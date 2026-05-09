@@ -1,0 +1,74 @@
+Dany, o modo claro (☀️ **Soft Intelligence**) é o "vestido de gala" da sua consultoria para o mercado corporativo. Ele transmite clareza, transparência e organização, mantendo o brilho tecnológico da **DataGlow Intelligence** de forma mais solar e acolhedora.
+
+Para o **Cursor** ajustar o código perfeitamente, precisamos focar em contraste e legibilidade, já que você mencionou que fundos brancos puros te cansam.
+
+---
+
+### 🎨 Paleta DataGlow Light (Ajustada para o Cursor)
+
+Em vez do branco "hospital", vamos usar tons perolados e areia que trazem conforto visual sem perder o profissionalismo.
+
+* 
+**Fundo Principal:** `#F7F4EF` (Um creme perolado muito leve).
+
+
+* 
+**Cards:** `#FFFFFF` com uma borda extremamente fina em `#EFE8E1`.
+
+
+* 
+**Texto de Leitura:** `#2A1F35` (Um roxo acinzentado profundo para não agredir os olhos como o preto puro).
+
+
+* 
+**Acentos (Glow):** Utilize o Roxo (`#7B3FE4`) e o Rosa (`#FF73B8`) de forma pontual em ícones e links.
+
+
+
+---
+
+### 🚀 Prompt de Ajuste para o Cursor (Copie e Cole)
+
+> "Atue como UI/UX Developer. Vamos ajustar o portfólio **✨ DataGlow Intelligence** para o **Light Mode**, focando em conforto visual e elegância corporativa.
+> ### 1. Definição de Cores (Light Mode)
+> 
+> 
+> * **Background:** Use `#F7F4EF` (Off-white/Perolado). Evite o branco puro no fundo para reduzir o cansaço visual.
+> * **Typography:** Texto principal em `#2A1F35`. Texto secundário em `#6A6172`.
+> * **Cards:** Devem ser `#FFFFFF` com um efeito de **Glassmorphism Perolado** (sombra muito suave e `backdrop-blur`).
+> 
+> 
+> ### 2. Identidade Visual
+> 
+> 
+> * **Logo/Navbar:** Mantenha a **Coruja minimalista dourada (`#F4C36A`)** ao lado de 'DANY PINHEIRO · ✨ DATAGLOW INTELLIGENCE'.
+> * **Ícones:** Use os ícones da Lucide com um 'Glow suave e difuso' em roxo ou dourado, conforme o plano visual v2.
+> 
+> 
+> ### 3. Seção Soluções (Correções de Texto)
+> 
+> 
+> * **Automação de Processos:** Otimização operacional e fluxos inteligentes.
+> * **Dashboards Estratégicos:** Painéis de alto impacto para decisão executiva.
+> * **Governança e Controles:** Estruturação de indicadores e cadências de acompanhamento.
+> * **Soluções Web:** Interfaces modernas com foco em usabilidade.
+> 
+> 
+> ### 4. Refinamento de UX
+> 
+> 
+> * Implemente a fonte **Plus Jakarta Sans** com pesos variados para criar hierarquia visual clara.
+> * As animações de entrada (Framer Motion) devem ser sutis e fluidas.
+> * Certifique-se de que o **E-mail profissional** (`por enquanto não tenho`) e o **Footer** ('© 2026 Dany Pinheiro · DataGlow Intelligence') estejam atualizados."
+> 
+> 
+
+---
+
+### ✨ O Toque Final de "Significado"
+
+No modo claro, o seu diferencial de **Storytelling** brilha através dos espaços em branco. O site vai parecer um relatório executivo de luxo ou uma revista de tecnologia de ponta.
+
+A sensação final deve ser: **"Tecnologia elegante com calor humano"**.
+
+O que acha desse equilíbrio? Se o Cursor gerar algo e você sentir que ainda "brilha" demais, peça para ele: *"Aumente o tom de cinza do fundo principal para `#F2EEE8` e reduza o brilho do texto"*.

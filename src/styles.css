@@ -1,0 +1,168 @@
+@config "./tailwind.config.ts";
+@import "tailwindcss";
+
+@theme {
+  --color-background: #f7f4ef;
+  --color-foreground: #2a1f35;
+  --color-surface: #ffffff;
+  --color-surface-2: #faf7f3;
+  --color-border: #efe8e1;
+  /** Texto mais fechado para nav / chips inactivos (#5c4f6f). */
+  --color-nav-muted: #5c4f6f;
+  /** Acentos suaves violeta (#b86bff) — cartões Soluções, focos visuais. */
+  --color-lilac: #b86bff;
+  /** Hover/link mais escuros em rodapés e texto secundário. */
+  --color-foreground-strong: #3d3250;
+  /** Primário mais escuro em hover onde o contraste precisa (#6a32d4). */
+  --color-primary-hover: #6a32d4;
+  --color-primary: #7b3fe4;
+  --color-gold: #f4c36a;
+  --color-pink: #ff73b8;
+  --color-muted-foreground: #6a6172;
+  --animate-fade-in: fade-in 0.7s ease-out forwards;
+  --animate-blob-float: blob-float 8s ease-in-out infinite;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Design System — DataGlow Intelligence (Soft Intelligence light) */
+:root {
+  --background: #f7f4ef;
+  --surface: #ffffff;
+  --surface-2: #faf7f3;
+  --primary: #7b3fe4;
+  --gold: #f4c36a;
+  --pink: #ff73b8;
+  --foreground: #2a1f35;
+  --muted-foreground: #6a6172;
+  --border: #efe8e1;
+  --gradient-hero: linear-gradient(120deg, #7b3fe4 0%, #b86bff 100%);
+  --gradient-gold-accent: linear-gradient(120deg, #c9a227 0%, #f4c36a 45%, #b86bff 100%);
+  --shadow-glow-purple: 0 8px 28px rgba(123, 63, 228, 0.16);
+  --shadow-glow-gold: 0 8px 28px rgba(244, 195, 106, 0.22);
+  --shadow-glass: 0 4px 24px rgba(42, 31, 53, 0.05);
+  --shadow-card: 0 10px 40px -12px rgba(42, 31, 53, 0.06);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family:
+      'Plus Jakarta Sans',
+      system-ui,
+      sans-serif;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .section-spacing {
+    @apply py-16 md:py-24;
+  }
+
+  /** Vidro perolado editorial — usar em cartões institucionais e painéis. */
+  .card-pearl {
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-glass);
+  }
+
+  .icon-glow-gold {
+    filter: drop-shadow(0 0 10px rgba(244, 195, 106, 0.45))
+      drop-shadow(0 0 18px rgba(244, 195, 106, 0.2));
+  }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-glass);
+}
+
+.card-light {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+}
+
+@keyframes blob-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-16px) scale(1.04);
+  }
+}
+
+.blob {
+  filter: blur(32px);
+  opacity: 0.65;
+  animation: blob-float 8s ease-in-out infinite;
+}
+
+.owl-float {
+  animation: owl-float 6s ease-in-out infinite;
+}
+@keyframes owl-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.text-gradient-gold {
+  background: var(--gradient-gold-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+.text-pink {
+  color: var(--pink);
+}
+.shadow-glow-gold {
+  box-shadow: var(--shadow-glow-gold);
+}
+.shadow-glow-purple {
+  box-shadow: var(--shadow-glow-purple);
+}
+
+.btn-cta-magenta {
+  background: linear-gradient(135deg, #ff73b8, #da5bff 45%, #9b54f0);
+  color: white;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  box-shadow:
+    0 10px 32px rgba(255, 115, 184, 0.32),
+    0 0 0 1px rgba(255, 255, 255, 0.35) inset;
+}
+.btn-cta-magenta:hover {
+  box-shadow:
+    0 14px 40px rgba(255, 115, 184, 0.42),
+    0 0 0 1px rgba(255, 255, 255, 0.45) inset;
+}

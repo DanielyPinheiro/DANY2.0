@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="hero" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" style="stop-color:#7b3fe4"/>
+      <stop offset="55%" style="stop-color:#b86bff"/>
+      <stop offset="100%" style="stop-color:#f4c36a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#f7f4ef"/>
+  <circle cx="900" cy="120" r="180" fill="url(#hero)" opacity="0.35"/>
+  <circle cx="200" cy="480" r="220" fill="#ff73b8" opacity="0.18"/>
+  <text x="80" y="280" fill="#2a1f35" font-family="system-ui,sans-serif" font-size="54" font-weight="700">
+    Dany Pinheiro | DataGlow Intelligence
+  </text>
+  <text x="82" y="348" fill="#6a6172" font-family="system-ui,sans-serif" font-size="31">
+    Dados, estrategia e tecnologia
+  </text>
+</svg>

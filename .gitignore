@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Lockfiles (manter package-lock.json versionado com npm)
+pnpm-lock.yaml
+yarn.lock
+
+# Build & caches
+dist/
+.output/
+.cache/
+.tanstack/tmp/
+*.tsbuildinfo
+
+# Env & local
+.env
+.env.*
+!.env.example
+
+# OS & editor
+.DS_Store
+*.log
+
+# Deploy / cloud
+.vercel/
+
+# Test artifacts (se no futuro adicionares Playwright, etc.)
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+count.txt

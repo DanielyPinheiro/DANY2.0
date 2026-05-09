@@ -1,0 +1,264 @@
+Se você gostou daquele estilo místico-tecnológico, o desafio é "envelopar" esse universo em uma roupagem corporativa e premium, exatamente como conversamos. Não vamos jogar a identidade fora, vamos refiná-la para que ela abra portas em vez de fechá-las.O segredo está em usar os elementos místicos como "detalhes de marca" (easter eggs) e não como a mensagem principal.Aqui está o "Manual de Adaptação" para o Cursor criar o seu site:🎨 Manual de Alquimia Corporativa (Adaptação para o Site)Regra de Ouro: Transformar o "Esotérico" em "Tech-Premium".Elemento Original (image_13.png)Como Adaptar (Para o Cursor)Por que funciona (Business)Fundo (Roxo/Preto chapado)Fundo Slate Deep-Violet (#1A1221) com texturas de "vidro fumê".Conforto visual do Dark Mode, mas com a sofisticação de um aplicativo de luxo.Sub Headline (Mística)Headline Corporativa: "Transformo dados complexos em decisões estratégicas."Clareza imediata. O CEO entende o que você faz em 2 segundos.Ilustração (Bruxinha)Ilustração de Inteligência Artificial: Use uma IA (tipo um robô com traços femininos ou apenas a coruja de linhas douradas).Remove a figura humana e foca na Tecnologia e Automação.Tipografia (Títulos)Títulos em Serif Clássica (ex: Playfair Display).Passa autoridade, tradição e sofisticação (como marcas de luxo).Ícones Místicos (Sol, Lua)Ícones Tech-Glow: Engrenagens, Bússolas e Gráficos de linha que emitem o mesmo brilho neon.Mantém o efeito visual do Glow, mas com símbolos de Controle e Direção.🚀 O Prompt de Adaptação (Cole no Cursor)"Aja como um Front-end Engineer Sênior e UI Designer especialista em Branding de Consultoria Premium. Vamos recriar o portfólio da Dany Pinheiro, adaptando a essência mística de image_13.png para uma estética '✨ DataGlow Intelligence.1. Layout e Paleta (Modo Escuro Sofisticado)Fundo: Não use preto puro. Use um Slate-Deep-Violet (#1A1221) para o conforto visual e sofisticação. Adicione efeitos de glassmorphism (fundo de vidro fumê) nas seções 'Soluções' e 'Cases'.Texto: Texto em creme seda (#EADCF7), não branco puro. Os CTAs secundários devem ter um leve neon-glow lilás.O Destaque Ouro: Use o dourado (#F4C36A) apenas para ícones de 'expertise' e botões principais.2. Arquitetura de Conversão (Foco em Business)Headline Principal: 'Transformo dados complexos em decisões estratégicas.'Sub Headline: 'Especialista em Controles Internos, Business Intelligence e Desenvolvimento Web Full-stack (Next.js/TS).' (Isso traz a autoridade técnica).Método: Mantenha a frase: 'Dados contam histórias. Eu dou significado.' Apresente a Dany como uma Estrategista de Dados.3. Estética de Detalhes (Onde a Magia Fica)Ilustração Hero: Remova a bruxinha. Use uma Coruja minimalista em linhas douradas (#F4C36A) que emite um brilho suave.Ícones de Serviço: Substitua os símbolos esotéricos por símbolos de Negócios e Tecnologia (Engrenagens, Bússola, Gráficos de barra), mas com o mesmo estilo de 'Data-Glow' (efeito de neon suave) das visualizações de image_13.png.Animações: Use framer-motion para animações de entrada lentas e fluidas, passando a sensação de calma e controle."
+
+☀️ MVP — Dany Pinheiro • ✨ DataGlow Intelligence
+Conceito Central
+
+Uma experiência digital premium que une:
+
+inteligência analítica;
+sofisticação visual;
+tecnologia moderna;
+calor humano;
+branding autoral. 
+🧭 Posicionamento
+Marca
+Dany Pinheiro
+Assinatura
+✨ DataGlow Intelligence
+Proposta
+
+Transformo dados complexos em decisões estratégicas.
+
+Essência
+
+Dados contam histórias. Eu dou significado.
+
+🎨 Sistema Visual
+🌙 DARK MODE — “Night Intelligence”
+Sensação
+central de inteligência;
+tecnologia sofisticada;
+futurismo elegante;
+profundidade analítica;
+glow cinematográfico.
+Paleta Dark
+Uso	HEX
+Fundo principal	#121217
+Fundo secundário	#241630
+Roxo glow	#B86BFF
+Roxo profundo	#7B3FE4
+Ouro principal	#F4C36A
+Ouro escuro	#D98A29
+Café profundo	#4A2C1D
+Café quente	#6A3B24
+Rosa assinatura	#FF73B8
+Texto principal	#F5ECFF
+Texto secundário	#B9ABC9
+☀️ LIGHT MODE — “Soft Intelligence”
+Sensação
+consultoria premium;
+laboratório criativo;
+tecnologia humana;
+dashboard sofisticado;
+elegância minimalista.
+Paleta Light
+Uso	HEX
+Fundo principal	#F7F4EF
+Fundo secundário	#EFE8E1
+Card principal	#FFFFFF
+Card secundário	#FAF7F3
+Texto principal	#2A1F35
+Texto secundário	#6A6172
+Roxo principal	#7B3FE4
+Glow suave	#B86BFF
+Ouro premium	#F4C36A
+Rosa detalhe	#FF73B8
+🔤 Tipografia
+Principal
+Plus Jakarta Sans
+Características
+moderna;
+clean;
+premium;
+tecnológica;
+elegante;
+leve.
+Hierarquia
+Uso	Peso
+Hero	Bold
+Títulos	SemiBold
+Corpo	Regular
+Destaques	Medium
+🦉 Identidade Visual
+Símbolo
+
+Coruja minimalista dourada.
+
+Elementos gráficos
+dashboards glow;
+linhas orbitais;
+partículas suaves;
+gráficos holográficos;
+engrenagens minimalistas;
+bússolas;
+grids sutis.
+✨ Filosofia Visual
+Regra de Ouro
+
+A “magia” aparece como:
+
+atmosfera;
+sensação;
+refinamento visual.
+
+Nunca como tema explícito.
+
+🧱 Estrutura do MVP
+1️⃣ HERO
+Objetivo
+
+Comunicar valor imediatamente.
+
+Conteúdo
+Headline
+Transformo dados complexos em decisões estratégicas.
+Subheadline
+
+Especialista em:
+
+Business Intelligence;
+Controles Internos;
+Automação;
+Desenvolvimento Web Full-stack.
+Frase assinatura
+
+Dados contam histórias. Eu dou significado.
+
+CTAs
+Primário
+Ver Projetos
+Secundário
+Falar Comigo
+Visual Hero
+glow dourado suave;
+coruja minimalista;
+gradientes profundos;
+dashboard holográfico;
+animações lentas.
+2️⃣ SOLUÇÕES
+Objetivo
+
+Mostrar expertise estratégica.
+
+Cards
+⚙️ Automação de Processos
+
+Otimização operacional inteligente.
+
+📊 Dashboards Estratégicos
+
+Visualização e análise de dados.
+
+🛡️ Controles Internos
+
+Estruturação e eficiência.
+
+💻 Desenvolvimento Web
+
+Aplicações modernas e responsivas.
+
+🧭 Estratégia Digital
+
+Organização e clareza operacional.
+
+✨ Experiência & Branding
+
+Tecnologia com identidade.
+
+3️⃣ SOBRE
+Objetivo
+
+Humanizar sem perder autoridade.
+
+Texto-base
+
+Atuo na interseção entre dados, tecnologia e estratégia, criando soluções inteligentes que unem análise, eficiência e experiência.
+
+Destaques
+Dados, estratégia e tecnologia com inteligência visual e soluções premium.
+Estrategista Digital
+4️⃣ PROJETOS
+Objetivo
+
+Validar competência técnica.
+
+Estrutura dos cards
+thumbnail;
+descrição;
+stack;
+resultado;
+CTA “Ver Case”.
+Projetos MVP
+Projeto	Tipo
+Exclã Celebra	Plataforma
+Lumina	Dashboard
+Oráculo	Analytics
+LuzComAromas	E-commerce
+Collibra	Governança
+ETRRFHCA	Automação
+5️⃣ STACK
+Objetivo
+
+Autoridade técnica rápida.
+
+Power BI
+Excel 
+VBA
+Git
+
+6️⃣ EXPERIÊNCIA VISUAL
+Glassmorphism
+Dark
+
+Vidro fumê translúcido.
+
+Light
+
+Vidro perolado suave.
+
+Glow System
+Dark
+
+Glow mais intenso e cinematográfico.
+
+Light
+
+Glow suave e difuso.
+
+Animações
+Framer Motion;
+fade-up lento;
+hover glow;
+floating particles;
+transições suaves.
+📱 Responsividade
+Estratégia
+
+Mobile-first premium.
+
+Cuidados
+menos glow no mobile;
+cards empilhados;
+excelente contraste;
+hero simplificado.
+🚀 Stack Técnica
+Camada	Tecnologia
+Front-end	Next.js
+UI	Tailwind CSS
+Motion	Framer Motion
+Deploy	Vercel
+Ícones	Lucide
+🧠 Sensação Final
+🌙 Dark Mode
+
+“Inteligência estratégica em ambiente premium.”
+
+☀️ Light Mode
+
+“Tecnologia elegante com calor humano.”
+
+🎯 Objetivo do Produto
+
+O site deve fazer a pessoa pensar:
+
+“Essa profissional é sofisticada, estratégica, técnica e claramente diferenciada.”
