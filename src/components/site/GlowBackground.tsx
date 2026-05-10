@@ -7,15 +7,15 @@ export default function GlowBackground() {
       className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-background"
     >
       <div
-        className="absolute top-[-15%] right-[-5%] h-[380px] w-[380px] rounded-full bg-primary opacity-[0.048]"
+        className="absolute top-[-15%] right-[-5%] h-[380px] w-[380px] rounded-full bg-primary opacity-[0.048] dark:opacity-[0.09]"
         style={{ filter: 'blur(90px)' }}
       />
       <div
-        className="absolute bottom-[-10%] left-[-10%] h-[320px] w-[320px] rounded-full bg-[#F4C36A] opacity-[0.042]"
+        className="absolute bottom-[-10%] left-[-10%] h-[320px] w-[320px] rounded-full bg-[#F4C36A] opacity-[0.042] dark:opacity-[0.07]"
         style={{ filter: 'blur(80px)' }}
       />
       <div
-        className="absolute top-[42%] left-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary opacity-[0.028]"
+        className="absolute top-[42%] left-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary opacity-[0.028] dark:opacity-[0.06]"
         style={{ filter: 'blur(100px)' }}
       />
     </div>

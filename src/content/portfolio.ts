@@ -1,3 +1,6 @@
+import type { ServicoItem } from './servicos-page'
+import { servicos } from './servicos-page'
+
 export type PortfolioMedia = {
   src: string
   alt: string
@@ -15,86 +18,46 @@ export type PortfolioProject = {
   media: PortfolioMedia[]
 }
 
-export const portfolioProjects: PortfolioProject[] = [
-  {
-    slug: 'excla-celebra',
-    name: 'Exclã Celebra',
-    type: 'Plataforma',
-    shortDesc:
-      'Plataforma de celebrações com automação de convites e dashboards de engajamento.',
-    stack: 'Next.js, Power BI',
-    resultado: 'Automação de processos e insights em tempo real.',
-    body: 'Case focado em convites, acompanhamento de RSVP e painéis de engajamento para decisões rápidas no evento.',
-    media: [],
-  },
-  {
-    slug: 'lumina',
-    name: 'Lumina',
-    type: 'Dashboard',
-    shortDesc: 'Dashboard estratégico para análise de dados financeiros.',
-    stack: 'Power BI',
-    resultado: 'Visualização clara e decisões rápidas.',
-    body: 'Consolidação de indicadores financeiros com narrativa visual para liderança.',
-    media: [
-      {
-        src: '/cases/lumina/print-1.png',
-        alt: 'Painel Lumina com visão consolidada de métricas financeiras',
-        caption: 'Visão executiva consolidada para a liderança financeira.',
-      },
-      {
-        src: '/cases/lumina/print-2.png',
-        alt: 'Detalhe de KPIs e tendências no dashboard Lumina',
-        caption: 'Foco em KPIs e leitura rápida para decisão.',
-      },
-    ],
-  },
-  {
-    slug: 'oraculo',
-    name: 'Oráculo',
-    type: 'Analytics',
-    shortDesc: 'Sistema de analytics para monitoramento de KPIs.',
-    stack: 'Next.js, Power BI',
-    resultado: 'Monitoramento contínuo e relatórios automatizados.',
-    body: 'Monitoramento de KPIs com alertas e relatórios recorrentes.',
-    media: [],
-  },
-  {
-    slug: 'luz-com-aromas',
-    name: 'LuzComAromas',
-    type: 'E-commerce',
-    shortDesc:
-      'E-commerce com dashboards de vendas e automação de estoque.',
-    stack: 'Next.js, Power BI',
-    resultado: 'Gestão eficiente e aumento de vendas.',
-    body: 'Operação de loja online com estoque, vendas e prioridades de reposição visíveis em um só lugar.',
-    media: [],
-  },
-]
+function servicoToPortfolioProject(s: ServicoItem): PortfolioProject {
+  const featureLines = s.features.map((f) =>
+    f.replace(/^\s*✅\s*/u, '• ').trim(),
+  )
+  const body = [s.description, '', 'O que inclui:', ...featureLines].join('\n')
 
-/** Ordem editorial dos destaques na home (primeiro = mais forte comercialmente / leitura). */
-export const HOME_FEATURED_SLUGS = [
-  'lumina',
-  'excla-celebra',
-  'luz-com-aromas',
-  'oraculo',
-] as const satisfies readonly string[]
+  return {
+    slug: s.slug,
+    name: s.title,
+    type: s.portfolioType,
+    shortDesc: s.description,
+    stack: s.stack,
+    resultado: s.resultado,
+    body,
+    media: [],
+  }
+}
+
+export const portfolioProjects: PortfolioProject[] =
+  servicos.map(servicoToPortfolioProject)
+
+/** Ordem editorial dos destaques na home — igual à ordem em `servicos`. */
+export const HOME_FEATURED_SLUGS: readonly string[] = servicos.map((s) => s.slug)
 
 export type PortfolioTipoFilter = 'Todos' | string
 
-export const PORTFOLIO_ALL_TITLE = 'Todos os cases'
+export const PORTFOLIO_ALL_TITLE = 'Todos os formatos'
 
 export const PORTFOLIO_ALL_BLURB =
-  'Visão completa dos projetos por tipo de solução. Use os filtros para focar dashboards, plataformas, analytics ou e-commerce.'
+  'Quatro linhas de entrega (escopo) — gestão e sistemas, Power BI, web e apps, e formação. Use os filtros para focar cada formato.'
 
 const portfolioCategoryBlurbs: Record<string, string> = {
-  Dashboard:
-    'Painéis executivos e leitura de KPIs para decisões mais rápidas e alinhamento com estratégia.',
-  Plataforma:
-    'Produtos digitais com fluxos automatizados, integrações e dados para apoiar a operação.',
-  Analytics:
-    'Monitoramento contínuo, alertas e relatórios que mantêm o ritmo sobre os indicadores certos.',
-  'E-commerce':
-    'Operação da loja online com estoque, vendas e prioridades de reposição visíveis onde importa.',
+  'Gestão e sistemas':
+    'Sistemas customizados em Excel ou Power BI para operação, estoque, vendas e decisões do dia a dia.',
+  'Power BI':
+    'Modelagem, DAX, visualizações e publicação com segurança por perfil.',
+  'Web e apps':
+    'Aplicações modernas, integrações e deploy — da arquitetura à manutenção.',
+  Formação:
+    'Capacitação da equipe em Excel, Power BI e SQL, com materiais e exercícios nos seus dados.',
 }
 
 export function getPortfolioCategoriesSorted(): string[] {
@@ -122,7 +85,7 @@ export function getPortfolioFilterSubtitle(filter: PortfolioTipoFilter): string 
   if (filter === 'Todos') return PORTFOLIO_ALL_BLURB
   return (
     portfolioCategoryBlurbs[filter] ??
-    `Cases destacados nesta área — ${filter}.`
+    `Formatos nesta área — ${filter}.`
   )
 }
 

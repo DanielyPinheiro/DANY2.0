@@ -1,20 +1,25 @@
 import type { LucideIcon } from 'lucide-react'
 import {
-  Cog,
+  AppWindow,
   Compass,
-  Gem,
-  MapPin,
-  Moon,
-  Monitor,
-  Sparkles,
+  LayoutDashboard,
+  PenLine,
+  ShieldCheck,
+  Zap,
 } from 'lucide-react'
 import { useRef } from 'react'
 
 import SectionHeaderWithArrows from './SectionHeaderWithArrows'
 
+/** Slides do carrossel: ocupam a largura visível do trilho até teto ~32rem. */
+const carouselSlideClass =
+  'min-w-0 max-w-[32rem] shrink-0 snap-center flex-[0_0_100%]'
+
+const ICON_STROKE = 1.2
+
 /** Grelha accent — alinhada ao design system (tokens `lilac`, `primary`). */
 const cardBase =
-  'rounded-xl border border-lilac/30 bg-white/80 p-6 shadow-sm backdrop-blur-xl transition-[transform,box-shadow] duration-300 hover:scale-[1.02] hover:shadow-[0_14px_44px_-12px_rgba(184,107,255,0.22)]'
+  'rounded-xl border border-lilac/30 bg-surface/80 p-6 shadow-sm backdrop-blur-xl transition-[transform,box-shadow] duration-300 hover:scale-[1.02] hover:shadow-[0_14px_44px_-12px_rgba(184,107,255,0.22)] dark:border-primary/20 dark:bg-surface dark:backdrop-blur-md'
 
 type IconCircleProps = {
   children: React.ReactNode
@@ -24,11 +29,11 @@ type IconCircleProps = {
 function IconCircle({ children, featured }: IconCircleProps) {
   return (
     <div
-      className={`mb-5 flex shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary ${
+      className={`icon-glow-night mb-5 flex shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary ${
         featured ? 'h-14 w-14' : 'h-12 w-12'
       }`}
     >
-      <div className={featured ? '[&>svg]:h-7 [&>svg]:w-7' : '[&_svg]:h-8 [&_svg]:w-8'}>
+      <div className={featured ? '[&>svg]:h-7 [&>svg]:w-7' : '[&_svg]:h-7 [&_svg]:w-7'}>
         {children}
       </div>
     </div>
@@ -37,7 +42,7 @@ function IconCircle({ children, featured }: IconCircleProps) {
 
 type SmallSolutionDef = {
   key: string
-  Icon: LucideIcon | 'composite-org'
+  Icon: LucideIcon
   title: string
   desc: string
 }
@@ -45,52 +50,40 @@ type SmallSolutionDef = {
 const SMALL_SOLUTION_DEFS: SmallSolutionDef[] = [
   {
     key: 'dashboards',
-    Icon: Compass,
+    Icon: LayoutDashboard,
     title: 'Dashboards Estratégicos',
-    desc:
-      'Visualização de dados de alto impacto voltada para a tomada de decisão executiva.',
+    desc: 'Painéis de alto impacto para decisão executiva.',
   },
   {
     key: 'governanca',
-    Icon: Moon,
+    Icon: ShieldCheck,
     title: 'Governança e Controles',
-    desc:
-      'Estruturação de indicadores e cadências para garantir eficiência operacional.',
+    desc: 'Estruturação de indicadores e cadências de acompanhamento.',
   },
   {
     key: 'web',
-    Icon: Monitor,
+    Icon: AppWindow,
     title: 'Soluções Web',
-    desc:
-      'Aplicações modernas (Next.js/TS) com foco total em usabilidade e performance.',
+    desc: 'Interfaces modernas com foco em usabilidade.',
   },
   {
     key: 'brand',
-    Icon: Gem,
+    Icon: PenLine,
     title: 'Experiência & Branding',
-    desc:
-      'Narrativa visual e consistência da sua marca no ambiente digital.',
+    desc: 'Tecnologia com identidade — narrativa visual e consistência da marca digital.',
   },
   {
-    key: 'organizacao',
-    Icon: 'composite-org',
-    title: 'Organização e Eficiência',
-    desc:
-      'Mapeamento de processos e ganhos operacionais sustentáveis.',
+    key: 'estrategia',
+    Icon: Compass,
+    title: 'Estratégia Digital',
+    desc: 'Organização e clareza operacional.',
   },
 ]
 
-function renderSmallIcon(iconType: SmallSolutionDef['Icon']) {
-  if (iconType === 'composite-org') {
-    return (
-      <span className="relative inline-flex h-8 w-8 items-center justify-center">
-        <Cog className="h-8 w-8" aria-hidden />
-        <MapPin className="absolute -bottom-1 -right-1 h-3.5 w-3.5 text-primary" aria-hidden strokeWidth={2.25} />
-      </span>
-    )
-  }
-  const I = iconType
-  return <I className="shrink-0" aria-hidden strokeWidth={1.75} />
+function SmallIcon({ Icon }: { Icon: LucideIcon }) {
+  return (
+    <Icon className="shrink-0" aria-hidden strokeWidth={ICON_STROKE} />
+  )
 }
 
 type SmallCardProps = {
@@ -106,10 +99,12 @@ function SmallSolutionCard({ def, inGrid, tightStack }: SmallCardProps) {
   return (
     <div
       className={`${cardBase} flex ${minHClass} flex-col font-sans ${
-        inGrid ? 'h-full min-w-0' : 'min-w-[272px] shrink-0 snap-center sm:min-w-[300px]'
+        inGrid ? 'h-full min-w-0' : `${carouselSlideClass} min-h-[200px]`
       }`}
     >
-      <IconCircle>{renderSmallIcon(def.Icon)}</IconCircle>
+      <IconCircle>
+        <SmallIcon Icon={def.Icon} />
+      </IconCircle>
       <h3 className="text-lg font-bold leading-snug text-foreground md:text-xl">
         {def.title}
       </h3>
@@ -121,20 +116,20 @@ function SmallSolutionCard({ def, inGrid, tightStack }: SmallCardProps) {
 }
 
 const AUTOMACAO_DESC =
-  'Otimização operacional e integração de sistemas para reduzir retrabalho e aumentar a previsibilidade.'
+  'Otimização operacional e fluxos inteligentes — integração de sistemas para reduzir retrabalho e aumentar previsibilidade.'
 
 function FeaturedAutomacaoCard({ forCarousel }: { forCarousel?: boolean }) {
   return (
     <div
       className={`${cardBase} flex flex-col justify-center font-sans ${
         forCarousel
-          ? 'min-h-[200px] min-w-[85vw] shrink-0 snap-center sm:min-w-[300px]'
+          ? `${carouselSlideClass} min-h-[220px]`
           : 'h-full min-h-[240px] w-full lg:min-h-0 lg:flex-1'
       }`}
     >
       <div className="max-w-lg lg:flex lg:min-h-0 lg:flex-1 lg:flex-col lg:justify-center">
         <IconCircle featured>
-          <Sparkles aria-hidden strokeWidth={1.85} />
+          <Zap aria-hidden strokeWidth={ICON_STROKE} />
         </IconCircle>
         <h3 className="text-xl font-bold leading-snug text-foreground md:text-2xl">
           Automação de Processos
@@ -162,7 +157,7 @@ export function SolucoesGrid() {
 
         <div
           ref={scrollRef}
-          className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 lg:hidden [-ms-overflow-style:none] [scrollbar-width:thin] [&::-webkit-scrollbar]:h-1.5"
+          className="flex w-full snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth scroll-px-4 pb-2 lg:hidden [-ms-overflow-style:none] [scrollbar-width:thin] [&::-webkit-scrollbar]:h-1.5"
         >
           <FeaturedAutomacaoCard forCarousel />
           {SMALL_SOLUTION_DEFS.map((def) => (

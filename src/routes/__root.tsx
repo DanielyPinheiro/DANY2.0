@@ -9,6 +9,7 @@ import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 
 import { SITE_DESCRIPTION_CARD } from '../content/site-metadata'
 import { absoluteUrl } from '../lib/site-url'
+import { themeBootstrapScript } from '../lib/theme-bootstrap'
 import appCss from '../styles.css?url'
 
 const ogImageUrl = absoluteUrl('/og-default.png')
@@ -85,6 +86,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
       <head>
+        <script
+          dangerouslySetInnerHTML={{ __html: themeBootstrapScript }}
+        />
         <HeadContent />
       </head>
       <body>

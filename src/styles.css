@@ -1,24 +1,22 @@
 @config "./tailwind.config.ts";
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
-  --color-background: #f7f4ef;
-  --color-foreground: #2a1f35;
-  --color-surface: #ffffff;
-  --color-surface-2: #faf7f3;
-  --color-border: #efe8e1;
-  /** Texto mais fechado para nav / chips inactivos (#5c4f6f). */
-  --color-nav-muted: #5c4f6f;
-  /** Acentos suaves violeta (#b86bff) — cartões Soluções, focos visuais. */
-  --color-lilac: #b86bff;
-  /** Hover/link mais escuros em rodapés e texto secundário. */
-  --color-foreground-strong: #3d3250;
-  /** Primário mais escuro em hover onde o contraste precisa (#6a32d4). */
-  --color-primary-hover: #6a32d4;
-  --color-primary: #7b3fe4;
-  --color-gold: #f4c36a;
-  --color-pink: #ff73b8;
-  --color-muted-foreground: #6a6172;
+  --color-background: var(--app-background);
+  --color-foreground: var(--app-foreground);
+  --color-surface: var(--app-surface);
+  --color-surface-2: var(--app-surface-2);
+  --color-border: var(--app-border);
+  --color-nav-muted: var(--app-nav-muted);
+  --color-lilac: var(--app-lilac);
+  --color-foreground-strong: var(--app-foreground-strong);
+  --color-primary-hover: var(--app-primary-hover);
+  --color-primary: var(--app-primary);
+  --color-gold: var(--app-gold);
+  --color-pink: var(--app-pink);
+  --color-muted-foreground: var(--app-muted-foreground);
   --animate-fade-in: fade-in 0.7s ease-out forwards;
   --animate-blob-float: blob-float 8s ease-in-out infinite;
 }
@@ -34,23 +32,79 @@
   }
 }
 
-/* Design System — DataGlow Intelligence (Soft Intelligence light) */
+/* Design System — DataGlow: Soft Intelligence (light) + Night Intelligence (html.dark) */
 :root {
-  --background: #f7f4ef;
-  --surface: #ffffff;
-  --surface-2: #faf7f3;
-  --primary: #7b3fe4;
-  --gold: #f4c36a;
-  --pink: #ff73b8;
-  --foreground: #2a1f35;
-  --muted-foreground: #6a6172;
-  --border: #efe8e1;
+  color-scheme: light;
+  --app-background: #f7f4ef;
+  --app-foreground: #2a1f35;
+  --app-surface: #ffffff;
+  --app-surface-2: #faf7f3;
+  --app-border: #efe8e1;
+  --app-nav-muted: #5c4f6f;
+  --app-lilac: #b86bff;
+  --app-foreground-strong: #3d3250;
+  --app-primary-hover: #6a32d4;
+  --app-primary: #7b3fe4;
+  --app-gold: #f4c36a;
+  --app-pink: #ff73b8;
+  --app-muted-foreground: #6a6172;
+  --app-card-pearl: rgba(255, 255, 255, 0.72);
+  --app-glass: rgba(255, 255, 255, 0.78);
+
+  --background: var(--app-background);
+  --surface: var(--app-surface);
+  --surface-2: var(--app-surface-2);
+  --primary: var(--app-primary);
+  --gold: var(--app-gold);
+  --pink: var(--app-pink);
+  --foreground: var(--app-foreground);
+  --muted-foreground: var(--app-muted-foreground);
+  --border: var(--app-border);
   --gradient-hero: linear-gradient(120deg, #7b3fe4 0%, #b86bff 100%);
   --gradient-gold-accent: linear-gradient(120deg, #c9a227 0%, #f4c36a 45%, #b86bff 100%);
   --shadow-glow-purple: 0 8px 28px rgba(123, 63, 228, 0.16);
   --shadow-glow-gold: 0 8px 28px rgba(244, 195, 106, 0.22);
   --shadow-glass: 0 4px 24px rgba(42, 31, 53, 0.05);
   --shadow-card: 0 10px 40px -12px rgba(42, 31, 53, 0.06);
+}
+
+/**
+ * Night Intelligence — paleta oficial DataGlow.
+ * Fundo #121217 · secundário #241630 · Roxo Glow #B86BFF · Roxo Profundo #7B3FE4 · Ouro #F4C36A · Rosa #FF73B8 · texto #F5ECFF · secundário #B9ABC9
+ */
+html.dark {
+  color-scheme: dark;
+  --app-background: #121217;
+  --app-foreground: #f5ecff;
+  --app-surface: rgb(36 22 48 / 0.6);
+  --app-surface-2: #241630;
+  --app-border: rgb(123 63 228 / 0.2);
+  --app-nav-muted: #b9abc9;
+  --app-lilac: #b86bff;
+  --app-foreground-strong: #f5ecff;
+  --app-primary-hover: #c9a0ff;
+  --app-primary: #7b3fe4;
+  --app-gold: #f4c36a;
+  --app-pink: #ff73b8;
+  --app-muted-foreground: #b9abc9;
+  --app-card-pearl: rgb(36 22 48 / 0.6);
+  --app-glass: rgb(36 22 48 / 0.55);
+
+  --background: var(--app-background);
+  --surface: var(--app-surface);
+  --surface-2: var(--app-surface-2);
+  --foreground: var(--app-foreground);
+  --muted-foreground: var(--app-muted-foreground);
+  --border: var(--app-border);
+  --gradient-hero: linear-gradient(120deg, #7b3fe4 0%, #b86bff 100%);
+  --gradient-gold-accent: linear-gradient(120deg, #f4c36a 0%, #b86bff 55%, #7b3fe4 100%);
+  --shadow-glow-purple: 0 8px 36px rgba(184, 107, 255, 0.45),
+    0 0 24px rgba(123, 63, 228, 0.28);
+  --shadow-glow-gold: 0 8px 32px rgba(244, 195, 106, 0.4),
+    0 0 20px rgba(184, 107, 255, 0.2);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.45), 0 0 1px rgb(123 63 228 / 0.35);
+  --shadow-card: 0 12px 48px -12px rgba(0, 0, 0, 0.55),
+    0 0 20px rgba(184, 107, 255, 0.08);
 }
 
 @layer base {
@@ -69,9 +123,9 @@
     @apply py-16 md:py-24;
   }
 
-  /** Vidro perolado editorial — usar em cartões institucionais e painéis. */
+  /** Vidro perolado editorial — modo Night usa --app-card-pearl. */
   .card-pearl {
-    background: rgba(255, 255, 255, 0.72);
+    background: var(--app-card-pearl);
     border: 1px solid var(--border);
     border-radius: 0.75rem;
     backdrop-filter: blur(12px);
@@ -79,18 +133,43 @@
     box-shadow: var(--shadow-glass);
   }
 
+  html.dark .card-pearl {
+    border-color: rgb(123 63 228 / 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
   .icon-glow-gold {
     filter: drop-shadow(0 0 10px rgba(244, 195, 106, 0.45))
       drop-shadow(0 0 18px rgba(244, 195, 106, 0.2));
   }
+
+  html.dark .icon-glow-gold {
+    filter: drop-shadow(0 0 14px rgba(184, 107, 255, 0.65))
+      drop-shadow(0 0 26px rgba(244, 195, 106, 0.45))
+      drop-shadow(0 0 6px rgba(123, 63, 228, 0.5));
+  }
+
+  /** Destaque glow Night Intelligence (apenas modo escuro). */
+  html.dark .icon-glow-night svg {
+    filter: drop-shadow(0 0 14px rgba(184, 107, 255, 0.7))
+      drop-shadow(0 0 22px rgba(123, 63, 228, 0.45))
+      drop-shadow(0 0 8px rgba(244, 195, 106, 0.35));
+  }
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.78);
+  background: var(--app-glass);
   border: 1px solid var(--border);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   box-shadow: var(--shadow-glass);
+}
+
+html.dark .glass {
+  border-color: rgb(123 63 228 / 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .card-light {

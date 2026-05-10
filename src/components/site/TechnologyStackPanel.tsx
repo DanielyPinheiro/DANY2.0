@@ -50,7 +50,7 @@ function ChipGlyph({ def }: { def: StackChipDef }) {
 }
 
 const chipClass =
-  'inline-flex cursor-default items-center gap-2 rounded-full border border-border bg-white/65 px-4 py-2 text-sm font-medium text-primary shadow-[var(--shadow-glass)] backdrop-blur-sm transition-shadow hover:shadow-[0_8px_28px_-8px_rgba(42,31,53,0.08)]'
+  'inline-flex cursor-default items-center gap-2 rounded-full border border-border bg-surface/65 px-4 py-2 text-sm font-medium text-primary shadow-[var(--shadow-glass)] backdrop-blur-sm transition-shadow hover:shadow-[0_8px_28px_-8px_rgba(42,31,53,0.08)] dark:hover:shadow-[0_8px_28px_-8px_rgba(0,0,0,0.3)]'
 
 export default function TechnologyStackPanel({
   anchorId,

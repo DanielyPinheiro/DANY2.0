@@ -3,14 +3,18 @@
   "private": true,
   "sideEffects": false,
   "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "scripts": {
     "dev": "vite dev",
     "dev:auto": "npm install && vite dev",
     "build": "vite build && tsc --noEmit",
     "preview": "vite preview",
     "start": "npx --yes srvx --prod -s ../client dist/server/server.js",
-    "routes:generate": "tsr generate",
-    "validate": "npm run build && node scripts/validate-preview.mjs"
+    "routes:generate": "npx --yes @tanstack/router-cli@latest generate",
+    "validate": "npm run build && node scripts/validate-preview.mjs",
+    "images:placeholders": "node scripts/generate-placeholder-pngs.mjs"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.169.2",

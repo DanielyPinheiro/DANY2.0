@@ -13,6 +13,23 @@ type SectionHeaderWithArrowsProps = {
   subtitleClassName?: string
 }
 
+function gapPxFromFlexContainer(el: HTMLElement): number {
+  const raw = getComputedStyle(el).gap || getComputedStyle(el).columnGap
+  if (!raw || raw === 'normal') return 16
+  const n = parseFloat(raw)
+  return Number.isFinite(n) ? n : 16
+}
+
+function measuredScrollDelta(el: HTMLElement | null, fallback: number): number {
+  if (!el) return fallback
+  const first = el.firstElementChild
+  if (first instanceof HTMLElement) {
+    return Math.round(first.offsetWidth + gapPxFromFlexContainer(el))
+  }
+  const w = el.clientWidth
+  return w > 0 ? Math.round(w) : fallback
+}
+
 export default function SectionHeaderWithArrows({
   title,
   scrollRef,
@@ -22,8 +39,10 @@ export default function SectionHeaderWithArrows({
   subtitleClassName = 'text-center text-sm text-muted-foreground md:text-left',
 }: SectionHeaderWithArrowsProps) {
   const scroll = (direction: -1 | 1) => {
-    scrollRef.current?.scrollBy({
-      left: direction * step,
+    const el = scrollRef.current
+    const delta = measuredScrollDelta(el, step)
+    el?.scrollBy({
+      left: direction * delta,
       behavior: 'smooth',
     })
   }
@@ -37,7 +56,7 @@ export default function SectionHeaderWithArrows({
         <div className={arrowsClassName}>
           <button
             type="button"
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-white/75 text-foreground shadow-[var(--shadow-glass)] backdrop-blur-md transition-colors hover:bg-white/92"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-surface/75 text-foreground shadow-[var(--shadow-glass)] backdrop-blur-md transition-colors hover:bg-surface/92"
             aria-label="Anterior"
             onClick={() => scroll(-1)}
           >
@@ -45,7 +64,7 @@ export default function SectionHeaderWithArrows({
           </button>
           <button
             type="button"
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-white/75 text-foreground shadow-[var(--shadow-glass)] backdrop-blur-md transition-colors hover:bg-white/92"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-surface/75 text-foreground shadow-[var(--shadow-glass)] backdrop-blur-md transition-colors hover:bg-surface/92"
             aria-label="Próximo"
             onClick={() => scroll(1)}
           >

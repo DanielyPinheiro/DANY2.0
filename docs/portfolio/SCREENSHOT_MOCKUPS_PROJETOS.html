@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mockups — dashboards (referência de screenshot)</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: #1a1520;
+      color: #f5ecff;
+      padding: 24px;
+    }
+    h1 { font-size: 1rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 20px; color: #b9abc9; }
+    .grid { display: grid; gap: 24px; max-width: 1200px; margin: 0 auto; }
+    @media (min-width: 900px) { .grid { grid-template-columns: 1fr; } }
+    .panel {
+      border-radius: 12px;
+      padding: 20px 24px 24px;
+      min-height: 260px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(184, 107, 255, 0.35);
+      box-shadow: 0 20px 48px -16px rgba(0,0,0,0.45);
+    }
+    .panel h2 { margin: 0 0 16px; font-size: 1.1rem; }
+    .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }
+    .kpi {
+      background: rgba(255,255,255,0.06);
+      border-radius: 8px;
+      padding: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .kpi span { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.8; }
+    .kpi strong { font-size: 1.25rem; margin-top: 6px; display: block; color: #f4c36a; }
+    .chez {
+      background: linear-gradient(145deg, #3d2419 0%, #1c1210 100%);
+    }
+    .vertebrare {
+      background: linear-gradient(145deg, #1e3a5c 0%, #0f1a2e 100%);
+    }
+    .hotel {
+      background: linear-gradient(145deg, #2a3550 0%, #151a28 100%);
+    }
+    .bars { display: flex; align-items: flex-end; gap: 8px; height: 72px; margin-top: 16px; }
+    .bar { flex: 1; background: linear-gradient(180deg, #b86bff, #7b3fe4); border-radius: 4px 4px 0 0; opacity: 0.85; }
+    .note { max-width: 1200px; margin: 24px auto 0; font-size: 0.85rem; color: #8a7d9a; }
+  </style>
+</head>
+<body>
+  <h1>Referência visual — substituir por PNG reais em public/images/</h1>
+  <div class="grid">
+    <section class="panel chez" id="chez-gaby">
+      <h2>Chez Gaby — Gestão & Vendas</h2>
+      <div class="kpis">
+        <div class="kpi"><span>Tempo de gestão</span><strong>-80%</strong></div>
+        <div class="kpi"><span>ROI (mês 1)</span><strong>74%</strong></div>
+        <div class="kpi"><span>Payback</span><strong>&lt; 2 meses</strong></div>
+      </div>
+      <div class="bars">
+        <div class="bar" style="height:45%"></div>
+        <div class="bar" style="height:70%"></div>
+        <div class="bar" style="height:55%"></div>
+        <div class="bar" style="height:90%"></div>
+        <div class="bar" style="height:62%"></div>
+      </div>
+    </section>
+    <section class="panel vertebrare" id="vertebrare">
+      <h2>Vertebrare — BI Healthcare</h2>
+      <div class="kpis">
+        <div class="kpi"><span>Relatórios</span><strong>-95%</strong></div>
+        <div class="kpi"><span>Medidas DAX</span><strong>40+</strong></div>
+        <div class="kpi"><span>Rastreabilidade</span><strong>100%</strong></div>
+      </div>
+      <div class="bars">
+        <div class="bar" style="height:60%"></div>
+        <div class="bar" style="height:85%"></div>
+        <div class="bar" style="height:72%"></div>
+        <div class="bar" style="height:48%"></div>
+      </div>
+    </section>
+    <section class="panel hotel" id="hotel-wa">
+      <h2>Hotel WA+ — Ocupação & Receita</h2>
+      <div class="kpis">
+        <div class="kpi"><span>Ocupação</span><strong>+24%</strong></div>
+        <div class="kpi"><span>Receita</span><strong>+35%</strong></div>
+        <div class="kpi"><span>ROI mensal</span><strong>257%</strong></div>
+      </div>
+      <div class="bars">
+        <div class="bar" style="height:52%"></div>
+        <div class="bar" style="height:88%"></div>
+        <div class="bar" style="height:66%"></div>
+        <div class="bar" style="height:78%"></div>
+        <div class="bar" style="height:94%"></div>
+      </div>
+    </section>
+  </div>
+  <p class="note">Exportar cada painel como <code>chez-gaby-dashboard.png</code>, <code>vertebrare-bi-dashboard.png</code>, <code>hotel-occupancy-dashboard.png</code>. Ver <a href="./GUIA_COMPLETO_SCREENSHOTS_SITE.md" style="color:#b86bff">GUIA_COMPLETO_SCREENSHOTS_SITE.md</a>.</p>
+</body>
+</html>

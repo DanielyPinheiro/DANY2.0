@@ -29,7 +29,13 @@ function mediaPathsFromPortfolio() {
 
 async function assertAssetsOk() {
   const paths = [
-    ...new Set(['/og-default.png', ...mediaPathsFromPortfolio()]),
+    ...new Set([
+      '/og-default.png',
+      '/images/chez-gaby-dashboard.png',
+      '/images/vertebrare-bi-dashboard.png',
+      '/images/hotel-occupancy-dashboard.png',
+      ...mediaPathsFromPortfolio(),
+    ]),
   ]
   for (const p of paths) {
     const res = await fetch(BASE + p, {
@@ -53,8 +59,30 @@ const checks = [
     mustInclude: ['<html', 'Portfólio', '</html>'],
   },
   {
-    path: '/portfolio/lumina',
-    mustInclude: ['<html', 'Lumina', '</html>'],
+    path: '/projetos',
+    mustInclude: [
+      '<html',
+      'Projetos',
+      'Portfólio',
+      'Casos reais',
+      'Recomendo para qualquer restaurante',
+      '</html>',
+    ],
+  },
+  {
+    path: '/servicos',
+    mustInclude: [
+      '<html',
+      'Serviços',
+      'sem valores fixos por pacote',
+      'Depoimentos',
+      'Como Funciona',
+      '</html>',
+    ],
+  },
+  {
+    path: '/portfolio/sistemas-gestao-customizados',
+    mustInclude: ['<html', 'Sistemas de Gestão Customizados', '</html>'],
   },
   {
     path: '/rota-invalida-validacao-only',

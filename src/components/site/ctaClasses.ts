@@ -4,7 +4,7 @@ export const CTA_PRIMARY_CLASS =
 
 /** Secundário (WhatsApp / outline claro). */
 export const CTA_SECONDARY_ANCHOR_CLASS =
-  'inline-flex justify-center rounded-xl border border-border bg-white/72 px-8 py-3.5 text-center text-sm font-semibold text-pink shadow-[var(--shadow-glass)] backdrop-blur-md transition-colors hover:border-pink/40 hover:bg-white/88 sm:rounded-full'
+  'inline-flex justify-center rounded-xl border border-border bg-surface/72 px-8 py-3.5 text-center text-sm font-semibold text-pink shadow-[var(--shadow-glass)] backdrop-blur-md transition-colors hover:border-pink/40 hover:bg-surface/88 sm:rounded-full dark:bg-surface/65'
 
 /** Teaser: botão cheio violeta (ex.: Soluções). */
 export const CTA_TEASER_SOLID_CLASS =

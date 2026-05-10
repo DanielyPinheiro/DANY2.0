@@ -21,6 +21,18 @@ export default function SolucoesTeaser() {
             Do painel estratégico à automação e às soluções web: ofertas estruturadas com foco em
             governança de dados e experiências digitais alinhadas à marca.
           </p>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+            Propostas e investimento são{' '}
+            <span className="font-medium text-foreground">sob demanda</span>, sem valores fixos por
+            pacote. Em{' '}
+            <Link
+              to="/servicos"
+              className="font-medium text-primary underline-offset-4 hover:underline"
+            >
+              Serviços
+            </Link>{' '}
+            encontra os quatro formatos de entrega; aqui vê os pilares em detalhe.
+          </p>
           <p className="mt-6">
             <Link
               to="/solucoes"

@@ -1,3 +1,4 @@
+import { linkedinHref } from '../../lib/linkedin-href'
 import { whatsappHref } from '../../lib/whatsapp-href'
 import { CTA_PRIMARY_CLASS } from './ctaClasses'
 
@@ -29,14 +30,14 @@ export default function Contato() {
               Vamos conversar
             </a>
             <a
-              href="https://www.linkedin.com/in/danielypinheiro/"
+              href={linkedinHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-xl border border-border bg-white/72 px-6 py-3 font-medium text-gold shadow-[var(--shadow-glass)] backdrop-blur-sm transition-[box-shadow] hover:shadow-[0_12px_36px_-14px_rgba(42,31,53,0.12)]"
+              className="rounded-xl border border-border bg-surface/72 px-6 py-3 font-medium text-gold shadow-[var(--shadow-glass)] backdrop-blur-sm transition-[box-shadow] hover:shadow-[0_12px_36px_-14px_rgba(42,31,53,0.12)] dark:hover:shadow-[0_12px_36px_-14px_rgba(0,0,0,0.25)]"
             >
               LinkedIn
             </a>
-            <p className="mt-2 w-full max-w-md rounded-xl border border-dashed border-border bg-white/55 px-5 py-3 text-xs leading-relaxed text-muted-foreground backdrop-blur-sm">
+            <p className="mt-2 w-full max-w-md rounded-xl border border-dashed border-border bg-surface/55 px-5 py-3 text-xs leading-relaxed text-muted-foreground backdrop-blur-sm">
               <span className="font-medium text-foreground">E-mail institucional</span>{' '}
               será divulgado em breve. Por enquanto, prefira WhatsApp ou LinkedIn.
             </p>

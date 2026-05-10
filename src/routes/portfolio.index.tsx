@@ -17,7 +17,7 @@ export const Route = createFileRoute('/portfolio/')({
       {
         name: 'description',
         content:
-          'Cases em dados, dashboards e automação — Lumina, Exclã Celebra, Oráculo, LuzComAromas.',
+          'Quatro formatos de entrega: gestão e sistemas customizados, Power BI, web e apps, e formação — com escopo e resultado por linha.',
       },
       {
         property: 'og:title',
@@ -25,8 +25,8 @@ export const Route = createFileRoute('/portfolio/')({
       },
       {
         property: 'og:description',
-          content:
-            'Cases em dados, dashboards e automação — conheça os projetos por categoria.',
+        content:
+          'Formatos de entrega em dados, dashboards e desenvolvimento — filtre por tipo e abra cada página.',
       },
     ],
     links:
@@ -46,11 +46,11 @@ function PortfolioIndexPage() {
             Portfólio
           </p>
           <h1 className="mt-3 text-3xl font-bold text-foreground md:text-4xl">
-            Cases e projetos
+            Formatos de entrega
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-            Cada projeto tem página própria com contexto, tecnologias e resultado. Quando há
-            material visual, há também uma galeria no próprio case.
+            Cada formato tem página própria com escopo, o que inclui e resultado. Use os filtros
+            por tipo para navegar entre as linhas de serviço.
           </p>
 
           <PortfolioFilterGrid />

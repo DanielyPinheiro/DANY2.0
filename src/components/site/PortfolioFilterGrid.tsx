@@ -44,7 +44,7 @@ export default function PortfolioFilterGrid() {
     <div className="mt-8">
       <nav
         aria-label="Filtrar projetos por categoria"
-        className="rounded-2xl border border-primary/14 bg-white/55 p-4 shadow-[var(--shadow-glass)] backdrop-blur-md"
+        className="rounded-2xl border border-primary/14 bg-surface/55 p-4 shadow-[var(--shadow-glass)] backdrop-blur-md dark:bg-surface/45"
       >
         <ul className="flex flex-wrap gap-2 sm:gap-2.5">
           {filterTokens.map((token) => {
@@ -58,7 +58,7 @@ export default function PortfolioFilterGrid() {
                   className={`${chipBase} ${
                     pressed
                       ? 'border-transparent bg-primary/14 text-primary ring-2 ring-primary/35'
-                      : 'border-border bg-white/72 text-nav-muted hover:bg-primary/8 hover:text-primary'
+                      : 'border-border bg-surface/72 text-nav-muted hover:bg-primary/8 hover:text-primary'
                   }`}
                 >
                   {token === 'Todos' ? 'Todos' : token}

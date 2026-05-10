@@ -90,7 +90,7 @@ export default function MediaLightbox({
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-[#2A1F35]/75 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-foreground/75 p-4 backdrop-blur-sm dark:bg-black/70"
       role="dialog"
       aria-modal="true"
       aria-label="Ampliar imagem"
@@ -101,12 +101,12 @@ export default function MediaLightbox({
         aria-label="Fechar painel"
         onClick={onClose}
       />
-      <div className="relative z-[101] max-h-[min(92vh,900px)] max-w-[min(96vw,1200px)] rounded-xl border border-border bg-white/90 p-2 shadow-2xl backdrop-blur-md">
+      <div className="relative z-[101] max-h-[min(92vh,900px)] max-w-[min(96vw,1200px)] rounded-xl border border-border bg-surface/90 p-2 shadow-2xl backdrop-blur-md dark:bg-surface/95">
         <button
           ref={closeBtnRef}
           type="button"
           onClick={onClose}
-          className="absolute -right-2 -top-2 z-[102] flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white text-foreground shadow-md transition-colors hover:bg-neutral-50"
+          className="absolute -right-2 -top-2 z-[102] flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-foreground shadow-md transition-colors hover:bg-surface-2 dark:hover:bg-surface-2"
           aria-label="Fechar"
         >
           <X className="h-5 w-5" aria-hidden />

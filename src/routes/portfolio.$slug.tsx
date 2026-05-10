@@ -112,7 +112,7 @@ function PortfolioCasePage() {
                   </p>
                 ) : null}
                 {project.media.length === 0 ? (
-                  <p className="mt-8 rounded-xl border border-dashed border-border bg-white/72 px-6 py-14 text-center text-muted-foreground backdrop-blur-md">
+                  <p className="mt-8 rounded-xl border border-dashed border-border bg-surface/72 px-6 py-14 text-center text-muted-foreground backdrop-blur-md">
                     Galeria em preparação — em breve, imagens deste projeto.
                   </p>
                 ) : (
@@ -121,7 +121,7 @@ function PortfolioCasePage() {
                       <li key={m.src}>
                         <button
                           type="button"
-                          className="group w-full overflow-hidden rounded-xl border border-border bg-white/80 p-1 text-left shadow-[var(--shadow-glass)] backdrop-blur-sm transition hover:shadow-[0_10px_32px_-12px_rgba(42,31,53,0.12)]"
+                          className="group w-full overflow-hidden rounded-xl border border-border bg-surface/80 p-1 text-left shadow-[var(--shadow-glass)] backdrop-blur-sm transition hover:shadow-[0_10px_32px_-12px_rgba(42,31,53,0.12)] dark:hover:shadow-[0_10px_32px_-12px_rgba(0,0,0,0.35)]"
                           onClick={() => {
                             setLightboxSrc(m.src)
                             setLightboxAlt(m.alt)
