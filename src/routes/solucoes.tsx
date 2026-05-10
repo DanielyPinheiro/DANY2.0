@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { Link, createFileRoute } from '@tanstack/react-router'
 
 import BackNavLink from '../components/site/BackNavLink'
 import SiteChrome from '../components/site/SiteChrome'
@@ -7,7 +7,7 @@ import TechnologyStackPanel from '../components/site/TechnologyStackPanel'
 import { absoluteUrl, siteBaseUrl } from '../lib/site-url'
 
 const SOLUCOES_META =
-  'Soluções em dados e automação — dashboards estratégicos, governança, web, marca e eficiência; ferramentas e tecnologias usadas neste site e nos projetos com clientes · DataGlow Intelligence.'
+  'Trabalho com dados, dashboards e apps nos moldes dos meus projetos públicos — dou transparência de stack sempre que o NDA permite · DataGlow Intelligence.'
 
 export const Route = createFileRoute('/solucoes')({
   head: () => ({
@@ -44,9 +44,16 @@ function SolucoesPage() {
             Oferta e ferramentas
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-            Casos que combinam visualização executiva, governança de indicadores, automação, produto web,
-            marca e eficiência operacional — com transparência sobre as tecnologias e o ambiente de trabalho
-            em uso.
+            O que eu entrego está nos casos da{' '}
+            <Link
+              to="/projetos"
+              className="font-medium text-primary underline-offset-4 hover:underline"
+            >
+              Biblioteca de resultados
+            </Link>
+            : operações mais claras em restaurantes, saúde ou hotelaria; menos tempo em relatório; e uma
+            experiência digital forte quando faz sentido. Aqui descrevo os pilares da mesma forma — com
+            apenas o nível técnico que cada sigilo permite.
           </p>
 
           <div className="mt-12 pb-10">

@@ -13,15 +13,15 @@ export const Route = createFileRoute('/portfolio/')({
   }),
   head: () => ({
     meta: [
-      { title: 'Portfólio · Dany Pinheiro · DataGlow Intelligence' },
+      { title: 'Portfólio · Daniely Pinheiro · DataGlow Intelligence' },
       {
         name: 'description',
         content:
-          'Quatro formatos de entrega: gestão e sistemas customizados, Power BI, web e apps, e formação — com escopo e resultado por linha.',
+          'Três formatos de entrega: gestão e sistemas customizados, Power BI e web e apps — com escopo e resultado por linha.',
       },
       {
         property: 'og:title',
-        content: 'Portfólio · Dany Pinheiro · DataGlow Intelligence',
+        content: 'Portfólio · Daniely Pinheiro · DataGlow Intelligence',
       },
       {
         property: 'og:description',

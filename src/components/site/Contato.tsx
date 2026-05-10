@@ -1,6 +1,9 @@
 import { linkedinHref } from '../../lib/linkedin-href'
-import { whatsappHref } from '../../lib/whatsapp-href'
-import { CTA_PRIMARY_CLASS } from './ctaClasses'
+import {
+  whatsappHref,
+  whatsappHrefApresentacaoResultados,
+} from '../../lib/whatsapp-href'
+import { CTA_PRIMARY_CLASS, CTA_SECONDARY_ANCHOR_CLASS } from './ctaClasses'
 
 export default function Contato() {
   return (
@@ -17,22 +20,33 @@ export default function Contato() {
             Vamos conversar?
           </h2>
           <p className="mx-auto mb-6 mt-4 max-w-md leading-relaxed text-muted-foreground">
-            Precisa de soluções em dados, dashboards ou automação? Envie mensagem pelo
-            WhatsApp ou fale comigo no LinkedIn.
+            Precisa de soluções em dados, dashboards ou automação? Peça pelo fluxo institucional
+            abaixo ou envie uma mensagem rápida — também pode falar comigo pelo LinkedIn.
           </p>
           <div className="flex flex-col items-center gap-3">
+            <a
+              href={whatsappHrefApresentacaoResultados}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Pedir apresentação de resultados sob consulta (WhatsApp)"
+              className={`${CTA_PRIMARY_CLASS} w-full max-w-md hover:scale-[1.01] active:scale-[0.98] sm:w-auto sm:min-w-[220px]`}
+            >
+              Ver Apresentação de Resultados
+            </a>
             <a
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className={`${CTA_PRIMARY_CLASS} w-full max-w-md hover:scale-[1.01] active:scale-[0.98] sm:w-auto sm:min-w-[220px]`}
+              aria-label="Enviar mensagem rápida pelo WhatsApp"
+              className={`${CTA_SECONDARY_ANCHOR_CLASS} w-full max-w-md hover:scale-[1.01] active:scale-[0.98] sm:w-auto sm:min-w-[220px]`}
             >
-              Vamos conversar
+              Mensagem rápida no WhatsApp
             </a>
             <a
               href={linkedinHref}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Perfil LinkedIn da Daniely Pinheiro"
               className="rounded-xl border border-border bg-surface/72 px-6 py-3 font-medium text-gold shadow-[var(--shadow-glass)] backdrop-blur-sm transition-[box-shadow] hover:shadow-[0_12px_36px_-14px_rgba(42,31,53,0.12)] dark:hover:shadow-[0_12px_36px_-14px_rgba(0,0,0,0.25)]"
             >
               LinkedIn

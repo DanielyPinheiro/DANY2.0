@@ -19,6 +19,9 @@ type SectionId = 'hero' | 'sobre' | 'projetos' | 'solucoes' | 'contato'
 
 type RouteTarget = '/projetos' | '/servicos' | '/sobre' | '/solucoes'
 
+const BRAND_NAV_TITLE_LONG =
+  'Daniely Pinheiro | Consultora em dados, automação e inteligência operacional'
+
 type Nav =
   | {
       kind: 'hash'
@@ -187,22 +190,21 @@ export default function Navbar() {
             hash="hero"
             hashScrollIntoView
             onClick={() => setMenuOpen(false)}
-            aria-label="Daniely Pinheiro — DataGlow Intelligence, ir para o início"
-            className="group min-w-0 flex-1 rounded-md px-1 -mx-1 py-0.5 outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-primary/35 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent sm:min-w-[10rem]"
+            aria-label={`${BRAND_NAV_TITLE_LONG}; ir para o início`}
+            className="group min-w-0 flex-1 rounded-md px-1 -mx-1 py-0.5 outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-primary/35 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent sm:min-w-[12rem]"
           >
-            <span className="text-xs font-bold uppercase leading-snug tracking-[0.12em] text-foreground drop-shadow-[0_1px_0_rgba(255,255,255,0.85)] transition-colors duration-200 sm:text-sm sm:font-extrabold md:text-base dark:text-lilac dark:drop-shadow-[0_0_14px_rgba(184,107,255,0.55)]">
-              DANIELY PINHEIRO ·{' '}
+            <span className="block font-sans text-[10px] font-bold uppercase leading-snug tracking-[0.08em] text-foreground transition-colors duration-200 sm:inline sm:text-[11px] sm:tracking-[0.1em] md:text-xs dark:text-lilac">
+              <span className="drop-shadow-[0_1px_0_rgba(255,255,255,0.85)] dark:drop-shadow-[0_0_10px_rgba(184,107,255,0.35)]">
+                Daniely Pinheiro
+              </span>
               <span
-                className="text-primary transition-colors duration-200 group-hover:text-primary-hover dark:text-lilac dark:group-hover:text-lilac"
+                className="mx-1.5 hidden text-gold opacity-95 sm:inline"
                 aria-hidden
               >
-                ✨{' '}
+                |
               </span>
-              <span className="text-primary transition-colors duration-200 group-hover:text-primary-hover dark:text-lilac dark:group-hover:text-lilac">
-                DATAGLOW
-              </span>{' '}
-              <span className="text-primary/70 transition-colors duration-200 group-hover:text-primary-hover dark:text-lilac dark:opacity-95 dark:group-hover:text-lilac lg:text-primary lg:dark:text-lilac">
-                INTELLIGENCE
+              <span className="mt-1 block font-semibold uppercase leading-snug tracking-[0.06em] text-muted-foreground text-pretty transition-colors duration-200 group-hover:text-primary/90 dark:mt-0 dark:inline dark:tracking-[0.04em] dark:text-muted-foreground dark:group-hover:text-lilac sm:mt-0 sm:inline md:tracking-[0.05em]">
+                Consultora em dados, automação e inteligência operacional
               </span>
             </span>
           </Link>
@@ -256,7 +258,7 @@ export default function Navbar() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex rounded-full p-1.5 text-primary outline-none transition-colors hover:bg-primary/10 focus-visible:ring-2 focus-visible:ring-primary/35 focus-visible:ring-offset-2 lg:p-2"
-                    aria-label="Vamos conversar no WhatsApp"
+                    aria-label="Contato pela DataGlow no WhatsApp — apresentação sob consulta ou mensagem rápida"
                   >
                     <Heart className="h-4 w-4 fill-current lg:h-[18px] lg:w-[18px]" />
                   </a>
@@ -268,9 +270,13 @@ export default function Navbar() {
               <ThemeToggle />
             </div>
             <a
-              aria-label="Vamos conversar no WhatsApp"
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Contato pela DataGlow no WhatsApp — apresentação sob consulta ou mensagem rápida"
+              className="inline-flex rounded-full p-2 text-primary outline-none transition-colors hover:bg-primary/10 focus-visible:ring-2 focus-visible:ring-primary/35 lg:hidden"
             >
-              <Heart className="h-5 w-5 fill-current" />
+              <Heart className="h-5 w-5 fill-current" aria-hidden />
             </a>
             <button
               type="button"
@@ -369,6 +375,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${drawerLinkClass} mt-5 border border-lilac/30 bg-surface/80 text-primary shadow-sm`}
+                aria-label="Contato pela DataGlow no WhatsApp — apresentação sob consulta ou mensagem rápida"
                 onClick={() => setMenuOpen(false)}
               >
                 <Heart className="h-5 w-5 shrink-0 fill-current" aria-hidden />

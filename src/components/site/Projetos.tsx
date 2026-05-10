@@ -1,8 +1,12 @@
+/**
+ * Carrossel «PROJETOS» na home: três cartões = formatos em `portfolio`/`servicos` (Opção A do
+ * cruzeamento com `escopo-consolidado`). Casos nomeados da biblioteca: `/projetos`.
+ */
 import { Link } from '@tanstack/react-router'
 import { useRef } from 'react'
 
 import { getFeaturedHomeProjects } from '../../content/portfolio'
-import { LINK_ACCENT_CLASS } from './ctaClasses'
+import { CTA_PRIMARY_CLASS, LINK_ACCENT_CLASS } from './ctaClasses'
 import {
   PortfolioProjectCardContent,
   portfolioCardOuterClassPearl,
@@ -20,8 +24,9 @@ export default function Projetos() {
           title="PROJETOS"
           scrollRef={scrollRef}
           arrowsClassName="flex gap-2"
+          subtitleClassName="flex justify-center md:justify-start"
           subtitle={
-            <Link to="/portfolio" className={LINK_ACCENT_CLASS}>
+            <Link to="/portfolio" className={CTA_PRIMARY_CLASS}>
               Ver portfólio
             </Link>
           }

@@ -1,8 +1,10 @@
 /** Conteúdo da página /servicos — textos conforme INSTRUCOES_CURSOR_IMPLEMENTACAO_SITE.md */
 
+import { depoimentosBibliotecaConsultoria } from './biblioteca-depos'
+
 /** Mensagem comercial única — detalhes dos formatos estão no portfólio. */
 export const servicosInvestimentoNota =
-  'Investimento e proposta são definidos após diagnóstico — sob demanda, sem valores fixos por pacote. Os quatro formatos de entrega (escopo) estão descritos no portfólio; não são produtos com preço de catálogo.'
+  'Cada projeto começa por diagnóstico; só então fecho proposta e investimento com você — sempre alinhados ao que você precisa resolver. No portfólio explico os três formatos de entrega como referência de escopo, não como produtos em catálogo.'
 
 export type ServicoItem = {
   id: number
@@ -32,7 +34,7 @@ export const servicos: ServicoItem[] = [
       '✅ Diagnóstico completo da situação atual',
       '✅ Design de sistema Excel ou Power BI profissional',
       '✅ Implementação com dados reais',
-      '✅ Treinamento de usuários',
+      '✅ Handover e orientação operacional aos responsáveis pela solução entregue',
       '✅ Suporte pós-implementação (30 dias)',
     ],
     resultado:
@@ -75,53 +77,18 @@ export const servicos: ServicoItem[] = [
     ],
     resultado: 'Aplicações produção-ready, escaláveis, com ótima performance',
   },
-  {
-    id: 4,
-    emoji: '🎓',
-    slug: 'trainings-consultoria',
-    portfolioType: 'Formação',
-    stack: 'Excel, Power BI, SQL, materiais sob medida',
-    title: 'Trainings & Consultoria',
-    description: 'Capacitar sua equipe com habilidades de dados',
-    features: [
-      '✅ Treinamentos personalizados (Excel, Power BI, SQL)',
-      '✅ Sessões 1-on-1 ou grupos',
-      '✅ Materiais customizados',
-      '✅ Exercícios práticos com seus dados',
-      '✅ Certificado de conclusão',
-      '✅ Suporte contínuo via email',
-    ],
-    resultado: 'Equipe capacitada, independente, usando dados para decisões',
-  },
 ]
 
-/** Depoimentos alinhados a CASE_STUDIES / docs/portfolio/SITE_CONTEUDO_PROJETOS_E_SERVICOS.md */
-export const depoimentos = [
-  {
-    id: 'chez',
-    quote:
-      'O sistema que Dany criou transformou a forma como gerenciamos o restaurante. Agora sabemos exatamente quais pratos lucram, conseguimos controlar estoque corretamente e nossas decisões são baseadas em dados reais.',
-    attribution: 'Gerson & Família Chez Gaby',
-  },
-  {
-    id: 'vertebrare',
-    quote:
-      'O sistema de BI foi transformacional para nossa clínica. Agora temos visibilidade total sobre cada procedimento e medicação. Conseguimos identificar oportunidades de otimização e tomar decisões baseadas em dados reais.',
-    attribution: 'Dr. Vertebrare',
-  },
-  {
-    id: 'hotel',
-    quote:
-      'O sistema transformou nossa gestão hoteleira. Conseguimos ver exatamente qual tipo de quarto é mais rentável, quando temos picos de ocupação e como otimizar preços.',
-    attribution: 'Gerente Hotel WA+',
-  },
-] as const
+/** Depoimentos espelhados com a biblioteca de resultados `/projetos` e `/projeto/$slug`. */
+export const depoimentos = depoimentosBibliotecaConsultoria.map(
+  ({ id, quote, attribution }) => ({ id, quote, attribution }),
+)
 
 export const comoFuncionaSteps = [
   {
     n: 1,
     title: 'Diagnóstico',
-    text: 'Conversamos sobre seu desafio, objetivos e dados disponíveis',
+    text: 'Converso com você sobre seu desafio, objetivos e dados disponíveis',
   },
   {
     n: 2,
@@ -136,6 +103,6 @@ export const comoFuncionaSteps = [
   {
     n: 4,
     title: 'Suporte',
-    text: 'Treinamento, documentação e suporte contínuo',
+    text: 'Entrego documentação, faço passagem de bastão aos responsáveis e continuo disponível no suporte pós-implementação',
   },
 ] as const

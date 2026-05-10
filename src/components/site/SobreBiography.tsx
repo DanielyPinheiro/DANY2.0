@@ -21,7 +21,7 @@ export default function SobreBiography() {
         </div>
         <div className="min-w-0 flex-1">
           <h2 className="text-xl font-bold leading-snug text-primary md:text-2xl">
-            Consultora em dados, automação e inteligência operacional
+            Sou consultora em dados, automação e inteligência operacional
           </h2>
         </div>
       </header>
@@ -29,19 +29,19 @@ export default function SobreBiography() {
       <div className="relative mt-10 grid gap-10 lg:grid-cols-2 lg:gap-12 lg:items-start">
         <div className="space-y-4 text-base font-normal leading-relaxed text-muted-foreground md:text-[1.05rem]">
           <p>
-            Daniely Pinheiro atua como consultora em dados, automação e inteligência operacional,
-            com foco em transformar informações complexas em soluções claras e estratégicas para a
-            gestão. Possui sólida experiência no desenvolvimento de sistemas analíticos, dashboards e
-            processos automatizados voltados para apoiar a tomada de decisão.
+            Atuo como consultora em dados, automação e inteligência operacional, com foco em
+            transformar informações complexas em soluções claras e estratégicas para a gestão. Tenho
+            sólida experiência no desenvolvimento de sistemas analíticos, dashboards e processos
+            automatizados voltados para apoiar a tomada de decisão.
           </p>
           <p>
-            É formada em Administração e Ciências Contábeis, com pós-graduação em Controladoria e
-            Finanças Empresiais e Executive MBA em Análises de Dados, unindo visão estratégica,
+            Sou formada em Administração e Ciências Contábeis, com pós-graduação em Controladoria e
+            Finanças Empresiais e Executive MBA em Análises de Dados; unindo visão estratégica,
             profunda compreensão do negócio e forte capacidade analítica para apoiar empresas na
             melhoria de controles, eficiência operacional e leitura de resultados.
           </p>
           <p>
-            Atua no desenvolvimento de soluções personalizadas, sempre priorizando clareza,
+            Atuo no desenvolvimento de soluções personalizadas, sempre priorizando clareza,
             usabilidade e impacto real nas decisões do negócio.
           </p>
         </div>
@@ -50,7 +50,7 @@ export default function SobreBiography() {
           <div className="rounded-xl border border-[#7B3FE4]/15 bg-[#7B3FE4]/[0.07] p-5 transition-[border-color,background-color,box-shadow] duration-300 group-hover/card:border-[#7B3FE4]/30 group-hover/card:bg-[#7B3FE4]/[0.11] group-hover/card:shadow-[inset_0_1px_0_rgba(255,255,255,0.55)] md:p-6">
             <blockquote className="m-0 text-lg font-bold leading-snug text-primary md:text-xl lg:text-2xl lg:leading-snug">
               <p className="m-0">
-                Acredita que dados só fazem sentido quando geram clareza, confiança e decisões melhores.
+                Acredito que dados só fazem sentido quando geram clareza, confiança e decisões melhores.
               </p>
             </blockquote>
           </div>

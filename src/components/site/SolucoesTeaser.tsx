@@ -18,20 +18,19 @@ export default function SolucoesTeaser() {
         </h2>
         <div className="card-pearl rounded-2xl p-6 shadow-[var(--shadow-glass)] backdrop-blur-md md:p-8">
           <p className="max-w-2xl text-base font-normal leading-relaxed text-muted-foreground md:text-lg">
-            Do painel estratégico à automação e às soluções web: ofertas estruturadas com foco em
-            governança de dados e experiências digitais alinhadas à marca.
+            Trabalho do painel estratégico à automação e às soluções web: estruturo a oferta com foco em
+            governança de dados e em experiências digitais coerentes com a marca.
           </p>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            Propostas e investimento são{' '}
-            <span className="font-medium text-foreground">sob demanda</span>, sem valores fixos por
-            pacote. Em{' '}
+            Proposta e investimento são sempre{' '}
+            <span className="font-medium text-foreground">sob demanda</span>. Em{' '}
             <Link
               to="/servicos"
               className="font-medium text-primary underline-offset-4 hover:underline"
             >
               Serviços
             </Link>{' '}
-            encontra os quatro formatos de entrega; aqui vê os pilares em detalhe.
+            eu explico os três formatos de entrega; aqui descrevo os pilares em mais detalhe.
           </p>
           <p className="mt-6">
             <Link

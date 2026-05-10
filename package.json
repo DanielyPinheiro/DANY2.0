@@ -10,6 +10,7 @@
     "dev": "vite dev",
     "dev:auto": "npm install && vite dev",
     "build": "vite build && tsc --noEmit",
+    "build:gh-pages": "vite build --base=/DANY2.0/ && tsc --noEmit",
     "preview": "vite preview",
     "start": "npx --yes srvx --prod -s ../client dist/server/server.js",
     "routes:generate": "npx --yes @tanstack/router-cli@latest generate",
@@ -20,10 +21,12 @@
     "@tanstack/react-router": "^1.169.2",
     "@tanstack/react-router-devtools": "^1.166.13",
     "@tanstack/react-start": "^1.167.65",
+    "framer-motion": "^12.38.0",
     "lucide-react": "^0.468.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "recharts": "^3.8.1"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.2.2",

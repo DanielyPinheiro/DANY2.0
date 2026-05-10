@@ -39,7 +39,12 @@ function servicoToPortfolioProject(s: ServicoItem): PortfolioProject {
 export const portfolioProjects: PortfolioProject[] =
   servicos.map(servicoToPortfolioProject)
 
-/** Ordem editorial dos destaques na home — igual à ordem em `servicos`. */
+/**
+ * Destaques do carrossel na home (`src/components/site/Projetos.tsx`).
+ * Editorial: **Opção A** (`escopo-consolidado`) — os três cartões são as **linhas de serviço**
+ * (`servicos-page`), não os oito cases nomeados da biblioteca (`projetos-page`). A biblioteca visual
+ * continua em `/projetos` e `/projeto/$slug`.
+ */
 export const HOME_FEATURED_SLUGS: readonly string[] = servicos.map((s) => s.slug)
 
 export type PortfolioTipoFilter = 'Todos' | string
@@ -47,7 +52,7 @@ export type PortfolioTipoFilter = 'Todos' | string
 export const PORTFOLIO_ALL_TITLE = 'Todos os formatos'
 
 export const PORTFOLIO_ALL_BLURB =
-  'Quatro linhas de entrega (escopo) — gestão e sistemas, Power BI, web e apps, e formação. Use os filtros para focar cada formato.'
+  'Três linhas de entrega (escopo) — gestão e sistemas, Power BI, web e apps. Use os filtros para focar cada formato.'
 
 const portfolioCategoryBlurbs: Record<string, string> = {
   'Gestão e sistemas':
@@ -56,8 +61,6 @@ const portfolioCategoryBlurbs: Record<string, string> = {
     'Modelagem, DAX, visualizações e publicação com segurança por perfil.',
   'Web e apps':
     'Aplicações modernas, integrações e deploy — da arquitetura à manutenção.',
-  Formação:
-    'Capacitação da equipe em Excel, Power BI e SQL, com materiais e exercícios nos seus dados.',
 }
 
 export function getPortfolioCategoriesSorted(): string[] {

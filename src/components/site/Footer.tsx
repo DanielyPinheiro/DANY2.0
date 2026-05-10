@@ -1,4 +1,4 @@
-import { Linkedin, MessageCircle } from 'lucide-react'
+import { Linkedin, Mail, MessageCircle } from 'lucide-react'
 
 import { linkedinHref } from '../../lib/linkedin-href'
 import { whatsappHref } from '../../lib/whatsapp-href'
@@ -26,21 +26,40 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full px-1 py-1 text-primary transition-colors hover:text-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35"
-            aria-label="Vamos conversar no WhatsApp"
+            aria-label="Contato pela DataGlow no WhatsApp — apresentação sob consulta ou mensagem rápida"
           >
             <MessageCircle className="h-5 w-5 shrink-0" aria-hidden strokeWidth={1.5} />
             <span className="font-medium">Vamos conversar</span>
           </a>
+          <a
+            href="mailto:daniely@excla.com.br"
+            className="inline-flex items-center gap-2 rounded-full px-1 py-1 text-primary transition-colors hover:text-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35"
+            aria-label="Escrever e-mail para daniely@excla.com.br"
+          >
+            <Mail className="h-5 w-5 shrink-0" aria-hidden strokeWidth={1.5} />
+            <span className="font-medium">daniely@excla.com.br</span>
+          </a>
         </nav>
 
-        <p className="text-center text-sm font-medium leading-relaxed tracking-[0.02em]">
-          <span className="text-foreground-strong">
-            © {new Date().getFullYear()} Daniely Pinheiro ·{' '}
+        <p className="mx-auto max-w-2xl px-4 text-center text-[0.8rem] font-medium italic leading-snug text-muted-foreground md:text-[0.85rem]">
+          Resultados baseados em implementações reais. Por conformidade ética (NDA), detalhes sensíveis
+          e acessos diretos são protegidos.
+        </p>
+
+        <p className="max-w-3xl text-center text-xs font-semibold uppercase leading-snug tracking-[0.06em] text-foreground-strong sm:text-sm sm:tracking-[0.04em]">
+          © {new Date().getFullYear()} Daniely Pinheiro{' '}
+          <span className="mx-1 text-gold opacity-90" aria-hidden>
+            |
+          </span>{' '}
+          <span className="font-semibold tracking-[0.04em] text-muted-foreground sm:inline">
+            Consultora em dados, automação e inteligência operacional
           </span>
-          <span className="text-primary" aria-hidden>
-            ✨{' '}
+        </p>
+        <p className="flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-primary md:text-sm">
+          <span className="text-gold opacity-95" aria-hidden>
+            ✨
           </span>
-          <span className="font-semibold text-primary">DataGlow Intelligence</span>
+          DataGlow Intelligence
         </p>
       </div>
     </footer>

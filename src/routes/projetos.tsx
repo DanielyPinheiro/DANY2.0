@@ -2,8 +2,9 @@ import { Link, createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
 
 import BackNavLink from '../components/site/BackNavLink'
+import MotionReveal from '../components/site/MotionReveal'
 import SiteChrome from '../components/site/SiteChrome'
-import { CTA_TEASER_SOLID_CLASS } from '../components/site/ctaClasses'
+import { CTA_PRIMARY_CLASS } from '../components/site/ctaClasses'
 import {
   type ProjetosCategory,
   portfolioItems,
@@ -13,7 +14,7 @@ import { absoluteUrl, siteBaseUrl } from '../lib/site-url'
 type FilterKey = 'todos' | ProjetosCategory
 
 const PROJETOS_META =
-  'Case studies e aplicações web de Dany Pinheiro — DataGlow Intelligence.'
+  'Biblioteca de resultados da Daniely Pinheiro · DataGlow Intelligence — consultoria e aplicações com impacto; apresentação sob sigilo sem links externos a demos.'
 
 export const Route = createFileRoute('/projetos')({
   head: () => ({
@@ -38,10 +39,15 @@ export const Route = createFileRoute('/projetos')({
 })
 
 const filterBtnBase =
-  'rounded-full border-2 border-primary/35 bg-surface/80 px-4 py-2 text-xs font-semibold text-primary shadow-sm transition-all hover:border-primary/50 hover:shadow-[0_8px_24px_-12px_rgba(123,63,228,0.25)] sm:text-sm dark:border-primary/20 dark:bg-surface dark:backdrop-blur-md'
+  'rounded-full border-2 border-primary/35 bg-surface/80 px-4 py-2 text-xs font-semibold tracking-tight text-primary shadow-sm transition-colors transition-shadow duration-[320ms] ease-out hover:border-primary/50 hover:shadow-[0_8px_24px_-12px_rgba(123,63,228,0.25)] motion-safe:active:scale-[0.98] sm:text-sm dark:border-primary/20 dark:bg-surface dark:backdrop-blur-md'
 
 const filterBtnActive =
   'border-transparent bg-primary text-white shadow-[0_8px_28px_-12px_rgba(123,63,228,0.45)]'
+
+function solutionPreviewLista(solucao_lista: string[]) {
+  if (solucao_lista.length === 0) return null
+  return solucao_lista.slice(0, 2)
+}
 
 function ProjetosCatalogPage() {
   const [filter, setFilter] = useState<FilterKey>('todos')
@@ -53,188 +59,200 @@ function ProjetosCatalogPage() {
 
   return (
     <SiteChrome>
-      <div className="section-spacing px-4 font-sans">
-        <div className="mx-auto max-w-6xl">
-          <header className="mb-10 text-center md:mb-14">
-            <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-              Projetos & Portfólio
-            </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-              Casos reais onde dados e código transformaram negócios
-            </p>
-          </header>
+      <div className="page-shell-editorial flex min-h-full flex-col">
+        <div className="page-shell-editorial-inner section-spacing flex-1 px-4 font-sans">
+          <div className="mx-auto max-w-6xl">
+            <MotionReveal>
+              <header className="mb-12 text-center md:mb-16">
+                <span
+                  className="mx-auto mb-5 inline-block h-1 w-14 rounded-full bg-gradient-to-r from-primary via-lilac to-gold opacity-95"
+                  aria-hidden
+                />
+                <p className="mb-3 text-[0.7rem] font-bold uppercase tracking-[0.2em] text-primary">
+                  DataGlow Intelligence
+                </p>
+                <h1 className="text-[1.75rem] font-bold leading-[1.15] tracking-[-0.02em] text-foreground md:text-[2.25rem] md:leading-snug lg:text-[2.5rem]">
+                  Biblioteca de resultados & catálogo
+                </h1>
+                <p className="mx-auto mt-5 max-w-2xl text-base font-medium leading-relaxed text-foreground-strong md:text-lg">
+                  Casos reais onde dados e código transformaram negócios — apresentações e detalhes
+                  sensíveis sob consulta profissional.
+                </p>
+              </header>
+            </MotionReveal>
 
-          <div
-            className="mb-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3"
-            role="tablist"
-            aria-label="Filtrar projetos"
-          >
-            <button
-              type="button"
-              role="tab"
-              aria-selected={filter === 'todos'}
-              className={`${filterBtnBase} ${filter === 'todos' ? filterBtnActive : ''}`}
-              onClick={() => setFilter('todos')}
+            <div
+              className="mb-11 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 md:mb-14"
+              role="tablist"
+              aria-label="Filtrar projetos"
             >
-              Todos (8)
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={filter === 'consultoria'}
-              className={`${filterBtnBase} ${filter === 'consultoria' ? filterBtnActive : ''}`}
-              onClick={() => setFilter('consultoria')}
-            >
-              📊 Consultoria (3)
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={filter === 'web'}
-              className={`${filterBtnBase} ${filter === 'web' ? filterBtnActive : ''}`}
-              onClick={() => setFilter('web')}
-            >
-              💻 Aplicações Web (5)
-            </button>
-          </div>
-
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8 xl:grid-cols-3">
-            {filtered.map((item) => (
-              <article
-                key={item.id}
-                className="group flex flex-col overflow-hidden rounded-xl border border-lilac/30 bg-surface/80 shadow-sm backdrop-blur-xl transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_14px_44px_-12px_rgba(184,107,255,0.22)] dark:border-primary/20 dark:bg-surface dark:backdrop-blur-md"
+              <button
+                type="button"
+                role="tab"
+                aria-selected={filter === 'todos'}
+                className={`${filterBtnBase} ${filter === 'todos' ? filterBtnActive : ''}`}
+                onClick={() => setFilter('todos')}
               >
-                <div className="border-b-2 border-primary/25 bg-gradient-to-br from-surface/90 to-primary/[0.06] px-5 py-4 dark:from-surface dark:to-primary/[0.12]">
-                  <span className="text-3xl leading-none" aria-hidden>
-                    {item.emoji}
-                  </span>
-                  <h2 className="mt-2 text-lg font-bold text-foreground md:text-xl">
-                    {item.title}
-                  </h2>
-                  <p className="mt-1 text-sm font-semibold text-primary">
-                    {item.subtitle}
-                  </p>
-                </div>
+                Todos (8)
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={filter === 'consultoria'}
+                className={`${filterBtnBase} ${filter === 'consultoria' ? filterBtnActive : ''}`}
+                onClick={() => setFilter('consultoria')}
+              >
+                📊 Consultoria (3)
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={filter === 'web'}
+                className={`${filterBtnBase} ${filter === 'web' ? filterBtnActive : ''}`}
+                onClick={() => setFilter('web')}
+              >
+                💻 Aplicações Web (5)
+              </button>
+            </div>
 
-                {item.image ? (
-                  <div className="relative h-52 w-full overflow-hidden bg-surface-2 md:h-56">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
-                ) : null}
-
-                <div className="flex flex-1 flex-col gap-4 p-5">
-                  <div className="grid gap-4 sm:grid-cols-2 sm:gap-3">
-                    <div>
-                      <h3 className="text-xs font-bold uppercase tracking-wide text-foreground">
-                        O Desafio
-                      </h3>
-                      <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-                        {item.description}
-                      </p>
-                    </div>
-                    {item.solution ? (
-                      <div>
-                        <h3 className="text-xs font-bold uppercase tracking-wide text-foreground">
-                          A Solução
-                        </h3>
-                        <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-                          {item.solution}
+            <div className="mx-auto grid max-w-[1360px] grid-cols-1 gap-7 md:grid-cols-2 md:gap-8 xl:grid-cols-3">
+              {filtered.map((item, index) => {
+                const preview = solutionPreviewLista(item.solucao_lista)
+                return (
+                  <MotionReveal key={item.slug} delay={0.05 + Math.min(index, 10) * 0.038}>
+                    <article className="editorial-card group relative flex h-full flex-col overflow-hidden">
+                      <div className="border-b border-primary/22 bg-gradient-to-br from-surface/95 to-primary/[0.065] px-5 py-5 dark:from-surface dark:to-primary/[0.12]">
+                        <span
+                          className="text-3xl leading-none transition-transform duration-[320ms] ease-out motion-safe:group-hover:scale-105 motion-safe:group-hover:rotate-[2deg]"
+                          aria-hidden
+                        >
+                          {item.emoji}
+                        </span>
+                        <h2 className="mt-3 text-xl font-bold leading-snug tracking-[-0.02em] text-foreground md:text-[1.25rem]">
+                          {item.title}
+                        </h2>
+                        <p className="mt-2 text-[0.8rem] font-semibold uppercase tracking-[0.08em] text-primary">
+                          {item.subtitle}
                         </p>
                       </div>
-                    ) : (
-                      <div className="hidden sm:block" aria-hidden />
-                    )}
-                  </div>
 
-                  <div className="grid grid-cols-2 gap-2 sm:gap-3">
-                    {item.metrics.map((m) => (
-                      <div
-                        key={`${item.id}-${m.label}`}
-                        className="rounded-lg border-l-[3px] border-primary bg-surface-2/90 px-3 py-2.5"
-                      >
-                        <span className="block text-[0.65rem] font-semibold uppercase tracking-wide text-muted-foreground">
-                          {m.label}
-                        </span>
-                        <span className="mt-0.5 block text-base font-bold text-foreground">
-                          {m.value}
-                        </span>
+                      {item.image ? (
+                        <div className="relative h-52 w-full overflow-hidden bg-surface-2 md:h-56">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </div>
+                      ) : null}
+
+                      <div className="flex flex-1 flex-col gap-5 p-6">
+                        <div className="grid gap-6 sm:grid-cols-2 sm:gap-5">
+                          <div>
+                            <h3 className="text-[0.65rem] font-bold uppercase tracking-[0.14em] text-foreground-strong">
+                              O Desafio
+                            </h3>
+                            <p className="mt-2 text-sm leading-[1.65] text-muted-foreground">
+                              {item.problema}
+                            </p>
+                          </div>
+                          {preview && preview.length > 0 ? (
+                            <div>
+                              <h3 className="text-[0.65rem] font-bold uppercase tracking-[0.14em] text-foreground-strong">
+                                A Solução (resumo)
+                              </h3>
+                              <div className="mt-2 space-y-2 text-sm leading-[1.65] text-muted-foreground">
+                                {preview.map((line, i) => (
+                                  <p key={i}>{line}</p>
+                                ))}
+                              </div>
+                            </div>
+                          ) : (
+                            <div className="hidden sm:block" aria-hidden />
+                          )}
+                        </div>
+
+                        <div className="metric-chips-grid grid grid-cols-2 gap-2.5">
+                          {item.kpis.map((m) => (
+                            <div
+                              key={`${item.slug}-${m.label}`}
+                              className="rounded-xl border border-y border-r border-border/55 border-l-[3px] border-l-primary bg-surface-2/90 px-3.5 py-3 shadow-sm transition-[border-color,box-shadow] duration-[280ms] ease-out motion-safe:group-hover:border-primary/25 dark:border-y-primary/14 dark:border-r-primary/14 dark:border-primary/14"
+                            >
+                              <span className="block text-[0.62rem] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
+                                {m.label}
+                              </span>
+                              <span className="mt-1 block text-base font-bold tabular-nums tracking-tight text-foreground md:text-[1.05rem]">
+                                {m.value}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+
+                        {item.testimonial ? (
+                          <figure className="rounded-xl border border-lilac/22 bg-surface-2/55 px-4 py-3.5 transition-[background-color,box-shadow] duration-[280ms] ease-out motion-safe:group-hover:bg-surface-2/72 dark:bg-surface-2/35">
+                            <blockquote className="border-l-[3px] border-gold/50 pl-3 text-[0.9rem] italic leading-relaxed text-foreground md:text-[0.935rem]">
+                              “{item.testimonial.quote}”
+                            </blockquote>
+                            <figcaption className="mt-3 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
+                              — {item.testimonial.attribution}
+                            </figcaption>
+                          </figure>
+                        ) : null}
+
+                        <div className="flex flex-wrap gap-2">
+                          {item.ferramentas.map((tech) => (
+                            <span
+                              key={`${item.slug}-${tech}`}
+                              className="rounded-full bg-primary/10 px-2.5 py-1 text-[0.685rem] font-semibold uppercase tracking-[0.04em] text-primary motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:translate-y-[0.5px]"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    ))}
-                  </div>
 
-                  {item.testimonial ? (
-                    <figure className="rounded-lg border border-lilac/25 bg-surface-2/60 px-4 py-3">
-                      <blockquote className="text-sm italic leading-relaxed text-foreground">
-                        “{item.testimonial.quote}”
-                      </blockquote>
-                      <figcaption className="mt-2 text-xs font-semibold text-muted-foreground">
-                        — {item.testimonial.attribution}
-                      </figcaption>
-                    </figure>
-                  ) : null}
+                      <div className="footer-cta-slot mt-auto border-t border-border/55 bg-surface/25 px-5 py-[1.125rem] dark:bg-surface/10">
+                        <Link
+                          to="/projeto/$slug"
+                          params={{ slug: item.slug }}
+                          className={`${CTA_PRIMARY_CLASS} proj-card-cta inline-flex w-full justify-center text-center text-[0.7rem] uppercase tracking-[0.045em] sm:text-xs`}
+                        >
+                          Ver Resultados
+                        </Link>
+                      </div>
+                    </article>
+                  </MotionReveal>
+                )
+              })}
+            </div>
 
-                  <div className="flex flex-wrap gap-2">
-                    {item.technologies.map((tech) => (
-                      <span
-                        key={`${item.id}-${tech}`}
-                        className="rounded-full bg-primary/10 px-2.5 py-1 text-[0.7rem] font-semibold text-primary"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+            <div
+              role="note"
+              className="mx-auto mt-16 max-w-3xl space-y-3 rounded-xl border border-gold/25 bg-surface/45 px-6 py-5 text-center text-sm italic leading-relaxed text-muted-foreground shadow-[var(--shadow-glass)] backdrop-blur-sm md:mt-20 md:px-9 md:py-6 md:text-base"
+            >
+              <p>
+                Por questões de conformidade e sigilo profissional, acessos diretos aos dashboards e
+                códigos de consultoria são protegidos. Demonstrações públicas não estão disponíveis
+                via links externos a partir deste catálogo. Entre em contato para uma apresentação
+                detalhada.
+              </p>
+              <p className="text-muted-foreground/95 not-italic text-[0.9rem] font-medium md:text-[0.9375rem]">
+                Resultados baseados em implementações reais. Por conformidade ética (NDA), detalhes
+                sensíveis e acessos diretos são protegidos.
+              </p>
+            </div>
 
-                <div className="mt-auto flex flex-wrap gap-2 border-t border-border/70 px-5 py-4">
-                  {item.link ? (
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`${CTA_TEASER_SOLID_CLASS} flex-1 min-w-[8rem] justify-center text-center text-xs sm:text-sm`}
-                    >
-                      Ver Projeto ↗️
-                    </a>
-                  ) : null}
-                  {item.github ? (
-                    <a
-                      href={item.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex flex-1 min-w-[8rem] items-center justify-center rounded-full border border-border bg-surface/75 px-4 py-2 text-center text-xs font-semibold text-foreground transition-colors hover:bg-surface sm:text-sm dark:hover:bg-surface-2"
-                    >
-                      GitHub
-                    </a>
-                  ) : null}
-                </div>
-              </article>
-            ))}
+            <p className="editorial-tail-links mt-14 text-center text-sm leading-relaxed text-muted-foreground md:mt-[4.25rem]">
+              <BackNavLink
+                to="/"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                Voltar ao início
+              </BackNavLink>
+            </p>
           </div>
-
-          <p className="mt-12 text-center text-muted-foreground">
-            <span className="block sm:inline">
-              Procura páginas detalhadas por case?
-            </span>{' '}
-            <Link
-              to="/portfolio"
-              className="font-medium text-pink underline-offset-4 hover:underline"
-            >
-              Ver portfólio (cases)
-            </Link>
-            {' · '}
-            <BackNavLink
-              to="/"
-              className="font-medium text-primary underline-offset-4 hover:underline"
-            >
-              Voltar ao início
-            </BackNavLink>
-          </p>
         </div>
       </div>
     </SiteChrome>

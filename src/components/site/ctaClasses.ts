@@ -12,7 +12,7 @@ export const CTA_TEASER_SOLID_CLASS =
 
 /** Teaser contorno (ex.: Sobre). */
 export const CTA_TEASER_OUTLINE_CLASS =
-  'inline-flex rounded-full border border-primary/25 bg-primary/10 px-5 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary/14'
+  'inline-flex rounded-full border border-primary/25 bg-primary/10 px-5 py-2 text-sm font-semibold text-primary transition-colors duration-300 ease-out hover:bg-primary/14'
 
 /** Links de destaque («Ver portfólio», «Ver case»). */
 export const LINK_ACCENT_CLASS =

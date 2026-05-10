@@ -52,31 +52,31 @@ const SMALL_SOLUTION_DEFS: SmallSolutionDef[] = [
     key: 'dashboards',
     Icon: LayoutDashboard,
     title: 'Dashboards Estratégicos',
-    desc: 'Painéis de alto impacto para decisão executiva.',
+    desc: 'BI operacional ou executivo (Excel/Power Pivot, Power BI) com cenários já documentados nos cases.',
   },
   {
     key: 'governanca',
     Icon: ShieldCheck,
     title: 'Governança e Controles',
-    desc: 'Estruturação de indicadores e cadências de acompanhamento.',
+    desc: 'Indicadores, cadências e disciplina de execução onde o escopo e NDA permitirem comunicar resultado.',
   },
   {
     key: 'web',
     Icon: AppWindow,
     title: 'Soluções Web',
-    desc: 'Interfaces modernas com foco em usabilidade.',
+    desc: 'SPAs em React já entregues em produção (conteúdo interativo, e-commerce, atualização ao vivo).',
   },
   {
     key: 'brand',
     Icon: PenLine,
     title: 'Experiência & Branding',
-    desc: 'Tecnologia com identidade — narrativa visual e consistência da marca digital.',
+    desc: 'UI coerente sobre o mesmo stack técnico exposto nos projetos, sem promessa genérica só de “presença digital”.',
   },
   {
     key: 'estrategia',
     Icon: Compass,
     title: 'Estratégia Digital',
-    desc: 'Organização e clareza operacional.',
+    desc: 'Modelos dados + priorização quando a base é operacional (consultoria antes de automatizar retrabalho).',
   },
 ]
 
@@ -116,7 +116,7 @@ function SmallSolutionCard({ def, inGrid, tightStack }: SmallCardProps) {
 }
 
 const AUTOMACAO_DESC =
-  'Otimização operacional e fluxos inteligentes — integração de sistemas para reduzir retrabalho e aumentar previsibilidade.'
+  'Power Query, macros (VBA quando cabe no escopo), fórmulas e painéis acoplados aos mesmos dashboards que aparecem na biblioteca de projetos — menos retrabalho manual, dados passíveis de auditar.'
 
 function FeaturedAutomacaoCard({ forCarousel }: { forCarousel?: boolean }) {
   return (
