@@ -8,7 +8,9 @@ npm install
 npm run dev
 ```
 
-Objetivo: `http://localhost:3000`. Se essa porta estiver ocupada, o Vite indica outra no terminal (**Local:**). Produção: `npm run build` (gera `dist/client` e `dist/server`), validação: `npm run validate`.
+Objetivo: `http://localhost:3000`. Se essa porta estiver ocupada, o Vite indica outra no terminal (**Local:**). Produção: `npm run build` (executa geração de `robots.txt`/`sitemap.xml`, depois Vite + TypeScript). Validação: `npm run validate`.
+
+Variáveis de deploy e OG: ver **[DEPLOY.md](DEPLOY.md)**.
 
 ### Arranque automático (Windows)
 
@@ -66,10 +68,10 @@ No VS Code / Cursor: **Ctrl+Shift+B** (task predefinida **Site: instalar e servi
 - Roxo principal: `#7b3fe4` (accent em gradientes inclui `#b86bff`)
 - Ouro: `#f4c36a`
 - Rosa: `#ff73b8`
-- Texto: `#2a1f35` · texto secundário: `#6a6172`
+- Texto: `#2a1f35` · texto secundário (tokens): `#544c5e`
 
 ## Tipografia
-- Plus Jakarta Sans (Google Fonts)
+- Plus Jakarta Sans (Google Fonts, `display=swap`). Para maior controlo de performance ou privacidade, considerar self-host com subset dos pesos usados — ver [DEPLOY.md](DEPLOY.md).
 
 ## Responsivo
 
@@ -80,7 +82,8 @@ No VS Code / Cursor: **Ctrl+Shift+B** (task predefinida **Site: instalar e servi
 
 ## Deploy
 
-- Recomendo Vercel. Para pré-visualizações em redes sociais, `og:image` aponta para [`public/og-default.svg`](./public/og-default.svg); em produção alguns scrapers funcionam melhor com URL absoluta — define domínio canónico no teu hospedeiro quando fizer deploy.
+- Variáveis (`VITE_PUBLIC_SITE_URL`, `VITE_BASE_PATH`), SEO estático e pré-visualização social: **[DEPLOY.md](DEPLOY.md)**.
+- Escalabilidade (CSP, E2E, LGPD estendida): **[docs/CHECKLIST-ESCALA.md](docs/CHECKLIST-ESCALA.md)**.
 
 ---
 

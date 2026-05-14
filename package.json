@@ -9,8 +9,8 @@
   "scripts": {
     "dev": "vite dev",
     "dev:auto": "npm install && vite dev",
-    "build": "vite build && tsc --noEmit",
-    "build:gh-pages": "vite build --base=/DANY2.0/ && tsc --noEmit",
+    "build": "node scripts/generate-robots-sitemap.mjs && vite build && tsc --noEmit",
+    "build:gh-pages": "node scripts/generate-robots-sitemap.mjs --base=/DANY2.0/ && vite build --base=/DANY2.0/ && tsc --noEmit",
     "preview": "vite preview",
     "start": "npx --yes srvx --prod -s ../client dist/server/server.js",
     "routes:generate": "npx --yes @tanstack/router-cli@latest generate",

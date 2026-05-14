@@ -59,6 +59,20 @@ export default function Projetos() {
             </article>
           ))}
         </div>
+        <p className="mx-auto mt-8 max-w-3xl px-1 text-center text-sm leading-relaxed text-muted-foreground md:text-[0.9375rem]">
+          Estes cartões mostram os{' '}
+          <strong className="font-semibold text-foreground">três formatos de entrega</strong>{' '}
+          (escopo de serviço). Os{' '}
+          <strong className="font-semibold text-foreground">casos nomeados</strong> da biblioteca (
+          exemplos sectoriais detalhados) estão em{' '}
+          <Link
+            to="/projetos"
+            className="font-medium text-primary underline-offset-4 hover:underline"
+          >
+            Biblioteca de resultados
+          </Link>
+          .
+        </p>
       </div>
     </section>
   )

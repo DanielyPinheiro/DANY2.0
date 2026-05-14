@@ -14,7 +14,7 @@ Guia operacional para ligar este repositório ao Vercel. O build gera saída Nit
 ## 2. Variáveis de ambiente (`VITE_PUBLIC_SITE_URL`)
 
 1. Em *Settings → Environment Variables*, adiciona `VITE_PUBLIC_SITE_URL`:
-   - **Valor:** URL pública **sem barra no fim** (ex.: `https://o-teu-projeto.vercel.app` ou o domínio customizado).
+   - **Valor:** URL pública **sem barra no fim**. Produção deste projeto: `https://dany2-site.vercel.app` (ou o domínio customizado, se existir).
    - **Production:** usa sempre a URL canónica final (SEO, `rel="canonical"`, URLs absolutas em meta — ver `src/lib/site-url.ts`).
    - **Preview / Development (opcional):** podes deixar vazio nas previews se não quiseres canonical absoluto em cada PR; ou define a URL de preview se quiseres OG/canónico alinhados ao ambiente.
 2. Após alterar variáveis, faz **Redeploy** para o build incorporar valores `VITE_*`.

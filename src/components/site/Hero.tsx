@@ -1,8 +1,10 @@
+import { lazy, Suspense } from 'react'
 import { Link } from '@tanstack/react-router'
 
 import { whatsappHrefApresentacaoResultados } from '../../lib/whatsapp-href'
 import { CTA_PRIMARY_CLASS, CTA_SECONDARY_ANCHOR_CLASS } from './ctaClasses'
-import HeroCharts from './HeroCharts'
+
+const HeroCharts = lazy(() => import('./HeroCharts'))
 
 export default function Hero() {
   return (
@@ -61,7 +63,16 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <HeroCharts />
+        <Suspense
+          fallback={
+            <div
+              className="hero-charts-fallback mt-12 min-h-[380px] w-full md:min-h-[420px]"
+              aria-hidden
+            />
+          }
+        >
+          <HeroCharts />
+        </Suspense>
       </div>
     </section>
   )

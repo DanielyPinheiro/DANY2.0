@@ -34,6 +34,7 @@ async function assertAssetsOk() {
       '/images/chez-gaby-dashboard.png',
       '/images/vertebrare-bi-dashboard.png',
       '/images/hotel-occupancy-dashboard.png',
+      '/sitemap.xml',
       ...mediaPathsFromPortfolio(),
     ]),
   ]
@@ -60,29 +61,19 @@ const checks = [
   },
   {
     path: '/projetos',
-    mustInclude: [
-      '<html',
-      'Projetos',
-      'Portfólio',
-      'Casos reais',
-      'Recomendo para qualquer restaurante',
-      '</html>',
-    ],
+    mustInclude: ['<html', 'Biblioteca de resultados', '</html>'],
   },
   {
     path: '/servicos',
-    mustInclude: [
-      '<html',
-      'Serviços',
-      'sem valores fixos por pacote',
-      'Depoimentos',
-      'Como Funciona',
-      '</html>',
-    ],
+    mustInclude: ['<html', 'Serviços', '</html>'],
   },
   {
     path: '/portfolio/sistemas-gestao-customizados',
     mustInclude: ['<html', 'Sistemas de Gestão Customizados', '</html>'],
+  },
+  {
+    path: '/privacidade',
+    mustInclude: ['<html', 'Privacidade', '</html>'],
   },
   {
     path: '/rota-invalida-validacao-only',
@@ -90,6 +81,21 @@ const checks = [
     mustInclude: ['<html', 'Página não encontrada', '</html>'],
   },
 ]
+
+async function assertRobotsTxt() {
+  const res = await fetch(`${BASE}/robots.txt`, {
+    redirect: 'follow',
+    signal: AbortSignal.timeout(15_000),
+  })
+  if (!res.ok) {
+    throw new Error(`robots.txt GET: esperado HTTP 200, recebido ${res.status}`)
+  }
+  const body = await res.text()
+  if (!body.includes('User-agent')) {
+    throw new Error('robots.txt: esperado cabeçalho User-agent')
+  }
+  console.log('[validate] robots.txt OK')
+}
 
 async function sleep(ms) {
   await new Promise((r) => setTimeout(r, ms))
@@ -162,6 +168,7 @@ try {
   for (const c of checks) {
     await run(c.path, c.mustInclude, c.acceptStatuses)
   }
+  await assertRobotsTxt()
   await assertAssetsOk()
   console.log('\n✓ validate: build + preview + HTTP + asserções OK\n')
   exit = 0

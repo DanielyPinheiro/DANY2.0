@@ -7,16 +7,17 @@ import {
 } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 
+import { buildWebsiteJsonLd } from '../content/schema-org'
 import { SITE_DESCRIPTION_CARD } from '../content/site-metadata'
-import { absoluteUrl } from '../lib/site-url'
+import { absoluteUrl, siteBaseUrl } from '../lib/site-url'
 import { themeBootstrapScript } from '../lib/theme-bootstrap'
 import appCss from '../styles.css?url'
 
 const ogImageUrl = absoluteUrl('/og-default.png')
 
 export const Route = createRootRoute({
-  head: () => ({
-    meta: [
+  head: () => {
+    const meta = [
       { charSet: 'utf-8' },
       {
         name: 'viewport',
@@ -41,7 +42,10 @@ export const Route = createRootRoute({
         content: SITE_DESCRIPTION_CARD,
       },
       { property: 'og:image', content: ogImageUrl },
-      { property: 'og:image:alt', content: 'DataGlow Intelligence — marca e identidade visual' },
+      {
+        property: 'og:image:alt',
+        content: 'DataGlow Intelligence — marca e identidade visual',
+      },
       { property: 'og:image:type', content: 'image/png' },
       { property: 'og:locale', content: 'pt_BR' },
       { name: 'twitter:card', content: 'summary_large_image' },
@@ -55,8 +59,16 @@ export const Route = createRootRoute({
         content: SITE_DESCRIPTION_CARD,
       },
       { name: 'twitter:image', content: ogImageUrl },
-    ],
-    links: [
+    ]
+    const origin = siteBaseUrl()
+    if (origin) {
+      meta.push({
+        'script:ld+json': buildWebsiteJsonLd(origin),
+      } as unknown as (typeof meta)[number])
+    }
+    return {
+      meta,
+      links: [
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       {
         rel: 'preconnect',
@@ -69,7 +81,8 @@ export const Route = createRootRoute({
       },
       { rel: 'stylesheet', href: appCss },
     ],
-  }),
+    }
+  },
   component: RootComponent,
 })
 

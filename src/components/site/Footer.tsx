@@ -1,5 +1,7 @@
+import { Link } from '@tanstack/react-router'
 import { Linkedin, Mail, MessageCircle } from 'lucide-react'
 
+import { SITE_EMAIL, SITE_MAILTO_HREF } from '../../content/site-metadata'
 import { linkedinHref } from '../../lib/linkedin-href'
 import { whatsappHref } from '../../lib/whatsapp-href'
 
@@ -32,13 +34,19 @@ export default function Footer() {
             <span className="font-medium">Vamos conversar</span>
           </a>
           <a
-            href="mailto:daniely@excla.com.br"
+            href={SITE_MAILTO_HREF}
             className="inline-flex items-center gap-2 rounded-full px-1 py-1 text-primary transition-colors hover:text-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35"
-            aria-label="Escrever e-mail para daniely@excla.com.br"
+            aria-label={`Escrever e-mail para ${SITE_EMAIL}`}
           >
             <Mail className="h-5 w-5 shrink-0" aria-hidden strokeWidth={1.5} />
-            <span className="font-medium">daniely@excla.com.br</span>
+            <span className="font-medium">{SITE_EMAIL}</span>
           </a>
+          <Link
+            to="/privacidade"
+            className="inline-flex items-center gap-2 rounded-full px-1 py-1 text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35"
+          >
+            <span className="font-medium">Privacidade</span>
+          </Link>
         </nav>
 
         <p className="mx-auto max-w-2xl px-4 text-center text-[0.8rem] font-medium italic leading-snug text-muted-foreground md:text-[0.85rem]">

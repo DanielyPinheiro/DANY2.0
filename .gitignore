@@ -31,3 +31,7 @@ dist/
 /playwright/.cache/
 
 count.txt
+
+# Gerados em `npm run build` (URLs dependem de VITE_* no CI)
+/public/robots.txt
+/public/sitemap.xml

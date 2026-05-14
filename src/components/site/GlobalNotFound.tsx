@@ -1,9 +1,35 @@
 import { Link } from '@tanstack/react-router'
+import { useEffect } from 'react'
 
 import BackNavLink from './BackNavLink'
 import SiteChrome from './SiteChrome'
 
+const NOT_FOUND_DESCRIPTION =
+  'Esta página não existe no site DataGlow Intelligence.'
+
 export default function GlobalNotFound() {
+  useEffect(() => {
+    const prevTitle = document.title
+    document.title = 'Página não encontrada · DataGlow Intelligence'
+
+    const robotsMeta = document.createElement('meta')
+    robotsMeta.setAttribute('name', 'robots')
+    robotsMeta.setAttribute('content', 'noindex, nofollow')
+    robotsMeta.setAttribute('data-tsr-not-found', '')
+    document.head.appendChild(robotsMeta)
+
+    const descMeta = document.createElement('meta')
+    descMeta.setAttribute('name', 'description')
+    descMeta.setAttribute('content', NOT_FOUND_DESCRIPTION)
+    descMeta.setAttribute('data-tsr-not-found', '')
+    document.head.appendChild(descMeta)
+
+    return () => {
+      document.title = prevTitle
+      document.head.querySelectorAll('meta[data-tsr-not-found]').forEach((el) => el.remove())
+    }
+  }, [])
+
   return (
     <SiteChrome>
       <div className="section-spacing px-4">

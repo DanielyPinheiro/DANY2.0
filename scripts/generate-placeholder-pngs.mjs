@@ -1,6 +1,7 @@
 /**
  * Gera PNGs RGB8 mínimos (800×450) para os três dashboards do portfólio,
  * até substituição por capturas reais (ver public/images/README.txt).
+ * Também grava `public/og-default.png` (1200×630) para Open Graph / Twitter.
  */
 import { writeFileSync, mkdirSync } from 'node:fs'
 import { dirname, join } from 'node:path'
@@ -8,7 +9,8 @@ import { deflateSync } from 'node:zlib'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const outDir = join(__dirname, '..', 'public', 'images')
+const publicRoot = join(__dirname, '..', 'public')
+const outDir = join(publicRoot, 'images')
 
 function crc32(buffer) {
   let c = 0xffffffff
@@ -89,5 +91,14 @@ const files = [
 for (const f of files) {
   const buf = makeGradientPNG(800, 450, f.top, f.bottom)
   writeFileSync(join(outDir, f.name), buf)
-  console.log('Wrote', f.name, `(${buf.length} bytes)`)
+  console.log('Wrote', join('images', f.name), `(${buf.length} bytes)`)
 }
+
+const ogBuf = makeGradientPNG(
+  1200,
+  630,
+  [123, 63, 228],
+  [36, 22, 48],
+)
+writeFileSync(join(publicRoot, 'og-default.png'), ogBuf)
+console.log('Wrote og-default.png', `(${ogBuf.length} bytes)`)

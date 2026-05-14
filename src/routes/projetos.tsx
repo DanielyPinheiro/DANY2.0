@@ -44,6 +44,12 @@ const filterBtnBase =
 const filterBtnActive =
   'border-transparent bg-primary text-white shadow-[0_8px_28px_-12px_rgba(123,63,228,0.45)]'
 
+const PROJETOS_TOTAL = portfolioItems.length
+const PROJETOS_CONSULTORIA_COUNT = portfolioItems.filter(
+  (i) => i.category === 'consultoria',
+).length
+const PROJETOS_WEB_COUNT = portfolioItems.filter((i) => i.category === 'web').length
+
 function solutionPreviewLista(solucao_lista: string[]) {
   if (solucao_lista.length === 0) return null
   return solucao_lista.slice(0, 2)
@@ -83,35 +89,32 @@ function ProjetosCatalogPage() {
 
             <div
               className="mb-11 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 md:mb-14"
-              role="tablist"
-              aria-label="Filtrar projetos"
+              role="group"
+              aria-label="Filtrar projetos por tipo de case"
             >
               <button
                 type="button"
-                role="tab"
-                aria-selected={filter === 'todos'}
+                aria-pressed={filter === 'todos'}
                 className={`${filterBtnBase} ${filter === 'todos' ? filterBtnActive : ''}`}
                 onClick={() => setFilter('todos')}
               >
-                Todos (8)
+                Todos ({PROJETOS_TOTAL})
               </button>
               <button
                 type="button"
-                role="tab"
-                aria-selected={filter === 'consultoria'}
+                aria-pressed={filter === 'consultoria'}
                 className={`${filterBtnBase} ${filter === 'consultoria' ? filterBtnActive : ''}`}
                 onClick={() => setFilter('consultoria')}
               >
-                📊 Consultoria (3)
+                📊 Consultoria ({PROJETOS_CONSULTORIA_COUNT})
               </button>
               <button
                 type="button"
-                role="tab"
-                aria-selected={filter === 'web'}
+                aria-pressed={filter === 'web'}
                 className={`${filterBtnBase} ${filter === 'web' ? filterBtnActive : ''}`}
                 onClick={() => setFilter('web')}
               >
-                💻 Aplicações Web (5)
+                💻 Aplicações Web ({PROJETOS_WEB_COUNT})
               </button>
             </div>
 
@@ -228,8 +231,8 @@ function ProjetosCatalogPage() {
               })}
             </div>
 
-            <div
-              role="note"
+            <aside
+              aria-label="Aviso sobre conformidade, sigilo e demonstrações públicas"
               className="mx-auto mt-16 max-w-3xl space-y-3 rounded-xl border border-gold/25 bg-surface/45 px-6 py-5 text-center text-sm italic leading-relaxed text-muted-foreground shadow-[var(--shadow-glass)] backdrop-blur-sm md:mt-20 md:px-9 md:py-6 md:text-base"
             >
               <p>
@@ -242,7 +245,7 @@ function ProjetosCatalogPage() {
                 Resultados baseados em implementações reais. Por conformidade ética (NDA), detalhes
                 sensíveis e acessos diretos são protegidos.
               </p>
-            </div>
+            </aside>
 
             <p className="editorial-tail-links mt-14 text-center text-sm leading-relaxed text-muted-foreground md:mt-[4.25rem]">
               <BackNavLink

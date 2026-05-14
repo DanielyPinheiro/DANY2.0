@@ -1,4 +1,4 @@
-/** URL pública do site (sem barra final). Ex.: `https://seudominio.vercel.app` */
+/** URL pública do site (sem barra final). Produção Vercel: `https://dany2-site.vercel.app` */
 export function siteBaseUrl(): string {
   const raw = import.meta.env.VITE_PUBLIC_SITE_URL as string | undefined
   return raw?.replace(/\/+$/, '').trim() ?? ''

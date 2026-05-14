@@ -1,0 +1,567 @@
+Plano de execução real — auditoria Dany2.0
+
+Nota: Parte dos “quick wins” da auditoria original (OG PNG, placeholders das imagens dos cases, copy/e-mail em Contato, <aside> em vez de role="note", contagens dinâmicas nos filtros) pode já estar aplicada no repositório; onde fizer sentido, trate como validação em CI/preview + redes sociais, não só código novo.
+
+
+
+Tarefas (formato solicitado)
+
+Alta prioridade
+
+T1 — Garantir assets estáticos e preview social
+
+
+
+
+
+Problema que resolve: OG/cases referenciando ficheiros em falta; previews partidos em redes e falhas em [scripts/validate-preview.mjs](c:/Users/daany/.vscode/Projeto/Repos/Dany2.0/scripts/validate-preview.mjs).
+
+
+
+Impacto: Elimina erro visual óbvio no catálogo; restores confiança e share cards profissionais.
+
+
+
+Dificuldade: Fácil (placeholders) a média (PNG reais / arte final).
+
+
+
+Prioridade: Alta.
+
+
+
+Recomendação prática: Manter [public/og-default.png](c:/Users/daany/.vscode/Projeto/Repos/Dany2.0/public/) e PNGs em [public/images/](c:/Users/daany/.vscode/Projeto/Repos/Dany2.0/public/images/) versionados; testar um URL real no Facebook Sharing Debugger / cartão Twitter depois do deploy.
+
+T2 — Canonical e URLs absolutas em produção
+
+
+
+
+
+Problema que resolve: Sem [VITE_PUBLIC_SITE_URL](c:/Users/daany/.vscode/Projeto/Repos/Dany2.0/src/lib/site-url.ts), canonical e OG absolutos não aparecem — duplicação e métricas inconsistentes entre ambientes.
+
+
+
+Impacto: Consolidação de URL para SEO e analytics; OG/canonical corretos em produção.
+
+
+
+Dificuldade: Fácil.
+
+
+
+Prioridade: Alta.
+
+
+
+Recomendação prática: Definir variável no host (ex.: Vercel/GitHub Pages); documentar no README de deploy o valor exato (sem barra final).
+
+T3 — robots.txt + sitemap.xml alinhados ao base
+
+
+
+
+
+Problema que resolve: SEO técnico incompleto (rastreabilidade); GitHub Pages usa [VITE_BASE_PATH](c:/Users/daany/.vscode/Projeto/Repos/Dany2.0/vite.config.ts).
+
+
+
+Impacto: Descoberta melhor pelos motores; menos páginas órfãs em migrações de URL.
+
+
+
+Dificuldade: Média (atenção ao prefixo /DANY2.0/ vs raiz).
+
+
+
+Prioridade: Alta (SEO essencial).
+
+
+
+Recomendação prática: Ficheiros estáticos em public/ gerados ou escritos à mão com URLs absolutas usando o mesmo domínio que VITE_PUBLIC_SITE_URL; validar após npm run build.
+
+T4 — Reduzir peso da entrada da home (lazy HeroCharts / isolamento Recharts)
+
+
+
+
+
+Problema que resolve: Chunk inicial grande com Recharts + Motion na rota / (auditoria: ~284 kB bruto / ~90 kB gzip no índice + MotionReveal).
+
+
+
+Impacto: LCP/TTI melhores; percepção de site “profissional e rápido”.
+
+
+
+Dificuldade: Média (Suspense, fallback de altura para CLS).
+
+
+
+Prioridade: Alta (performance essencial).
+
+
+
+Recomendação prática: React.lazy de [HeroCharts.tsx](c:/Users/daany/.vscode/Projeto/Repos/Dany2.0/src/components/site/HeroCharts.tsx) dentro de [Hero.tsx](c:/Users/daany/.vscode/Projeto/Repos/Dany2.0/src/components/site/Hero.tsx) + skeleton com altura fixa.
+
+
+
+Média prioridade
+
+T5 — JSON-LD (Person / Organization ou ProfessionalService)
+
+
+
+
+
+Problema que resolve: Falta de rich results e contexto semântico para marca + pessoa.
+
+
+
+Impacto: Possível melhoria de snippets e entidade na Pesquisa Google (efeito variável).
+
+
+
+Dificuldade: Média (JSON válido + URLs absolutas).
+
+
+
+Prioridade: Média (SEO essencial de médio prazo).
+
+
+
+Recomendação prática: Injetar <script type="application/ld+json"> em [__root.tsx](c:/Users/daany/.vscode/Projeto/Repos/Dany2.0/src/routes/__root.tsx) ou por rota-chave com mesmos dados que [SITE_DESCRIPTION_CARD](c:/Users/daany/.vscode/Projeto/Repos/Dany2.0/src/content/site-metadata.ts).
+
+T6 — Clarificar Portfólio (formatos) vs Biblioteca/Cases na UI
+
+
+
+
+
+Problema que resolve: Dualidade cognitiva entre [Projetos.tsx](c:/Users/daany/.vscode/Projeto/Repos/Dany2.0/src/components/site/Projetos.tsx) na home (3 formatos) e “Biblioteca” com 8 cases.
+
+
+
+Impacto: Menos abandono por confusão; hierarquia mental mais clara.
+
+
+
+Dificuldade: Média (copy + talvez renomear label/nav).
+
+
+
+Prioridade: Média (forte para percepção de qualidade).
+
+
+
+Recomendação prática: Linha curta sob o carrossel da home + link para /projetos; opcionalmente renomear secção para “Formatos” ou “Linhas de entrega”.
+
+T7 — Meta específica para 404
+
+
+
+
+
+Problema que resolve: [GlobalNotFound.tsx](c:/Users/daany/.vscode/Projeto/Repos/Dany2.0/src/components/site/GlobalNotFound.tsx) sem title/description dedicados.
+
+
+
+Impacto: Melhor UX em tabs/partilhas de URL inválida; sinal técnico mais limpo.
+
+
+
+Dificuldade: Fácil (se o router permitir head na rota not-found — confirmar API TanStack Start).
+
+
+
+Prioridade: Média (SEO marginal; UX).
+
+
+
+Recomendação prática: noindex opcional na 404 para não diluir crawl em URLs lixo.
+
+T8 — Endurecer validate-preview.mjs
+
+
+
+
+
+Problema que resolve: Acoplamento a strings editoriais específicas (“Casos reais”, depoimento).
+
+
+
+Impacto: CI estável ante mudanças de copy; menos falsos negativos.
+
+
+
+Dificuldade: Fácil a média.
+
+
+
+Prioridade: Média (qualidade de engenharia).
+
+
+
+Recomendação prática: Validar estrutura (<html>, rotas HTTP 200, presença de <title>), não frases únicas.
+
+T9 — Padrão de filtros em /projetos (tabs vs toolbar)
+
+
+
+
+
+Problema que resolve: role="tablist" sem tabpanels/id completos (ARIA incompleto).
+
+
+
+Impacto: Leitores de ecrã mais previsíveis; menos risco de falha em auditorias a11y.
+
+
+
+Dificuldade: Média (corrigir padrão) ou fácil (remover tab semantics e usar grupo de botões com aria-pressed).
+
+
+
+Prioridade: Média (a11y).
+
+
+
+Recomendação prática: Preferir barra de filtros com aria-pressed (já próximo do [PortfolioFilterGrid](c:/Users/daany/.vscode/Projeto/Repos/Dany2.0/src/components/site/PortfolioFilterGrid.tsx)).
+
+T10 — Verificação WCAG contraste (light/dark)
+
+
+
+
+
+Problema que resolve: Contraste em cartões glass e muted-foreground não medido no browser.
+
+
+
+Impacto: Legibilidade e inclusão; evita feedback negativo de utilizadores com baixa visão.
+
+
+
+Dificuldade: Média (iterar tokens em [styles.css](c:/Users/daany/.vscode/Projeto/Repos/Dany2.0/src/styles.css)).
+
+
+
+Prioridade: Média (percepção de qualidade + a11y).
+
+
+
+Baixa prioridade
+
+T11 — Self-host ou subset de Plus Jakarta Sans
+
+
+
+
+
+Problema que resolve: Stylesheet Google Fonts em [__root.tsx](c:/Users/daany/.vscode/Projeto/Repos/Dany2.0/src/routes/__root.tsx) (privacidade, cache, bloqueio).
+
+
+
+Impacto: Ganho marginal em performance e controlo de fontes.
+
+
+
+Dificuldade: Média.
+
+
+
+Prioridade: Baixa (performance complementar).
+
+T12 — Alinhar Hero + meta description (mesmo eixo narrativo)
+
+
+
+
+
+Problema que resolve: Duas promessas ligeiramente diferentes (Hero vs snippet).
+
+
+
+Impacto: Marca mais coerente; CTR orgânico pode beneficiar se title/description refletirem a mesma promessa.
+
+
+
+Dificuldade: Fácil (copy apenas).
+
+
+
+Prioridade: Baixa (SEO/conversão leve).
+
+T13 — Prova social explícita (logos, números auditáveis)
+
+
+
+
+
+Problema que resolve: Autoridade sobretudo textual; NDA limita demos.
+
+
+
+Impacto: Confiança e conversão B2B quando permitido legalmente.
+
+
+
+Dificuldade: Alta (aprovação cliente + assets).
+
+
+
+Prioridade: Baixa a média conforme disponibilidade de materiais.
+
+T14 — CSP + HSTS no host
+
+
+
+
+
+Problema que resolve: Segurança em camada HTTP não definida no repo.
+
+
+
+Impacto: Reduz XSS/script injection; confiança técnica.
+
+
+
+Dificuldade: Alta (testar sem partir fonts/scripts externos).
+
+
+
+Prioridade: Baixa estrutural mas importante antes de escalar tráfego.
+
+T15 — Política de privacidade / LGPD
+
+
+
+
+
+Problema que resolve: Obrigatoriedade futura se analytics/formulários.
+
+
+
+Impacto: Compliance e conversão em empresas sensíveis a dados.
+
+
+
+Dificuldade: Média (jurídico + página estática).
+
+
+
+Prioridade: Baixa até haver tracking ou formulários.
+
+T16 — Testes E2E ou a11y em CI (Playwright / Pa11y)
+
+
+
+
+
+Problema que resolve: Regressões visuais e de navegação não cobertas só por smoke HTML.
+
+
+
+Impacto: Velocidade de iteração com menos medo de quebrar fluxos críticos.
+
+
+
+Dificuldade: Alta (pipelines + manutenção).
+
+
+
+Prioridade: Baixa inicialmente.
+
+T17 — Manter Router Devtools só em DEV
+
+
+
+
+
+Problema que resolve: Risco futuro de exposição acidental em prod.
+
+
+
+Impacto: Segurança operacional marginal.
+
+
+
+Dificuldade: Fácil (já parece correto em [__root.tsx](c:/Users/daany/.vscode/Projeto/Repos/Dany2.0/src/routes/__root.tsx); checklist).
+
+
+
+Prioridade: Baixa (manutenção).
+
+
+
+5) Tarefas que mais rápido melhoram a percepção de qualidade
+
+
+
+
+
+T1 (imagens e OG sem falhas).
+
+
+
+T4 (home mais rápida).
+
+
+
+T6 (clareza Portfólio vs Biblioteca).
+
+
+
+T10 (contraste/legibilidade).
+
+
+
+T12 (copy coerente).
+
+6) Tarefas que mais aumentam a chance de conversão
+
+
+
+
+
+T6 (menos confusão antes do CTA).
+
+
+
+T13 (prova social, quando possível).
+
+
+
+T12 + mensagens nos CTAs WhatsApp já existentes ([whatsapp-href.ts](c:/Users/daany/.vscode/Projeto/Repos/Dany2.0/src/lib/whatsapp-href.ts)).
+
+
+
+T15 quando existir formulário/analytics (reduz fricção legal).
+
+7) Tarefas essenciais para SEO vs essenciais para performance
+
+
+
+
+
+
+
+Domínio
+
+
+
+Tarefas-chave
+
+
+
+
+
+SEO
+
+
+
+T2, T3, T5; T1 para OG; T7 (404); T12 (copy SERP).
+
+
+
+
+
+Performance
+
+
+
+T4; T11 (fontes); T1 (imagens pesadas quando substituíres placeholders por screenshots reais — otimizar compressão/dimensões).
+
+8) Ordem ideal de implementação
+
+flowchart LR
+  subgraph wave1 [Onda_1_Confianca_deploy]
+    T2[T2_canonical_env]
+    T1[T1_assets_OG_imagens]
+  end
+  subgraph wave2 [Onda_2_SEO_perf]
+    T3[T3_robots_sitemap]
+    T4[T4_lazy_HeroCharts]
+  end
+  subgraph wave3 [Onda_3_SEO_semantica_UX]
+    T5[T5_JSON_LD]
+    T6[T6_copy_PortfolioBiblioteca]
+    T8[T8_validate_preview]
+  end
+  subgraph wave4 [Onda_4_A11y_polimento]
+    T9[T9_filtros_ARIA]
+    T7[T7_meta_404]
+    T10[T10_contraste]
+    T11[T11_fontes]
+    T12[T12_copy_Hero_meta]
+  end
+  subgraph wave5 [Onda_5_Escala]
+    T13[T13_prova_social]
+    T14[T14_CSP_HSTS]
+    T15[T15_LGPD]
+    T16[T16_CI_E2E_a11y]
+  end
+  T2 --> T1
+  T1 --> T3
+  T3 --> T4
+  T4 --> T5
+  T5 --> T6
+  T6 --> T8
+  T8 --> T9
+  T9 --> T7
+  T7 --> T10
+  T10 --> T11
+  T11 --> T12
+  T12 --> T13
+  T13 --> T14
+  T14 --> T15
+  T15 --> T16
+
+Ordem linear recomendada: T2 → T1 (validação) → T3 → T4 → T5 → T6 → T8 → T9 → T7 → T10 → T11 → T12 → (conforme negócio) T13 → T14 → T15 → T16. T17 em paralelo como verificação em cada release.
+
+
+
+Top 10 ajustes mais importantes para o Dany2.0
+
+
+
+
+
+VITE_PUBLIC_SITE_URL em produção + documentação — canonical e OG absolutos corretos (T2).
+
+
+
+OG PNG + imagens de cases garantidas no deploy e previews sociais testados (T1).
+
+
+
+robots.txt + sitemap.xml com base correto (T3).
+
+
+
+Lazy load dos gráficos da Hero para aliviar o primeiro carregamento (T4).
+
+
+
+JSON-LD Person/Organization com dados consistentes com o site (T5).
+
+
+
+Copy/UI que expliquem “3 formatos” vs “8 cases” numa linha + link para /projetos (T6).
+
+
+
+validate-preview menos frágil para não penalizar edições de texto (T8).
+
+
+
+Corrigir semântica dos filtros de /projetos (toolbar ou tabs ARIA completos) (T9).
+
+
+
+Auditoria de contraste WCAG light/dark e ajustes de tokens (T10).
+
+
+
+404 com meta adequada (e opcional noindex) (T7).
+

@@ -1,3 +1,4 @@
+import { SITE_EMAIL, SITE_MAILTO_HREF } from '../../content/site-metadata'
 import { linkedinHref } from '../../lib/linkedin-href'
 import {
   whatsappHref,
@@ -51,9 +52,15 @@ export default function Contato() {
             >
               LinkedIn
             </a>
-            <p className="mt-2 w-full max-w-md rounded-xl border border-dashed border-border bg-surface/55 px-5 py-3 text-xs leading-relaxed text-muted-foreground backdrop-blur-sm">
-              <span className="font-medium text-foreground">E-mail institucional</span>{' '}
-              será divulgado em breve. Por enquanto, prefira WhatsApp ou LinkedIn.
+            <a
+              href={SITE_MAILTO_HREF}
+              className="rounded-xl border border-border bg-surface/72 px-6 py-3 font-medium text-primary shadow-[var(--shadow-glass)] backdrop-blur-sm transition-[box-shadow] hover:shadow-[0_12px_36px_-14px_rgba(42,31,53,0.12)] dark:hover:shadow-[0_12px_36px_-14px_rgba(0,0,0,0.25)]"
+              aria-label={`Enviar e-mail para ${SITE_EMAIL}`}
+            >
+              {SITE_EMAIL}
+            </a>
+            <p className="mt-1 max-w-md text-center text-xs leading-relaxed text-muted-foreground">
+              Para assuntos formais ou anexos, o e-mail complementa WhatsApp e LinkedIn.
             </p>
           </div>
         </div>
