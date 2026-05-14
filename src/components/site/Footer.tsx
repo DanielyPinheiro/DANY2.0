@@ -1,7 +1,10 @@
 import { Link } from '@tanstack/react-router'
 import { Linkedin, Mail, MessageCircle } from 'lucide-react'
 
-import { SITE_EMAIL, SITE_MAILTO_HREF } from '../../content/site-metadata'
+import {
+  SITE_EMAIL_LINK_LABEL,
+  SITE_MAILTO_HREF,
+} from '../../content/site-metadata'
 import { linkedinHref } from '../../lib/linkedin-href'
 import { whatsappHref } from '../../lib/whatsapp-href'
 
@@ -18,7 +21,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full px-1 py-1 text-primary transition-colors hover:text-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35"
-            aria-label="Perfil LinkedIn da Daniely Pinheiro"
+            aria-label="Abrir meu perfil no LinkedIn"
           >
             <Linkedin className="h-5 w-5 shrink-0" aria-hidden strokeWidth={1.5} />
             <span className="font-medium">LinkedIn</span>
@@ -28,7 +31,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full px-1 py-1 text-primary transition-colors hover:text-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35"
-            aria-label="Contato pela DataGlow no WhatsApp — apresentação sob consulta ou mensagem rápida"
+            aria-label="Falar comigo no WhatsApp — apresentação sob consulta ou mensagem rápida"
           >
             <MessageCircle className="h-5 w-5 shrink-0" aria-hidden strokeWidth={1.5} />
             <span className="font-medium">Vamos conversar</span>
@@ -36,10 +39,10 @@ export default function Footer() {
           <a
             href={SITE_MAILTO_HREF}
             className="inline-flex items-center gap-2 rounded-full px-1 py-1 text-primary transition-colors hover:text-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35"
-            aria-label={`Escrever e-mail para ${SITE_EMAIL}`}
+            aria-label="Abrir o cliente de e-mail para contato institucional"
           >
             <Mail className="h-5 w-5 shrink-0" aria-hidden strokeWidth={1.5} />
-            <span className="font-medium">{SITE_EMAIL}</span>
+            <span className="font-medium">{SITE_EMAIL_LINK_LABEL}</span>
           </a>
           <Link
             to="/privacidade"
@@ -50,8 +53,8 @@ export default function Footer() {
         </nav>
 
         <p className="mx-auto max-w-2xl px-4 text-center text-[0.8rem] font-medium italic leading-snug text-muted-foreground md:text-[0.85rem]">
-          Resultados baseados em implementações reais. Por conformidade ética (NDA), detalhes sensíveis
-          e acessos diretos são protegidos.
+          Baseio meus resultados em implementações reais. Por ética e NDA, não exponho detalhes
+          sensíveis nem acessos diretos a ambientes de cliente.
         </p>
 
         <p className="max-w-3xl text-center text-xs font-semibold uppercase leading-snug tracking-[0.06em] text-foreground-strong sm:text-sm sm:tracking-[0.04em]">
@@ -60,7 +63,7 @@ export default function Footer() {
             |
           </span>{' '}
           <span className="font-semibold tracking-[0.04em] text-muted-foreground sm:inline">
-            Consultora em dados, automação e inteligência operacional
+            Atuo como consultora em dados, automação e inteligência operacional
           </span>
         </p>
         <p className="flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-primary md:text-sm">

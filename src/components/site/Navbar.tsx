@@ -20,7 +20,7 @@ type SectionId = 'hero' | 'sobre' | 'projetos' | 'solucoes' | 'contato'
 type RouteTarget = '/projetos' | '/servicos' | '/sobre' | '/solucoes'
 
 const BRAND_NAV_TITLE_LONG =
-  'Daniely Pinheiro | Consultora em dados, automação e inteligência operacional'
+  'Daniely Pinheiro — consultora em dados, automação e inteligência operacional'
 
 type Nav =
   | {
@@ -204,7 +204,7 @@ export default function Navbar() {
                 |
               </span>
               <span className="mt-1 block font-semibold uppercase leading-snug tracking-[0.06em] text-muted-foreground text-pretty transition-colors duration-200 group-hover:text-primary/90 dark:mt-0 dark:inline dark:tracking-[0.04em] dark:text-muted-foreground dark:group-hover:text-lilac sm:mt-0 sm:inline md:tracking-[0.05em]">
-                Consultora em dados, automação e inteligência operacional
+                Atuo em dados, automação e inteligência operacional
               </span>
             </span>
           </Link>
@@ -258,7 +258,7 @@ export default function Navbar() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex rounded-full p-1.5 text-primary outline-none transition-colors hover:bg-primary/10 focus-visible:ring-2 focus-visible:ring-primary/35 focus-visible:ring-offset-2 lg:p-2"
-                    aria-label="Contato pela DataGlow no WhatsApp — apresentação sob consulta ou mensagem rápida"
+                    aria-label="Falar comigo no WhatsApp — apresentação sob consulta ou mensagem rápida"
                   >
                     <Heart className="h-4 w-4 fill-current lg:h-[18px] lg:w-[18px]" />
                   </a>
@@ -273,7 +273,7 @@ export default function Navbar() {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Contato pela DataGlow no WhatsApp — apresentação sob consulta ou mensagem rápida"
+              aria-label="Falar comigo no WhatsApp — apresentação sob consulta ou mensagem rápida"
               className="inline-flex rounded-full p-2 text-primary outline-none transition-colors hover:bg-primary/10 focus-visible:ring-2 focus-visible:ring-primary/35 lg:hidden"
             >
               <Heart className="h-5 w-5 fill-current" aria-hidden />
@@ -375,7 +375,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${drawerLinkClass} mt-5 border border-lilac/30 bg-surface/80 text-primary shadow-sm`}
-                aria-label="Contato pela DataGlow no WhatsApp — apresentação sob consulta ou mensagem rápida"
+                aria-label="Falar comigo no WhatsApp — apresentação sob consulta ou mensagem rápida"
                 onClick={() => setMenuOpen(false)}
               >
                 <Heart className="h-5 w-5 shrink-0 fill-current" aria-hidden />

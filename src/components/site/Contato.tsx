@@ -1,4 +1,7 @@
-import { SITE_EMAIL, SITE_MAILTO_HREF } from '../../content/site-metadata'
+import {
+  SITE_EMAIL_LINK_LABEL,
+  SITE_MAILTO_HREF,
+} from '../../content/site-metadata'
 import { linkedinHref } from '../../lib/linkedin-href'
 import {
   whatsappHref,
@@ -21,15 +24,15 @@ export default function Contato() {
             Vamos conversar?
           </h2>
           <p className="mx-auto mb-6 mt-4 max-w-md leading-relaxed text-muted-foreground">
-            Precisa de soluções em dados, dashboards ou automação? Peça pelo fluxo institucional
-            abaixo ou envie uma mensagem rápida — também pode falar comigo pelo LinkedIn.
+            Se você precisa de soluções em dados, dashboards ou automação, fale comigo: use o fluxo
+            institucional abaixo, uma mensagem rápida no WhatsApp ou o LinkedIn.
           </p>
           <div className="flex flex-col items-center gap-3">
             <a
               href={whatsappHrefApresentacaoResultados}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Pedir apresentação de resultados sob consulta (WhatsApp)"
+              aria-label="Pedir minha apresentação de resultados sob consulta no WhatsApp"
               className={`${CTA_PRIMARY_CLASS} w-full max-w-md hover:scale-[1.01] active:scale-[0.98] sm:w-auto sm:min-w-[220px]`}
             >
               Ver Apresentação de Resultados
@@ -38,7 +41,7 @@ export default function Contato() {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Enviar mensagem rápida pelo WhatsApp"
+              aria-label="Enviar mensagem rápida no meu WhatsApp"
               className={`${CTA_SECONDARY_ANCHOR_CLASS} w-full max-w-md hover:scale-[1.01] active:scale-[0.98] sm:w-auto sm:min-w-[220px]`}
             >
               Mensagem rápida no WhatsApp
@@ -47,7 +50,7 @@ export default function Contato() {
               href={linkedinHref}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Perfil LinkedIn da Daniely Pinheiro"
+              aria-label="Abrir meu perfil no LinkedIn"
               className="rounded-xl border border-border bg-surface/72 px-6 py-3 font-medium text-gold shadow-[var(--shadow-glass)] backdrop-blur-sm transition-[box-shadow] hover:shadow-[0_12px_36px_-14px_rgba(42,31,53,0.12)] dark:hover:shadow-[0_12px_36px_-14px_rgba(0,0,0,0.25)]"
             >
               LinkedIn
@@ -55,12 +58,12 @@ export default function Contato() {
             <a
               href={SITE_MAILTO_HREF}
               className="rounded-xl border border-border bg-surface/72 px-6 py-3 font-medium text-primary shadow-[var(--shadow-glass)] backdrop-blur-sm transition-[box-shadow] hover:shadow-[0_12px_36px_-14px_rgba(42,31,53,0.12)] dark:hover:shadow-[0_12px_36px_-14px_rgba(0,0,0,0.25)]"
-              aria-label={`Enviar e-mail para ${SITE_EMAIL}`}
+              aria-label="Abrir o cliente de e-mail para contato institucional"
             >
-              {SITE_EMAIL}
+              {SITE_EMAIL_LINK_LABEL}
             </a>
             <p className="mt-1 max-w-md text-center text-xs leading-relaxed text-muted-foreground">
-              Para assuntos formais ou anexos, o e-mail complementa WhatsApp e LinkedIn.
+              Para assuntos formais ou anexos, o e-mail institucional complementa WhatsApp e LinkedIn.
             </p>
           </div>
         </div>

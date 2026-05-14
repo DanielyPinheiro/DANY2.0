@@ -17,7 +17,7 @@ export const Route = createFileRoute('/portfolio/')({
       {
         name: 'description',
         content:
-          'Três formatos de entrega: gestão e sistemas customizados, Power BI e web e apps — com escopo e resultado por linha.',
+          'Ofereço três formatos de entrega: gestão e sistemas customizados, Power BI e web e apps — com escopo e resultado por linha.',
       },
       {
         property: 'og:title',
@@ -26,7 +26,7 @@ export const Route = createFileRoute('/portfolio/')({
       {
         property: 'og:description',
         content:
-          'Formatos de entrega em dados, dashboards e desenvolvimento — filtre por tipo e abra cada página.',
+          'Filtre por tipo e abra cada página — formatos de entrega em dados, dashboards e desenvolvimento.',
       },
     ],
     links:
@@ -49,8 +49,8 @@ function PortfolioIndexPage() {
             Formatos de entrega
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-            Cada formato tem página própria com escopo, o que inclui e resultado. Use os filtros
-            por tipo para navegar entre as linhas de serviço.
+            Em cada formato eu descrevo escopo, o que inclui e resultado. Use os filtros por tipo para
+            navegar entre as linhas de serviço.
           </p>
 
           <PortfolioFilterGrid />

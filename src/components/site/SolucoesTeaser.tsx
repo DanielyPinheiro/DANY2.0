@@ -18,7 +18,7 @@ export default function SolucoesTeaser() {
         </h2>
         <div className="card-pearl rounded-2xl p-6 shadow-[var(--shadow-glass)] backdrop-blur-md md:p-8">
           <p className="max-w-2xl text-base font-normal leading-relaxed text-muted-foreground md:text-lg">
-            Trabalho do painel estratégico à automação e às soluções web: estruturo a oferta com foco em
+            Trabalho do painel estratégico à automação e às soluções web: organizo a oferta com foco em
             governança de dados e em experiências digitais coerentes com a marca.
           </p>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">

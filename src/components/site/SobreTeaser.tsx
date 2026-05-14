@@ -18,18 +18,18 @@ export default function SobreTeaser() {
         </h2>
         <div className="card-pearl rounded-2xl p-6 shadow-[var(--shadow-glass)] backdrop-blur-md md:p-8">
           <p className="max-w-2xl text-base font-normal leading-relaxed text-muted-foreground md:text-lg">
-            Daniely Pinheiro — consultora em <span className="font-medium text-foreground">dados</span>,
+            Sou consultora em <span className="font-medium text-foreground">dados</span>,
             <span className="font-medium text-foreground"> automação </span>e{' '}
             <span className="font-medium text-foreground">inteligência operacional</span>.
-            Une formação sólida (Administração, Contabilidade, MBA em Análise de Dados) ao propósito de
-            DataGlow Intelligence: transformar ruído em clareza e decisões mais confiantes.
+            Reúno formação sólida (Administração, Ciências Contábeis, MBA em Análise de Dados) com o
+            propósito da DataGlow Intelligence: transformar ruído em clareza e decisões mais confiantes.
           </p>
           <p className="mt-6">
             <Link
               to="/sobre"
               className={CTA_TEASER_OUTLINE_CLASS}
             >
-              Saber mais sobre a autora →
+              Conhecer minha trajetória →
             </Link>
           </p>
         </div>

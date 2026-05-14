@@ -72,9 +72,9 @@ export default function HeroCharts() {
     <div className="mt-12 grid gap-10 md:mt-16 md:grid-cols-2 md:gap-11">
       <figure className={`${chartGlass} ${chartFadeIn} order-1`}>
         <figcaption className="sr-only">
-          Barras comparando ROI percentual: Inteligência Gastronômica Global setenta e quatro por
-          cento; Precisão em Saúde e Coluna setenta e quatro por cento; Estratégia de Hospitalidade de
-          Elite duzentos e cinquenta e sete por cento.
+          Ilustração com ROIs simbólicos de cases que documento na biblioteca: Inteligência Gastronômica
+          Global setenta e quatro por cento; Precisão em Saúde e Coluna setenta e quatro por cento;
+          Estratégia de Hospitalidade de Elite duzentos e cinquenta e sete por cento.
         </figcaption>
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
           ROI por caso (%)
@@ -142,8 +142,8 @@ export default function HeroCharts() {
 
       <figure className={`${chartGlass} ${chartFadeIn} hero-chart-slide-up-delay order-2`}>
         <figcaption className="sr-only">
-          Distribuição de projetos: Consultoria trinta e sete vírgula cinco por cento; desenvolvimento
-          sessenta e dois vírgula cinco por cento.
+          Ilustração da minha distribuição de projetos por área: consultoria trinta e sete vírgula cinco
+          por cento; desenvolvimento sessenta e dois vírgula cinco por cento.
         </figcaption>
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
           Projetos por área

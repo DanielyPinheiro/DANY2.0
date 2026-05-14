@@ -69,8 +69,8 @@ export default function TechnologyStackPanel({
               Este site
             </p>
             <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-              Ferramentas com que este portfólio público está construído hoje — transparência sobre o que
-              há em produção neste domínio.
+              Ferramentas com que construí este portfólio público hoje — transparência sobre o que está
+              em produção neste domínio.
             </p>
             <div className="flex flex-wrap gap-3">
               {SITE_STACK.map((item) => (

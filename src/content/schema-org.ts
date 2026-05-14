@@ -1,4 +1,4 @@
-import { SITE_DESCRIPTION_CARD, SITE_EMAIL } from './site-metadata'
+import { SITE_DESCRIPTION_CARD } from './site-metadata'
 
 /** JSON-LD quando existe URL absoluta do site (`VITE_PUBLIC_SITE_URL`). */
 export function buildWebsiteJsonLd(siteOrigin: string) {
@@ -11,14 +11,15 @@ export function buildWebsiteJsonLd(siteOrigin: string) {
         '@id': `${origin}/#organization`,
         name: 'DataGlow Intelligence',
         url: origin,
-        description: SITE_DESCRIPTION_CARD,
+        description:
+          'Marca e metodologia em dados, automação e inteligência operacional, por Daniely Pinheiro.',
       },
       {
         '@type': 'Person',
         '@id': `${origin}/#person`,
         name: 'Daniely Pinheiro',
-        email: SITE_EMAIL,
         url: origin,
+        description: SITE_DESCRIPTION_CARD,
         worksFor: { '@id': `${origin}/#organization` },
         jobTitle:
           'Consultora em dados, automação e inteligência operacional',

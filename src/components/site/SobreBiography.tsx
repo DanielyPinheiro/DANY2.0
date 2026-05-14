@@ -36,7 +36,7 @@ export default function SobreBiography() {
           </p>
           <p>
             Sou formada em Administração e Ciências Contábeis, com pós-graduação em Controladoria e
-            Finanças Empresiais e Executive MBA em Análises de Dados; unindo visão estratégica,
+            Finanças Empresariais e MBA executivo em Análise de Dados; unindo visão estratégica,
             profunda compreensão do negócio e forte capacidade analítica para apoiar empresas na
             melhoria de controles, eficiência operacional e leitura de resultados.
           </p>

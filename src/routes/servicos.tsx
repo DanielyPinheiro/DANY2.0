@@ -16,7 +16,7 @@ import {
 import { absoluteUrl, siteBaseUrl } from '../lib/site-url'
 
 const SERVICOS_META =
-  'Soluções, biblioteca de formatos de entrega e operações sob medida com Daniely Pinheiro · DataGlow Intelligence.'
+  'Formatos de entrega, biblioteca de escopo e operações sob medida comigo — Daniely Pinheiro · DataGlow Intelligence.'
 
 export const Route = createFileRoute('/servicos')({
   head: () => ({
@@ -61,8 +61,8 @@ function ServicosPage() {
                 Serviços & biblioteca de entrega
               </h1>
               <p className="mx-auto mt-5 max-w-2xl text-base font-medium leading-relaxed text-foreground-strong md:text-lg">
-                Dados, automação e inteligência operacional sob medida — alinhados à mesma estrutura
-                de autoridade técnica de /projetos.
+                Trabalho com dados, automação e inteligência operacional sob medida — na mesma linha de
+                autoridade técnica da minha biblioteca em /projetos.
               </p>
               <p className="mx-auto mt-6 max-w-2xl text-[0.9375rem] leading-relaxed text-muted-foreground md:text-base md:leading-relaxed">
                 {servicosInvestimentoNota}
@@ -144,8 +144,8 @@ function ServicosPage() {
               Ver os três formatos de entrega
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-relaxed text-muted-foreground">
-              Cada formato tem página própria no portfólio com escopo, o que inclui e resultado
-              esperado — gestão customizada, Power BI e web e apps.
+              Em cada formato eu descrevo no portfólio o escopo, o que inclui e o resultado esperado —
+              gestão customizada, Power BI e web e apps.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-5">
               <Link to="/portfolio" className={CTA_PRIMARY_CLASS}>

@@ -5,7 +5,7 @@ import BackNavLink from './BackNavLink'
 import SiteChrome from './SiteChrome'
 
 const NOT_FOUND_DESCRIPTION =
-  'Esta página não existe no site DataGlow Intelligence.'
+  'Este endereço não existe no meu site DataGlow Intelligence.'
 
 export default function GlobalNotFound() {
   useEffect(() => {

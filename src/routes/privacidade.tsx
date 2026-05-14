@@ -2,11 +2,11 @@ import { createFileRoute } from '@tanstack/react-router'
 
 import BackNavLink from '../components/site/BackNavLink'
 import SiteChrome from '../components/site/SiteChrome'
-import { SITE_EMAIL, SITE_MAILTO_HREF } from '../content/site-metadata'
+import { SITE_MAILTO_HREF } from '../content/site-metadata'
 import { absoluteUrl, siteBaseUrl } from '../lib/site-url'
 
 const PRIV_META =
-  'Informações sobre tratamento de dados e contactos institucionais — DataGlow Intelligence.'
+  'Como trato dados pessoais e como você pode falar comigo no site DataGlow Intelligence.'
 
 export const Route = createFileRoute('/privacidade')({
   head: () => ({
@@ -34,36 +34,34 @@ function PrivacidadePage() {
             Privacidade
           </p>
           <h1 className="mt-3 text-3xl font-bold text-foreground md:text-4xl">
-            Dados pessoais e contacto
+            Dados pessoais e contato
           </h1>
           <div className="mt-8 space-y-6 text-base leading-relaxed text-muted-foreground">
             <p>
-              Este site é um canal institucional da Daniely Pinheiro (
+              Este site é meu canal institucional como Daniely Pinheiro (
               <strong className="text-foreground">DataGlow Intelligence</strong>
-              ). Não utilizamos formulários próprios nesta página inicial; os contactos
-              preferenciais são{' '}
+              ). Não utilizo formulários próprios nesta página inicial; meus contatos preferenciais são{' '}
               <a
                 href={SITE_MAILTO_HREF}
                 className="font-medium text-primary underline-offset-4 hover:underline"
               >
-                {SITE_EMAIL}
+                e-mail institucional
               </a>
-              , WhatsApp e LinkedIn indicados na secção de contato e no rodapé.
+              , WhatsApp e LinkedIn, indicados na seção de contato e no rodapé.
             </p>
             <p>
-              Se no futuro forem adicionados analytics ou formulários de lead, será
-              publicada uma política detalhada de privacidade alinhada à LGPD e serão
-              recolhidos apenas os dados estritamente necessários, com base legal
-              adequada e possibilidade de exercício dos teus direitos (acesso,
-              correção, eliminação, entre outros).
+              Se no futuro eu adicionar analytics ou formulários de captação, publico uma política
+              detalhada de privacidade alinhada à LGPD e passo a coletar apenas os dados estritamente
+              necessários, com base legal adequada e com possibilidade de você exercer seus direitos
+              (acesso, correção, exclusão, entre outros).
             </p>
             <p className="text-sm">
-              Encarregado de contacto para questões de privacidade:{' '}
+              Para questões de privacidade, fale comigo pelo{' '}
               <a
                 href={SITE_MAILTO_HREF}
                 className="font-medium text-primary underline-offset-4 hover:underline"
               >
-                {SITE_EMAIL}
+                mesmo contato por e-mail institucional
               </a>
               .
             </p>

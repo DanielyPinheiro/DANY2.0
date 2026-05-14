@@ -38,8 +38,8 @@ function SobrePage() {
             Daniely Pinheiro
           </h1>
           <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
-            Criadora da metodologia DataGlow Intelligence — parcerias em dados, automação e inteligência
-            operacional.
+            Sou criadora da metodologia DataGlow Intelligence e faço parcerias em dados, automação e
+            inteligência operacional.
           </p>
           <section
             id="perfil"

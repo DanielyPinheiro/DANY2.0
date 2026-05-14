@@ -22,7 +22,7 @@ export default function Hero() {
               </span>
             </h1>
             <p className="mt-5 max-w-2xl text-pretty font-sans text-base leading-relaxed text-muted-foreground md:text-lg">
-              <span className="font-medium text-foreground">Daniely Pinheiro</span>
+              <span className="font-medium text-foreground">Sou Daniely Pinheiro</span>
               <span
                 aria-hidden
                 className="mx-1.5 text-muted-foreground/55 sm:mx-2.5 md:mx-3"
@@ -30,21 +30,21 @@ export default function Hero() {
                 |
               </span>
               <span className="inline">
-                Analista de Dados
+                analista de dados
                 <span
                   aria-hidden
                   className="mx-1 text-muted-foreground/50 sm:mx-1.5 md:mx-2"
                 >
                   •
                 </span>
-                Consultora
+                consultora
                 <span
                   aria-hidden
                   className="mx-1 text-muted-foreground/50 sm:mx-1.5 md:mx-2"
                 >
                   •
                 </span>
-                Desenvolvedora
+                desenvolvedora
               </span>
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -56,7 +56,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={CTA_SECONDARY_ANCHOR_CLASS}
-                aria-label="Pedir apresentação de resultados sob consulta (WhatsApp)"
+                aria-label="Pedir minha apresentação de resultados sob consulta no WhatsApp"
               >
                 Ver Apresentação de Resultados
               </a>

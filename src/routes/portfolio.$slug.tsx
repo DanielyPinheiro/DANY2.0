@@ -17,7 +17,7 @@ export const Route = createFileRoute('/portfolio/$slug')({
     const desc =
       project != null
         ? project.shortDesc
-        : 'Case não encontrado. Consulte todos os projetos no portfólio.'
+        : 'Case não encontrado. Veja todos os formatos no meu portfólio.'
     return {
       meta: [
         { title },

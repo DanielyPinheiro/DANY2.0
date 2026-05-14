@@ -41,7 +41,7 @@ function SolucoesPage() {
             Soluções
           </p>
           <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            Oferta e ferramentas
+            O que eu entrego
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
             O que eu entrego está nos casos da{' '}

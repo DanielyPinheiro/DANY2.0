@@ -4,7 +4,7 @@ import { depoimentosBibliotecaConsultoria } from './biblioteca-depos'
 
 /** Mensagem comercial única — detalhes dos formatos estão no portfólio. */
 export const servicosInvestimentoNota =
-  'Cada projeto começa por diagnóstico; só então fecho proposta e investimento com você — sempre alinhados ao que você precisa resolver. No portfólio explico os três formatos de entrega como referência de escopo, não como produtos em catálogo.'
+  'Cada projeto começa por diagnóstico; só depois fecho proposta e investimento com você — sempre alinhados ao que você precisa resolver. No portfólio explico os três formatos de entrega como referência de escopo, não como produtos em catálogo.'
 
 export type ServicoItem = {
   id: number
@@ -29,7 +29,7 @@ export const servicos: ServicoItem[] = [
     portfolioType: 'Gestão e sistemas',
     stack: 'Excel, Power BI, dashboards operacionais',
     title: 'Sistemas de Gestão Customizados',
-    description: 'Para restaurantes, hotéis, clínicas e outros negócios',
+    description: 'Atendo restaurantes, hotéis, clínicas e outros negócios com sistemas sob medida.',
     features: [
       '✅ Diagnóstico completo da situação atual',
       '✅ Design de sistema Excel ou Power BI profissional',
@@ -47,7 +47,7 @@ export const servicos: ServicoItem[] = [
     portfolioType: 'Power BI',
     stack: 'Power BI, DAX, Power Query, RLS',
     title: 'Dashboards em Power BI',
-    description: 'Transforme seus dados em visualizações poderosas',
+    description: 'Transformo seus dados em visualizações fortes para decisão.',
     features: [
       '✅ Análise de seus dados existentes',
       '✅ Modelagem dimensional profissional',
@@ -66,7 +66,7 @@ export const servicos: ServicoItem[] = [
     portfolioType: 'Web e apps',
     stack: 'React, Node.js, Vercel, APIs',
     title: 'Desenvolvimento Web & Apps',
-    description: 'Aplicações React, Node.js, e-commerce ou SaaS',
+    description: 'Desenvolvo aplicações em React, Node.js, e-commerce ou SaaS.',
     features: [
       '✅ Consultoria técnica de arquitetura',
       '✅ Desenvolvimento full-stack',

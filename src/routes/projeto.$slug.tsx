@@ -15,7 +15,7 @@ export const Route = createFileRoute('/projeto/$slug')({
       p != null ? `${p.title} · Biblioteca · DataGlow Intelligence` : 'Projeto não encontrado'
     const desc =
       p != null
-        ? `${p.subtitle} — sensível sob NDA; detalhes técnicos em apresentação orientada pelo site.`
+        ? `${p.subtitle} — sensível sob NDA; detalhes técnicos em apresentação que faço sob consulta a partir deste site.`
         : 'Case não encontrado na biblioteca de resultados.'
     return {
       meta: [

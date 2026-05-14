@@ -52,31 +52,31 @@ const SMALL_SOLUTION_DEFS: SmallSolutionDef[] = [
     key: 'dashboards',
     Icon: LayoutDashboard,
     title: 'Dashboards Estratégicos',
-    desc: 'BI operacional ou executivo (Excel/Power Pivot, Power BI) com cenários já documentados nos cases.',
+    desc: 'Trabalho com BI operacional ou executivo (Excel/Power Pivot, Power BI), nos mesmos tipos de cenário que documento nos cases públicos.',
   },
   {
     key: 'governanca',
     Icon: ShieldCheck,
     title: 'Governança e Controles',
-    desc: 'Indicadores, cadências e disciplina de execução onde o escopo e NDA permitirem comunicar resultado.',
+    desc: 'Organizo indicadores, cadências e disciplina de execução onde o escopo e o NDA permitem comunicar resultado com clareza.',
   },
   {
     key: 'web',
     Icon: AppWindow,
     title: 'Soluções Web',
-    desc: 'SPAs em React já entregues em produção (conteúdo interativo, e-commerce, atualização ao vivo).',
+    desc: 'Entrego SPAs em React já em produção (conteúdo interativo, e-commerce, atualização ao vivo).',
   },
   {
     key: 'brand',
     Icon: PenLine,
     title: 'Experiência & Branding',
-    desc: 'UI coerente sobre o mesmo stack técnico exposto nos projetos, sem promessa genérica só de “presença digital”.',
+    desc: 'Cuido da UI coerente sobre o mesmo stack técnico dos meus projetos, sem promessa genérica só de “presença digital”.',
   },
   {
     key: 'estrategia',
     Icon: Compass,
     title: 'Estratégia Digital',
-    desc: 'Modelos dados + priorização quando a base é operacional (consultoria antes de automatizar retrabalho).',
+    desc: 'Estruturo modelos de dados e priorização quando a base é operacional — consultoria antes de automatizar retrabalho.',
   },
 ]
 
@@ -116,7 +116,7 @@ function SmallSolutionCard({ def, inGrid, tightStack }: SmallCardProps) {
 }
 
 const AUTOMACAO_DESC =
-  'Power Query, macros (VBA quando cabe no escopo), fórmulas e painéis acoplados aos mesmos dashboards que aparecem na biblioteca de projetos — menos retrabalho manual, dados passíveis de auditar.'
+  'Uso Power Query, macros (VBA quando cabe no escopo), fórmulas e painéis acoplados aos mesmos dashboards da minha biblioteca de projetos — menos retrabalho manual e dados passíveis de auditar.'
 
 function FeaturedAutomacaoCard({ forCarousel }: { forCarousel?: boolean }) {
   return (

@@ -14,7 +14,7 @@ import { absoluteUrl, siteBaseUrl } from '../lib/site-url'
 type FilterKey = 'todos' | ProjetosCategory
 
 const PROJETOS_META =
-  'Biblioteca de resultados da Daniely Pinheiro · DataGlow Intelligence — consultoria e aplicações com impacto; apresentação sob sigilo sem links externos a demos.'
+  'Minha biblioteca de resultados · DataGlow Intelligence — consultoria e aplicações com impacto; apresentação sob sigilo, sem links externos para demos.'
 
 export const Route = createFileRoute('/projetos')({
   head: () => ({
@@ -81,8 +81,8 @@ function ProjetosCatalogPage() {
                   Biblioteca de resultados & catálogo
                 </h1>
                 <p className="mx-auto mt-5 max-w-2xl text-base font-medium leading-relaxed text-foreground-strong md:text-lg">
-                  Casos reais onde dados e código transformaram negócios — apresentações e detalhes
-                  sensíveis sob consulta profissional.
+                  Casos reais em que eu usei dados e código para transformar negócios — apresentações e
+                  detalhes sensíveis sob consulta profissional.
                 </p>
               </header>
             </MotionReveal>
@@ -236,14 +236,13 @@ function ProjetosCatalogPage() {
               className="mx-auto mt-16 max-w-3xl space-y-3 rounded-xl border border-gold/25 bg-surface/45 px-6 py-5 text-center text-sm italic leading-relaxed text-muted-foreground shadow-[var(--shadow-glass)] backdrop-blur-sm md:mt-20 md:px-9 md:py-6 md:text-base"
             >
               <p>
-                Por questões de conformidade e sigilo profissional, acessos diretos aos dashboards e
-                códigos de consultoria são protegidos. Demonstrações públicas não estão disponíveis
-                via links externos a partir deste catálogo. Entre em contato para uma apresentação
-                detalhada.
+                Por conformidade e sigilo profissional, eu não exponho acessos diretos a dashboards nem
+                código de consultoria. Demonstrações públicas não ficam disponíveis por links externos a
+                partir deste catálogo — fale comigo para uma apresentação detalhada.
               </p>
               <p className="text-muted-foreground/95 not-italic text-[0.9rem] font-medium md:text-[0.9375rem]">
-                Resultados baseados em implementações reais. Por conformidade ética (NDA), detalhes
-                sensíveis e acessos diretos são protegidos.
+                Baseio meus resultados em implementações reais. Por ética e NDA, não exponho detalhes
+                sensíveis nem acessos diretos a ambientes de cliente.
               </p>
             </aside>
 

@@ -52,15 +52,15 @@ export type PortfolioTipoFilter = 'Todos' | string
 export const PORTFOLIO_ALL_TITLE = 'Todos os formatos'
 
 export const PORTFOLIO_ALL_BLURB =
-  'Três linhas de entrega (escopo) — gestão e sistemas, Power BI, web e apps. Use os filtros para focar cada formato.'
+  'Reúno três linhas de entrega (escopo) — gestão e sistemas, Power BI, web e apps. Use os filtros para focar cada formato.'
 
 const portfolioCategoryBlurbs: Record<string, string> = {
   'Gestão e sistemas':
-    'Sistemas customizados em Excel ou Power BI para operação, estoque, vendas e decisões do dia a dia.',
+    'Entrego sistemas customizados em Excel ou Power BI para operação, estoque, vendas e decisões do dia a dia.',
   'Power BI':
-    'Modelagem, DAX, visualizações e publicação com segurança por perfil.',
+    'Faço modelagem, DAX, visualizações e publicação com segurança por perfil.',
   'Web e apps':
-    'Aplicações modernas, integrações e deploy — da arquitetura à manutenção.',
+    'Levo aplicações modernas, integrações e deploy — da arquitetura à manutenção.',
 }
 
 export function getPortfolioCategoriesSorted(): string[] {
@@ -88,7 +88,7 @@ export function getPortfolioFilterSubtitle(filter: PortfolioTipoFilter): string 
   if (filter === 'Todos') return PORTFOLIO_ALL_BLURB
   return (
     portfolioCategoryBlurbs[filter] ??
-    `Formatos nesta área — ${filter}.`
+    `Formatos nesta área em que eu atuo — ${filter}.`
   )
 }
 
