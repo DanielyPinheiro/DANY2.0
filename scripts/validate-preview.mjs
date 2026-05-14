@@ -31,6 +31,8 @@ async function assertAssetsOk() {
   const paths = [
     ...new Set([
       '/og-default.png',
+      '/favicon.ico',
+      '/favicon.png',
       '/images/chez-gaby-dashboard.png',
       '/images/vertebrare-bi-dashboard.png',
       '/images/hotel-occupancy-dashboard.png',

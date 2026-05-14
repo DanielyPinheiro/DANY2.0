@@ -69,6 +69,14 @@ export const Route = createRootRoute({
     return {
       meta,
       links: [
+      {
+        rel: 'icon',
+        href: '/favicon.ico',
+        type: 'image/png',
+        sizes: '32x32',
+      },
+      { rel: 'icon', href: '/favicon.png', type: 'image/png' },
+      { rel: 'apple-touch-icon', href: '/og-default.png' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       {
         rel: 'preconnect',
