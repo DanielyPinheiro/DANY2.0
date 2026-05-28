@@ -3,11 +3,8 @@ import {
   SITE_MAILTO_HREF,
 } from '../../content/site-metadata'
 import { linkedinHref } from '../../lib/linkedin-href'
-import {
-  whatsappHref,
-  whatsappHrefApresentacaoResultados,
-} from '../../lib/whatsapp-href'
-import { CTA_PRIMARY_CLASS, CTA_SECONDARY_ANCHOR_CLASS } from './ctaClasses'
+import { whatsappHref } from '../../lib/whatsapp-href'
+import { CTA_PRIMARY_CLASS } from './ctaClasses'
 
 export default function Contato() {
   return (
@@ -24,27 +21,17 @@ export default function Contato() {
             Vamos conversar?
           </h2>
           <p className="mx-auto mb-6 mt-4 max-w-md leading-relaxed text-muted-foreground">
-            Se você precisa de soluções em dados, dashboards ou automação, fale comigo: use o fluxo
-            institucional abaixo, uma mensagem rápida no WhatsApp ou o LinkedIn.
+            Tem um projeto em mente? Fale comigo pelo WhatsApp, LinkedIn ou e-mail institucional.
           </p>
           <div className="flex flex-col items-center gap-3">
-            <a
-              href={whatsappHrefApresentacaoResultados}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Pedir minha apresentação de resultados sob consulta no WhatsApp"
-              className={`${CTA_PRIMARY_CLASS} w-full max-w-md hover:scale-[1.01] active:scale-[0.98] sm:w-auto sm:min-w-[220px]`}
-            >
-              Ver Apresentação de Resultados
-            </a>
             <a
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Enviar mensagem rápida no meu WhatsApp"
-              className={`${CTA_SECONDARY_ANCHOR_CLASS} w-full max-w-md hover:scale-[1.01] active:scale-[0.98] sm:w-auto sm:min-w-[220px]`}
+              aria-label="Falar comigo no WhatsApp"
+              className={`${CTA_PRIMARY_CLASS} w-full max-w-md hover:scale-[1.01] active:scale-[0.98] sm:w-auto sm:min-w-[220px]`}
             >
-              Mensagem rápida no WhatsApp
+              Falar no WhatsApp
             </a>
             <a
               href={linkedinHref}
