@@ -31,6 +31,7 @@ export const Route = createFileRoute('/servicos')({
         content: 'Serviços - DataGlow Intelligence',
       },
       { property: 'og:description', content: SERVICOS_META },
+      ...(siteBaseUrl() !== '' ? [{ property: 'og:url', content: absoluteUrl('/servicos') }] : []),
     ],
     links:
       siteBaseUrl() !== ''

@@ -10,6 +10,10 @@ import { absoluteUrl, siteBaseUrl } from '../lib/site-url'
 
 export const Route = createFileRoute('/')({
   head: () => ({
+    meta:
+      siteBaseUrl() !== ''
+        ? [{ property: 'og:url', content: absoluteUrl('/') }]
+        : [],
     links:
       siteBaseUrl() !== ''
         ? [{ rel: 'canonical', href: absoluteUrl('/') }]

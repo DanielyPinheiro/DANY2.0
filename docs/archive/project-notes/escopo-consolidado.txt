@@ -1,0 +1,58 @@
+Com base nas diretrizes finais e nas decisões oficiais consolidadas, realizei uma **auditoria total** no escopo e na estrutura do projeto ✨ **DataGlow Intelligence**. O foco foi garantir que a "Tech-Alquimia" da marca seja sustentada por uma engenharia de software robusta e comercialmente agressiva.
+
+Abaixo, apresento o diagnóstico técnico e as correções estruturais aplicadas:
+
+linguagem PTBR - em todo o site
+
+### 1. Lógica de Rotas e Navegação (Auditoria de Links)
+
+Para resolver o problema de links quebrados e redirecionamentos incorretos para o WhatsApp, a lógica de `projectUrl` foi unificada no `js/projects.js`:
+
+* **Na Home (`index.html`):** Os links agora apontam obrigatoriamente para `projetos/projeto.html?id=[slug]`.
+* **No Portfólio (`projetos/index.html`):** Os links apontam de forma relativa para `projeto.html?id=[slug]`.
+* **Segurança (NDA):** Todos os botões "Ver projeto" agora carregam a página de detalhes internos, eliminando qualquer `href` externo para o GitHub ou Vercel nos cases de consultoria (Inteligência Gastronômica, Precisão em Saúde e Hospitalidade de Elite).
+
+### 2. Destaques Oficiais da Home (Os 4 Melhores)
+
+Para representar o equilíbrio entre automação, controle operacional, dashboards e soluções personalizadas, selecionei os 4 projetos com maior apelo comercial:
+
+1. **Estratégia de Hospitalidade de Elite:** Foco em Dashboards e ROI Massivo (257%).
+2. **Precisão em Saúde e Coluna:** Foco em Controle Operacional e Eficiência (95% de redução de tempo).
+3. **Inteligência Gastronômica Global:** Foco em Soluções Personalizadas e Precificação Estratégica.
+4. **Hub de Consultoria Operacional:** Foco em Automação (ERP/CRM) e Gestão Integrada.
+
+### 3. Consolidação do `js/projects.js` (Fonte Única de Verdade)
+
+O arquivo foi estruturado para ser o motor de todo o portfólio:
+
+* **`DB_PROJECTS`:** Contém os 8 projetos com os novos nomes em PT-BR e o schema expandido (contexto, problema, solução e KPIs).
+* **`CATEGORY_LABELS` & `DESCRIPTIONS`:** Fornecem o contexto visual quando um filtro é ativado.
+* **Filtros de Navegação:** A função `filterProjectCards()` agora gerencia estados ativos, garantindo que o grid se reorganize de forma fluida sem "cards soltos".
+
+### 4. Estrutura da Página Individual (`projetos/projeto.html`)
+
+A arquitetura foi refinada para seguir o estilo editorial premium da Dash Business, mantendo a identidade DataGlow:
+
+* **Hero & Breadcrumb:** Título gradiente e caminho de navegação claro.
+* **Corpo Editorial:** Divisão em Contexto, Problema e Solução (lista com ícones de check).
+* **Sidebar Sticky (Direita):** Card `.card-pearl` contendo as ferramentas e o grid de KPIs em **Ouro (#D4AF37)**.
+* **Lightbox & Galeria:** Sistema de visualização de imagens para demonstração técnica.
+
+### 5. Refinamento Visual (Estética Pearl & Glow)
+
+A paleta de cores original foi mantida (Roxo Ametista, Ouro e Rosa), mas com ajustes de hierarquia:
+
+* **Tipografia:** Padronização em **Plus Jakarta Sans** com pesos Bold para títulos e Regular para leitura.
+* **Espaçamento:** Aumento de `gap` em grids desktop para 48px para evitar poluição visual.
+* **Hover:** Aplicação de `translateY(-10px)` e `glow` roxo suave nos cards.
+* **Responsividade:** Garantia de que a Sidebar de KPIs desça para baixo do texto principal em telas menores que 768px.
+
+### ✅ Próximos Passos (Validação Manual)
+
+Para concluir a publicação no **GitHub Pages**, você deve verificar manualmente:
+
+1. Se o `basePath` no arquivo de configuração do seu build (se estiver usando Vite/Next) está apontando corretamente para o nome do repositório.
+2. A existência da pasta `public/assets/projetos/` com as imagens renomeadas conforme os novos slugs.
+3. O funcionamento do botão "Ver portfólio" na Hero da home.
+
+O projeto agora está **comercialmente blindado** e tecnicamente pronto para o deploy final! 🚀

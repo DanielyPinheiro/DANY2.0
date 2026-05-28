@@ -25,6 +25,7 @@ export const Route = createFileRoute('/solucoes')({
         property: 'og:description',
         content: SOLUCOES_META,
       },
+      ...(siteBaseUrl() !== '' ? [{ property: 'og:url', content: absoluteUrl('/solucoes') }] : []),
     ],
     links:
       siteBaseUrl() !== '' ? [{ rel: 'canonical', href: absoluteUrl('/solucoes') }] : [],
