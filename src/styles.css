@@ -1,5 +1,6 @@
 @config "./tailwind.config.ts";
 @import "tailwindcss";
+@import "@fontsource-variable/plus-jakarta-sans";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -231,6 +232,7 @@ html.dark {
   body {
     @apply bg-background text-foreground antialiased;
     font-family:
+      'Plus Jakarta Sans Variable',
       'Plus Jakarta Sans',
       system-ui,
       sans-serif;

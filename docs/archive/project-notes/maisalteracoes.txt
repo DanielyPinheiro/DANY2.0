@@ -1,0 +1,53 @@
+🚀 PROMPT MESTRE FINAL: Implementação Full-Stack ✨ DataGlow Intelligence
+Copie e cole no chat do Cursor (Ctrl+L):
+
+"Atue como um Engenheiro de Software Full-Stack e Arquiteto de UI/UX Sênior. Vamos implementar a versão definitiva do ecossistema ✨ DataGlow Intelligence, transformando o portfólio em uma Biblioteca Visual de Resultados estruturada para crescimento e pronta para o GitHub Pages.
+
+🎨 1. Identidade, Estética e Branding
+Marca: Daniely Pinheiro · ✨ DataGlow Intelligence (
+
+Cores (Night Intelligence): Fundo #121217, Destaques #7B3FE4 (Roxo), Insights #D4AF37 (Ouro) e CTAs #FF69B4 (Rosa).
+
+Tipografia: Plus Jakarta Sans com hierarquia editorial.
+
+Efeitos: Utilize .card-pearl para superfícies e Framer Motion para animações de entrada (fade-in + slide-up).
+
+🛠️ 2. Engenharia de Dados e Nomenclatura (PT-BR)
+Atualize o array de projetos (projects.ts ou similar) com as novas nomenclaturas estratégicas e suporte para páginas individuais:
+
+Cases: Inteligência Gastronômica Global, Precisão em Saúde e Coluna, Estratégia de Hospitalidade de Elite, Hub de Consultoria Operacional, Celebração Digital: Conexão em Tempo Real, E-commerce Sensorial Premium, Oráculo Digital: Inteligência e Intuição.
+
+Schema: Cada item deve conter id (slug), contexto, problema, solucao_lista (array) e kpis (array de objetos {value, label}).
+
+🏗️ 3. Mecânica da Biblioteca e Navegação Interna
+Página de Detalhes: Implemente a rota dinâmica /projeto/[id] seguindo o modelo editorial (3fr 1fr).
+
+Layout principal (Esquerda): Seções Contexto, Problema e Solução com ícones de check.
+
+Sidebar Sticky (Direita): Card de KPIs (grid 2 colunas em Ouro) e Card de Ferramentas.
+
+Comportamento do Botão: O CTA 'Ver Resultados' deve navegar internamente para a página do projeto, NUNCA abrir o WhatsApp ou links externos para cases de consultoria (NDA).
+
+🎮 4. Correção Técnica: Celebração Digital
+Reforce a narrativa de Engajamento e Gamificação.
+
+Destaque a sincronização em tempo real via Firebase Real-time DB para Quiz e Sorteios.
+
+📱 5. Responsividade e Social Proof
+Mobile: Em telas < 768px, o grid de detalhes deve virar coluna única, com KPIs abaixo do texto principal.
+
+Testemunhos: Integre depoimentos anonimizados (Ex: 'Gerente Geral, Estratégia de Hospitalidade de Elite') dentro das páginas de resultados.
+
+🔗 6. Finalização e Deploy (GitHub Pages)
+Rodapé: Insira a nota de sigilo: 'Resultados baseados em implementações reais. Por conformidade ética (NDA), detalhes sensíveis e acessos diretos são protegidos.' Contato por e-mail: usar apenas SITE_EMAIL em src/content/site-metadata.ts (não usar daniely@excla.com.br — não é o e-mail da Daniely).
+
+Build: Ajuste o basePath no arquivo de configuração para garantir que rotas e imagens funcionem no GitHub Pages."
+
+✨ O que este comando resolve para você hoje:
+Profissionalismo Total: Elimina nomes de arquivos técnicos (app_cha, luzcomaromas) e os substitui por nomes de Plataformas e Hubs de Inteligência.
+
+Retenção e Autoridade: O cliente não sai mais do seu site para o WhatsApp; ele mergulha nos seus cases, lendo sobre os desafios e soluções que você criou.
+
+Escalabilidade Técnica: O código fica preparado para você apenas adicionar novos dados no futuro e o site criar as páginas sozinho.
+
+Dany, ao rodar este prompt, o Cursor entregará a versão mais madura da ✨ DataGlow Intelligence. Quando ele terminar, você estará a um passo de publicar sua biblioteca de sucessos! 🚀

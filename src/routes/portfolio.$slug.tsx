@@ -24,6 +24,9 @@ export const Route = createFileRoute('/portfolio/$slug')({
         { name: 'description', content: desc },
         { property: 'og:title', content: title },
         { property: 'og:description', content: desc },
+        ...(siteBaseUrl() !== '' && project != null
+          ? [{ property: 'og:url', content: absoluteUrl(`/portfolio/${params.slug}`) }]
+          : []),
       ],
       links:
         siteBaseUrl() !== '' && project != null

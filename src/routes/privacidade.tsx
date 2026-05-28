@@ -16,6 +16,7 @@ export const Route = createFileRoute('/privacidade')({
       { property: 'og:title', content: 'Privacidade · DataGlow Intelligence' },
       { property: 'og:description', content: PRIV_META },
       { name: 'robots', content: 'index, follow' },
+      ...(siteBaseUrl() !== '' ? [{ property: 'og:url', content: absoluteUrl('/privacidade') }] : []),
     ],
     links:
       siteBaseUrl() !== ''

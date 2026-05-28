@@ -22,6 +22,7 @@ export default function HeroIllustration() {
       className="mx-auto w-full max-w-md select-none object-contain drop-shadow-lg md:max-w-lg"
       decoding="async"
       loading="eager"
+      fetchPriority="high"
       onError={() => setUseFallback(true)}
     />
   );

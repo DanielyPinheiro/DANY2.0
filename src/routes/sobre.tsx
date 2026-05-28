@@ -16,6 +16,7 @@ export const Route = createFileRoute('/sobre')({
         content: 'Sobre · Dany Pinheiro · DataGlow Intelligence',
       },
       { property: 'og:description', content: SITE_DESCRIPTION_CARD },
+      ...(siteBaseUrl() !== '' ? [{ property: 'og:url', content: absoluteUrl('/sobre') }] : []),
     ],
     links:
       siteBaseUrl() !== '' ? [{ rel: 'canonical', href: absoluteUrl('/sobre') }] : [],

@@ -1,0 +1,151 @@
+Quero que você faça uma auditoria COMPLETA, profunda e crítica do meu site “Dany2.0”, como se fosse um especialista sênior em:
+- arquitetura front-end
+- UX/UI
+- performance
+- SEO técnico
+- acessibilidade
+- responsividade mobile
+- conversão
+- segurança
+- qualidade de código
+- conteúdo e clareza da comunicação
+
+Analise TODO o projeto, sem pular arquivos importantes. Quero uma auditoria “gran finale super master power”, com visão técnica e estratégica.
+
+Objetivo:
+1. entender exatamente como o site está hoje
+2. identificar tudo o que está bom, ruim, incompleto ou mal resolvido
+3. descobrir o que ainda falta para o site ficar nota 1000
+4. gerar um plano claro de melhoria com prioridades
+
+Quero que você analise pelo menos estes pontos:
+
+1) Estrutura e arquitetura
+- organização de pastas
+- componentes repetidos
+- acoplamento excessivo
+- escalabilidade
+- legibilidade do código
+- possíveis gargalos de manutenção
+
+2) Front-end e experiência
+- consistência visual
+- hierarquia da informação
+- clareza das seções
+- excesso ou falta de conteúdo
+- usabilidade
+- fluxo de navegação
+- qualidade do mobile
+- responsividade real
+- CTAs fracos ou confusos
+
+3) Performance
+- imagens pesadas
+- componentes desnecessariamente pesados
+- renderização ruim
+- carregamento lento
+- oportunidades de lazy loading
+- otimização de assets
+- bundle size
+- uso incorreto de fontes, animações, scripts ou bibliotecas
+
+4) SEO
+- titles e meta descriptions
+- headings (H1, H2, H3...)
+- estrutura semântica
+- sitemap
+- robots.txt
+- canonical
+- Open Graph
+- schema markup
+- URLs
+- conteúdo raso ou mal otimizado
+- páginas sem foco claro de palavra-chave
+- oportunidades de melhorar rankeamento
+
+5) Acessibilidade
+- contraste
+- navegação por teclado
+- alt text
+- labels
+- aria
+- semântica HTML
+- foco visível
+- problemas de leitura para leitores de tela
+
+6) Segurança e boas práticas
+- exposição indevida
+- uso inseguro de variáveis
+- dados sensíveis no front
+- dependências suspeitas ou desatualizadas
+- headers de segurança recomendados
+- riscos básicos
+
+7) Conversão e posicionamento
+- se está claro o que o site vende/oferece
+- se a proposta de valor está forte
+- se gera confiança
+- se tem prova social
+- se falta autoridade
+- se os textos estão convincentes
+- se os botões realmente levam o usuário à ação
+
+8) Conteúdo
+- clareza
+- objetividade
+- excesso de texto
+- falta de texto
+- tom de voz
+- coerência entre seções
+- erros de escrita
+- oportunidades de melhorar comunicação
+
+Formato da resposta:
+Quero a resposta em 6 blocos:
+
+BLOCO 1 — Diagnóstico executivo
+- resumo honesto do estado atual do site
+- nota geral de 0 a 10
+- nota por área: visual, UX, SEO, performance, acessibilidade, conversão, código
+
+BLOCO 2 — O que está bom
+- liste os pontos fortes reais
+- sem inventar elogio
+
+BLOCO 3 — Problemas encontrados
+- liste todos os problemas encontrados
+- separando por gravidade: crítico, médio e melhoria
+- sempre que possível, cite arquivo, componente, seção ou trecho responsável
+
+BLOCO 4 — O que falta para ficar nota 1000
+- liste tudo que ainda não existe ou está incompleto
+- pense como produto, marca, site institucional e máquina de conversão
+
+BLOCO 5 — Plano de ação priorizado
+- quick wins
+- melhorias de médio esforço
+- melhorias estruturais
+- ordem ideal de execução
+
+BLOCO 6 — Sugestões práticas
+- mostre exatamente o que eu deveria ajustar
+- proponha melhorias específicas no layout, copy, código, SEO e performance
+- se fizer sentido, sugira código pronto ou refatoração
+
+Regras importantes:
+- não seja superficial
+- não esconda problema
+- não elogie por educação
+- seja direto, técnico e estratégico
+- não faça suposições sem avisar
+- se faltar contexto, diga o que está faltando
+- se encontrar algo confuso, diga com clareza
+- se algo estiver fraco, diga como melhorar
+- priorize impacto real
+- quero crítica útil, não gentileza vazia
+
+No final, monte uma checklist final chamada:
+“Falta para o Dany2.0 virar nota 1000”
+
+Se possível, gere isso também em um arquivo markdown chamado:
+AUDITORIA_DANY20.md

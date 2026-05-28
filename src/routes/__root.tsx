@@ -6,6 +6,8 @@ import {
   createRootRoute,
 } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 
 import { buildWebsiteJsonLd } from '../content/schema-org'
 import { SITE_DESCRIPTION_CARD } from '../content/site-metadata'
@@ -47,6 +49,7 @@ export const Route = createRootRoute({
         content: 'DataGlow Intelligence — marca e identidade visual',
       },
       { property: 'og:image:type', content: 'image/png' },
+      { property: 'og:type', content: 'website' },
       { property: 'og:locale', content: 'pt_BR' },
       { name: 'twitter:card', content: 'summary_large_image' },
       {
@@ -62,9 +65,12 @@ export const Route = createRootRoute({
     ]
     const origin = siteBaseUrl()
     if (origin) {
-      meta.push({
-        'script:ld+json': buildWebsiteJsonLd(origin),
-      } as unknown as (typeof meta)[number])
+      meta.push(
+        { property: 'og:url', content: origin } as unknown as (typeof meta)[number],
+        {
+          'script:ld+json': buildWebsiteJsonLd(origin),
+        } as unknown as (typeof meta)[number],
+      )
     }
     return {
       meta,
@@ -72,21 +78,11 @@ export const Route = createRootRoute({
       {
         rel: 'icon',
         href: '/favicon.ico',
-        type: 'image/png',
+        type: 'image/x-icon',
         sizes: '32x32',
       },
       { rel: 'icon', href: '/favicon.png', type: 'image/png' },
       { rel: 'apple-touch-icon', href: '/og-default.png' },
-      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-      {
-        rel: 'preconnect',
-        href: 'https://fonts.gstatic.com',
-        crossOrigin: 'anonymous',
-      },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap',
-      },
       { rel: 'stylesheet', href: appCss },
     ],
     }
@@ -115,6 +111,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <body>
         {children}
         <Scripts />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
