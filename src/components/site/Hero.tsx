@@ -1,8 +1,7 @@
 import { lazy, Suspense } from 'react'
 import { Link } from '@tanstack/react-router'
 
-import { whatsappHrefApresentacaoResultados } from '../../lib/whatsapp-href'
-import { CTA_PRIMARY_CLASS, CTA_SECONDARY_ANCHOR_CLASS } from './ctaClasses'
+import { CTA_PRIMARY_CLASS } from './ctaClasses'
 
 const HeroCharts = lazy(() => import('./HeroCharts'))
 
@@ -51,15 +50,6 @@ export default function Hero() {
               <Link to="/portfolio" className={CTA_PRIMARY_CLASS}>
                 Ver portfólio
               </Link>
-              <a
-                href={whatsappHrefApresentacaoResultados}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={CTA_SECONDARY_ANCHOR_CLASS}
-                aria-label="Pedir minha apresentação de resultados sob consulta no WhatsApp"
-              >
-                Ver Apresentação de Resultados
-              </a>
             </div>
           </div>
         </div>
