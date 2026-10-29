@@ -1,9 +1,8 @@
-import {
-  SITE_EMAIL_LINK_LABEL,
-  SITE_MAILTO_HREF,
-} from '../../content/site-metadata'
+import { MessageCircle } from 'lucide-react'
+
 import { linkedinHref } from '../../lib/linkedin-href'
 import { whatsappHref } from '../../lib/whatsapp-href'
+import ContactCTA from './ContactCTA'
 import { CTA_PRIMARY_CLASS } from './ctaClasses'
 
 export default function Contato() {
@@ -21,9 +20,15 @@ export default function Contato() {
             Vamos conversar?
           </h2>
           <p className="mx-auto mb-6 mt-4 max-w-md leading-relaxed text-muted-foreground">
-            Tem um projeto em mente? Fale comigo pelo WhatsApp, LinkedIn ou e-mail institucional.
+            Tem um projeto em mente? Preencha o briefing abaixo e te respondo
+            com clareza sobre escopo, prazo e investimento.
           </p>
           <div className="flex flex-col items-center gap-3">
+            <ContactCTA
+              variant="primary"
+              label="Enviar briefing"
+              className="w-full max-w-md hover:scale-[1.01] active:scale-[0.98] sm:w-auto sm:min-w-[220px]"
+            />
             <a
               href={whatsappHref}
               target="_blank"
@@ -31,7 +36,8 @@ export default function Contato() {
               aria-label="Falar comigo no WhatsApp"
               className={`${CTA_PRIMARY_CLASS} w-full max-w-md hover:scale-[1.01] active:scale-[0.98] sm:w-auto sm:min-w-[220px]`}
             >
-              Falar no WhatsApp
+              <MessageCircle className="mr-2 inline h-4 w-4" strokeWidth={1.5} aria-hidden />
+              WhatsApp
             </a>
             <a
               href={linkedinHref}
@@ -42,16 +48,6 @@ export default function Contato() {
             >
               LinkedIn
             </a>
-            <a
-              href={SITE_MAILTO_HREF}
-              className="rounded-xl border border-border bg-surface/72 px-6 py-3 font-medium text-primary shadow-[var(--shadow-glass)] backdrop-blur-sm transition-[box-shadow] hover:shadow-[0_12px_36px_-14px_rgba(42,31,53,0.12)] dark:hover:shadow-[0_12px_36px_-14px_rgba(0,0,0,0.25)]"
-              aria-label="Abrir o cliente de e-mail para contato institucional"
-            >
-              {SITE_EMAIL_LINK_LABEL}
-            </a>
-            <p className="mt-1 max-w-md text-center text-xs leading-relaxed text-muted-foreground">
-              Para assuntos formais ou anexos, o e-mail institucional complementa WhatsApp e LinkedIn.
-            </p>
           </div>
         </div>
       </div>

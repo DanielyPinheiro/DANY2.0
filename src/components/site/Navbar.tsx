@@ -9,9 +9,10 @@ import {
   UserRound,
   X,
 } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useRouterState } from '@tanstack/react-router'
 
+import { useContactModal } from '../../lib/contact-modal-context'
 import ThemeToggle from './ThemeToggle'
 import { whatsappHref } from '../../lib/whatsapp-href'
 
@@ -87,6 +88,8 @@ const drawerLinkClass =
   'flex w-full items-center gap-3 rounded-xl px-4 py-3.5 text-left text-sm font-semibold tracking-wide transition-colors outline-none focus-visible:ring-2 focus-visible:ring-primary/35'
 
 export default function Navbar() {
+  const { open: openContact } = useContactModal()
+  const briefingBtnRef = useRef<HTMLButtonElement>(null)
   const pathname = useRouterState({ select: (s) => s.location.pathname })
   const onHome = pathname === '/'
   const onPortfolioRoute = pathname.startsWith('/portfolio')
@@ -253,6 +256,17 @@ export default function Navbar() {
                   <ThemeToggle />
                 </li>
                 <li>
+                  <button
+                    ref={briefingBtnRef}
+                    type="button"
+                    onClick={() => openContact(undefined, briefingBtnRef.current)}
+                    className="inline-flex rounded-full p-1.5 text-primary outline-none transition-colors hover:bg-primary/10 focus-visible:ring-2 focus-visible:ring-primary/35 focus-visible:ring-offset-2 lg:p-2"
+                    aria-label="Abrir formulário de briefing"
+                  >
+                    <Mail className="h-4 w-4 lg:h-[18px] lg:w-[18px]" aria-hidden strokeWidth={1.5} />
+                  </button>
+                </li>
+                <li>
                   <a
                     href={whatsappHref}
                     target="_blank"
@@ -370,11 +384,19 @@ export default function Navbar() {
                   )
                 })}
               </ul>
+              <button
+                type="button"
+                className={`${drawerLinkClass} mt-5 border border-lilac/30 bg-surface/80 text-primary shadow-sm`}
+                onClick={() => { openContact(); setMenuOpen(false) }}
+              >
+                <Mail className="h-5 w-5 shrink-0" aria-hidden strokeWidth={1.5} />
+                Enviar briefing
+              </button>
               <a
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${drawerLinkClass} mt-5 border border-lilac/30 bg-surface/80 text-primary shadow-sm`}
+                className={`${drawerLinkClass} mt-2 border border-lilac/30 bg-surface/80 text-primary shadow-sm`}
                 aria-label="Falar comigo no WhatsApp — apresentação sob consulta ou mensagem rápida"
                 onClick={() => setMenuOpen(false)}
               >

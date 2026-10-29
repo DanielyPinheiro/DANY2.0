@@ -9,8 +9,10 @@ import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 
+import ContactModal from '../components/site/ContactModal'
 import { buildWebsiteJsonLd } from '../content/schema-org'
 import { SITE_DESCRIPTION_CARD } from '../content/site-metadata'
+import { ContactModalProvider } from '../lib/contact-modal-context'
 import { absoluteUrl, siteBaseUrl } from '../lib/site-url'
 import { themeBootstrapScript } from '../lib/theme-bootstrap'
 import appCss from '../styles.css?url'
@@ -93,8 +95,11 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <RootDocument>
-      <Outlet />
-      {import.meta.env.DEV ? <TanStackRouterDevtools /> : null}
+      <ContactModalProvider>
+        <Outlet />
+        <ContactModal />
+        {import.meta.env.DEV ? <TanStackRouterDevtools /> : null}
+      </ContactModalProvider>
     </RootDocument>
   )
 }

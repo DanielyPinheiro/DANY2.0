@@ -1,14 +1,12 @@
 import { Link } from '@tanstack/react-router'
 import { Linkedin, Mail, MessageCircle } from 'lucide-react'
 
-import {
-  SITE_EMAIL_LINK_LABEL,
-  SITE_MAILTO_HREF,
-} from '../../content/site-metadata'
 import { linkedinHref } from '../../lib/linkedin-href'
+import { useContactModal } from '../../lib/contact-modal-context'
 import { whatsappHref } from '../../lib/whatsapp-href'
 
 export default function Footer() {
+  const { open } = useContactModal()
   return (
     <footer className="relative z-10 border-t border-primary/20 bg-surface/60 py-10 font-sans text-sm backdrop-blur-md dark:bg-surface/45">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4">
@@ -36,14 +34,15 @@ export default function Footer() {
             <MessageCircle className="h-5 w-5 shrink-0" aria-hidden strokeWidth={1.5} />
             <span className="font-medium">Vamos conversar</span>
           </a>
-          <a
-            href={SITE_MAILTO_HREF}
+          <button
+            type="button"
+            onClick={() => open()}
             className="inline-flex items-center gap-2 rounded-full px-1 py-1 text-primary transition-colors hover:text-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35"
-            aria-label="Abrir o cliente de e-mail para contato institucional"
+            aria-label="Abrir formulário de briefing"
           >
             <Mail className="h-5 w-5 shrink-0" aria-hidden strokeWidth={1.5} />
-            <span className="font-medium">{SITE_EMAIL_LINK_LABEL}</span>
-          </a>
+            <span className="font-medium">Enviar briefing</span>
+          </button>
           <Link
             to="/privacidade"
             className="inline-flex items-center gap-2 rounded-full px-1 py-1 text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35"

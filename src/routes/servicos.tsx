@@ -1,6 +1,7 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
 
 import BackNavLink from '../components/site/BackNavLink'
+import ContactCTA from '../components/site/ContactCTA'
 import SiteChrome from '../components/site/SiteChrome'
 import {
   CTA_PRIMARY_CLASS,
@@ -152,14 +153,11 @@ function ServicosPage() {
               <Link to="/portfolio" className={CTA_PRIMARY_CLASS}>
                 Abrir portfólio
               </Link>
-              <Link
-                to="/"
-                hash="contato"
-                hashScrollIntoView
-                className={CTA_TEASER_OUTLINE_CLASS}
-              >
-                Solicitar orçamento
-              </Link>
+              <ContactCTA
+                variant="outline"
+                label="Solicitar orçamento"
+                prefill={{ tipo: 'Consultoria', source: 'servicos' }}
+              />
             </div>
           </section>
 

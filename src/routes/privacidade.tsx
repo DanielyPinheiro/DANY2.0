@@ -2,7 +2,6 @@ import { createFileRoute } from '@tanstack/react-router'
 
 import BackNavLink from '../components/site/BackNavLink'
 import SiteChrome from '../components/site/SiteChrome'
-import { SITE_MAILTO_HREF } from '../content/site-metadata'
 import { absoluteUrl, siteBaseUrl } from '../lib/site-url'
 
 const PRIV_META =
@@ -41,28 +40,25 @@ function PrivacidadePage() {
             <p>
               Este site é meu canal institucional como Daniely Pinheiro (
               <strong className="text-foreground">DataGlow Intelligence</strong>
-              ). Não utilizo formulários próprios nesta página inicial; meus contatos preferenciais são{' '}
+              ). Meus canais de contato preferencial são o formulário de briefing
+              (disponível no rodapé e na seção de contato), WhatsApp e LinkedIn.
+              Os dados informados no formulário — nome, e-mail, tipo de demanda e mensagem —
+              são usados exclusivamente para responder ao seu contato e não são compartilhados com terceiros.
+            </p>
+            <p>
+              Coleto apenas os dados estritamente necessários, com base legal adequada (legítimo
+              interesse / execução de contrato) e com possibilidade de você exercer seus direitos
+              de acesso, correção e exclusão conforme a LGPD.
+            </p>
+            <p className="text-sm">
+              Para exercer seus direitos sob a LGPD (acesso, correção, exclusão), entre em
+              contato pelo{' '}
+              {/* mailto mantido aqui como canal LGPD — não é CTA de conversão */}
               <a
-                href={SITE_MAILTO_HREF}
+                href="mailto:DanielyPinheiro@exclasolucoes.onmicrosoft.com"
                 className="font-medium text-primary underline-offset-4 hover:underline"
               >
                 e-mail institucional
-              </a>
-              , WhatsApp e LinkedIn, indicados na seção de contato e no rodapé.
-            </p>
-            <p>
-              Se no futuro eu adicionar analytics ou formulários de captação, publico uma política
-              detalhada de privacidade alinhada à LGPD e passo a coletar apenas os dados estritamente
-              necessários, com base legal adequada e com possibilidade de você exercer seus direitos
-              (acesso, correção, exclusão, entre outros).
-            </p>
-            <p className="text-sm">
-              Para questões de privacidade, fale comigo pelo{' '}
-              <a
-                href={SITE_MAILTO_HREF}
-                className="font-medium text-primary underline-offset-4 hover:underline"
-              >
-                mesmo contato por e-mail institucional
               </a>
               .
             </p>
