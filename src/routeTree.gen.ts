@@ -9,34 +9,19 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SolucoesRouteImport } from './routes/solucoes'
-import { Route as SobreRouteImport } from './routes/sobre'
-import { Route as ServicosRouteImport } from './routes/servicos'
-import { Route as ProjetosRouteImport } from './routes/projetos'
-import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PrivacidadeRouteImport } from './routes/privacidade'
+import { Route as ProjetosRouteImport } from './routes/projetos'
+import { Route as ServicosRouteImport } from './routes/servicos'
+import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as SolucoesRouteImport } from './routes/solucoes'
 import { Route as PortfolioIndexRouteImport } from './routes/portfolio.index'
-import { Route as ProjetoSlugRouteImport } from './routes/projeto.$slug'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
+import { Route as ProjetoSlugRouteImport } from './routes/projeto.$slug'
 
-const SolucoesRoute = SolucoesRouteImport.update({
-  id: '/solucoes',
-  path: '/solucoes',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SobreRoute = SobreRouteImport.update({
-  id: '/sobre',
-  path: '/sobre',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicosRoute = ServicosRouteImport.update({
-  id: '/servicos',
-  path: '/servicos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProjetosRoute = ProjetosRouteImport.update({
-  id: '/projetos',
-  path: '/projetos',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacidadeRoute = PrivacidadeRouteImport.update({
@@ -44,9 +29,24 @@ const PrivacidadeRoute = PrivacidadeRouteImport.update({
   path: '/privacidade',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const ProjetosRoute = ProjetosRouteImport.update({
+  id: '/projetos',
+  path: '/projetos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicosRoute = ServicosRouteImport.update({
+  id: '/servicos',
+  path: '/servicos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolucoesRoute = SolucoesRouteImport.update({
+  id: '/solucoes',
+  path: '/solucoes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioIndexRoute = PortfolioIndexRouteImport.update({
@@ -54,14 +54,14 @@ const PortfolioIndexRoute = PortfolioIndexRouteImport.update({
   path: '/portfolio/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProjetoSlugRoute = ProjetoSlugRouteImport.update({
-  id: '/projeto/$slug',
-  path: '/projeto/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
   id: '/portfolio/$slug',
   path: '/portfolio/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjetoSlugRoute = ProjetoSlugRouteImport.update({
+  id: '/projeto/$slug',
+  path: '/projeto/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -149,32 +149,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/solucoes': {
-      id: '/solucoes'
-      path: '/solucoes'
-      fullPath: '/solucoes'
-      preLoaderRoute: typeof SolucoesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sobre': {
-      id: '/sobre'
-      path: '/sobre'
-      fullPath: '/sobre'
-      preLoaderRoute: typeof SobreRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/servicos': {
-      id: '/servicos'
-      path: '/servicos'
-      fullPath: '/servicos'
-      preLoaderRoute: typeof ServicosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projetos': {
-      id: '/projetos'
-      path: '/projetos'
-      fullPath: '/projetos'
-      preLoaderRoute: typeof ProjetosRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacidade': {
@@ -184,11 +163,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/projetos': {
+      id: '/projetos'
+      path: '/projetos'
+      fullPath: '/projetos'
+      preLoaderRoute: typeof ProjetosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicos': {
+      id: '/servicos'
+      path: '/servicos'
+      fullPath: '/servicos'
+      preLoaderRoute: typeof ServicosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solucoes': {
+      id: '/solucoes'
+      path: '/solucoes'
+      fullPath: '/solucoes'
+      preLoaderRoute: typeof SolucoesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portfolio/': {
@@ -198,18 +198,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/projeto/$slug': {
-      id: '/projeto/$slug'
-      path: '/projeto/$slug'
-      fullPath: '/projeto/$slug'
-      preLoaderRoute: typeof ProjetoSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/portfolio/$slug': {
       id: '/portfolio/$slug'
       path: '/portfolio/$slug'
       fullPath: '/portfolio/$slug'
       preLoaderRoute: typeof PortfolioSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projeto/$slug': {
+      id: '/projeto/$slug'
+      path: '/projeto/$slug'
+      fullPath: '/projeto/$slug'
+      preLoaderRoute: typeof ProjetoSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
