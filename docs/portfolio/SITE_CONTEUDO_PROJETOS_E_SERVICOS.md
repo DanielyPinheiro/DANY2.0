@@ -53,4 +53,4 @@ Links e stacks estão em `projetos-page.ts`: dashbusiness, app_cha_casa_nova, ap
 - Proposta customizada
 - Entrega em 4–8 semanas conforme escopo
 
-**Contacto de referência no doc de cases:** excla.excel@gmail.com · site [dany2-site.vercel.app](https://dany2-site.vercel.app/)
+**Contacto de referência no doc de cases:** contato pelo site · site [dany2-site.vercel.app](https://dany2-site.vercel.app/)

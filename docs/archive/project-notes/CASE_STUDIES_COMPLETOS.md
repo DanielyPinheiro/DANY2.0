@@ -477,7 +477,7 @@ Desenvolvemos um **Sistema Integrado de Gestão Hoteleira** em Excel:
 
 ## CONTATO
 
-📧 **Email:** excla.excel@gmail.com
+📧 **Email:** contato pelo site
 📱 **Whatsapp:** [Seu número]
 🔗 **LinkedIn:** [Seu perfil]
 🌐 **Website:** https://dany2-site.vercel.app/
